@@ -1,0 +1,75 @@
+import type { Metadata } from "next";
+import PageHero from "@/components/layout/PageHero";
+import CtaBand from "@/components/layout/CtaBand";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
+import PracticeCard from "@/components/cards/PracticeCard";
+import JourneyRail from "@/components/expertise/JourneyRail";
+import { practiceAreas } from "@/content/practice-areas";
+
+export const metadata: Metadata = {
+  title: "Expertise",
+  description:
+    "Legal advice across corporate, commercial, transactional and dispute-related matters — from setting up a business to resolving complex disputes.",
+  alternates: { canonical: "/expertise" },
+};
+
+export default function ExpertisePage() {
+  return (
+    <>
+      <PageHero
+        title="Expertise"
+        subtitle="Tell us what you're dealing with, and let's discuss how we can help."
+        image="/images/hero-banner.jpg"
+      />
+
+      <section className="bg-cream py-24 md:py-32">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Our Services"
+            title="Legal expertise for every stage of your journey."
+            aside={
+              <div className="space-y-4 text-[0.9375rem] leading-relaxed text-ink/65">
+                <p>
+                  We provide legal support across corporate, commercial, transactional, and
+                  dispute-related matters. Our advice is tailored to the needs and objectives of each
+                  client.
+                </p>
+                <p>
+                  From building and growing a business to managing complex transactions and resolving
+                  disputes, we help clients understand their options, manage risk, and move forward
+                  with clarity.
+                </p>
+              </div>
+            }
+          />
+
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {practiceAreas.map((area, index) => (
+              <Reveal key={area.slug} delay={index % 3} className="h-full">
+                <PracticeCard area={area} tone="cream" />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="overflow-hidden bg-white py-24 md:py-32">
+        <div className="container-page">
+          <SectionHeading
+            align="center"
+            eyebrow="Your Journey"
+            title="How we work with you"
+            description="Most of our work follows a business through its life — setting up, structuring, contracting, raising capital, growing, protecting what it has built, transacting, and resolving what does not go to plan. Each stage maps to a practice."
+          />
+
+          <div className="mt-16 md:mt-20">
+            <JourneyRail />
+          </div>
+        </div>
+      </section>
+
+      <CtaBand />
+    </>
+  );
+}
