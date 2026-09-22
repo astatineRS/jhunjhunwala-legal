@@ -42,7 +42,7 @@ export default function Header() {
       transition={{ duration: 0.9, ease: EASE_OUT_EXPO, delay: 0.1 }}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-500",
-        solid ? "bg-cream/92 shadow-[0_1px_0_rgb(17_17_17_/_0.07)] backdrop-blur-xl" : "bg-transparent",
+        solid ? "bg-cream/40 backdrop-blur-2xl" : "bg-transparent",
       )}
     >
       <div

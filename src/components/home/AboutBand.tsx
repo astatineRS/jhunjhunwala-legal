@@ -2,6 +2,7 @@ import Image from "next/image";
 import { stats, trustedBy } from "@/content/home";
 import { ButtonLink } from "@/components/ui/Button";
 import Counter from "@/components/ui/Counter";
+import ClientLogo from "@/components/ui/ClientLogo";
 import Marquee from "@/components/ui/Marquee";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
@@ -74,12 +75,12 @@ export default function AboutBand() {
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
             <p className="eyebrow shrink-0 text-cream/50">Trusted By</p>
             <Marquee duration={40} className="min-w-0 flex-1">
-              {trustedBy.map((name) => (
+              {trustedBy.map((client) => (
                 <span
-                  key={name}
-                  className="mr-12 whitespace-nowrap font-display text-[1.375rem] text-cream/70 md:text-[1.625rem]"
+                  key={client.name}
+                  className="mr-12 flex items-center text-cream/70 transition-opacity duration-500 hover:text-cream"
                 >
-                  {name}
+                  <ClientLogo client={client} />
                 </span>
               ))}
             </Marquee>

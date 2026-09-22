@@ -16,14 +16,23 @@ export const mandates = [
   "Represented shareholders in an oppression and mismanagement dispute.",
 ];
 
-export const trustedBy = [
-  "Meridian Industries",
-  "Calcutta Steelworks",
-  "Northbridge Education Trust",
-  "Vector Labs",
-  "Sundara Hospitality",
-  "Harbourline Logistics",
-  "Anant Textiles",
+export type Client = {
+  name: string;
+  /** Path to a brand SVG in /public/logos. Falls back to a wordmark lockup. */
+  logo?: string;
+  /** Rendered height of the logo file, in pixels. */
+  logoHeight?: number;
+};
+
+export const trustedBy: Client[] = [
+  { name: "Syinq", logo: "/logos/syinq.svg", logoHeight: 38 },
+  { name: "Meridian Industries" },
+  { name: "Calcutta Steelworks" },
+  { name: "Northbridge Education Trust" },
+  { name: "Vector Labs" },
+  { name: "Sundara Hospitality" },
+  { name: "Harbourline Logistics" },
+  { name: "Anant Textiles" },
 ];
 
 export type InFocusItem = {
