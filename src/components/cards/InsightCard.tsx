@@ -22,7 +22,7 @@ export default function InsightCard({
       href={`/resources/${insight.slug}`}
       className={cn("group flex h-full flex-col", className)}
     >
-      <div className="relative aspect-[3/2] overflow-hidden rounded-[var(--radius-card)]">
+      <div className="relative aspect-[2/1] md:aspect-[3/2] overflow-hidden rounded-[var(--radius-card)]">
         <Image
           src={insight.image}
           alt=""
@@ -35,11 +35,11 @@ export default function InsightCard({
         </span>
       </div>
 
-      <h3 className="mt-5 font-display text-[1.3125rem] font-semibold leading-snug text-ink transition-colors duration-400 group-hover:text-teal">
+      <h3 className="mt-4 md:mt-5 font-display text-[1.125rem] md:text-[1.3125rem] font-semibold leading-snug text-ink transition-colors duration-400 group-hover:text-teal">
         {insight.title}
       </h3>
 
-      <div className="mt-auto flex items-center justify-between gap-4 pt-2.5 text-[0.9375rem] text-ink/60">
+      <div className="mt-auto flex items-center justify-between gap-4 pt-2 md:pt-2.5 text-[0.875rem] md:text-[0.9375rem] text-ink/60">
         <span>{insight.readTime}</span>
         <span>{insight.date}</span>
       </div>

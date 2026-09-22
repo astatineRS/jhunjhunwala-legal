@@ -53,7 +53,7 @@ export default function Accordion({
   const [open, setOpen] = useState<number | null>(defaultOpen);
 
   return (
-    <div className={cn("flex flex-col gap-3", className)}>
+    <div className={cn("flex flex-col gap-2 md:gap-3", className)}>
       {items.map((item, index) => {
         const isOpen = open === index;
         return (
@@ -70,7 +70,7 @@ export default function Accordion({
               type="button"
               onClick={() => setOpen(isOpen ? null : index)}
               aria-expanded={isOpen}
-              className="flex w-full items-center gap-4 px-5 py-5 text-left md:px-7"
+              className="flex w-full items-center gap-3 px-4 py-4 text-left md:gap-4 md:px-7 md:py-5"
             >
               <span className={cn("font-display text-sm tabular-nums md:text-base", palette.index)}>
                 {String(index + 1).padStart(2, "0")}
@@ -95,7 +95,7 @@ export default function Accordion({
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
                 >
-                  <p className={cn("px-5 pb-6 pl-[3.25rem] text-[0.975rem] leading-relaxed md:px-7 md:pl-[4.5rem]", palette.answer)}>
+                  <p className={cn("px-4 pb-5 pl-[2.75rem] text-[0.9375rem] leading-relaxed md:px-7 md:pb-6 md:pl-[4.5rem] md:text-[0.975rem]", palette.answer)}>
                     {item.answer}
                   </p>
                 </motion.div>

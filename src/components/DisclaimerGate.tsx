@@ -59,15 +59,15 @@ export default function DisclaimerGate() {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.85, ease: EASE_OUT_EXPO }}
-            className="max-h-[85vh] w-full overflow-y-auto border-t-2 border-teal bg-cream shadow-[0_-18px_60px_rgb(17_17_17_/_0.28)]"
+            className="max-h-[70vh] w-full overflow-y-auto border-t-2 border-teal bg-cream shadow-[0_-18px_60px_rgb(17_17_17_/_0.28)] md:max-h-[85vh]"
           >
-            <div className="container-page grid gap-8 py-8 md:grid-cols-[minmax(0,1fr)_14rem] md:items-start md:gap-14 md:py-10">
+            <div className="container-page grid gap-5 py-6 md:grid-cols-[minmax(0,1fr)_14rem] md:items-start md:gap-14 md:py-10">
               <div>
-                <h2 id="disclaimer-title" className="font-display text-[1.75rem] font-semibold leading-tight text-ink">
+                <h2 id="disclaimer-title" className="font-display text-[1.375rem] font-semibold leading-tight text-ink md:text-[1.75rem]">
                   User acknowledgment
                 </h2>
-                <div className="mt-4 h-px bg-ink/10" />
-                <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink/72">
+                <div className="mt-3 h-px bg-ink/10 md:mt-4" />
+                <p className="mt-3 text-[0.875rem] leading-relaxed text-ink/72 md:mt-4 md:text-[0.9375rem]">
                   As per the rules of the Bar Council of India, lawyers and law firms are not permitted to solicit work
                   or advertise. By clicking &ldquo;I Agree&rdquo;, you acknowledge that there has been no advertisement,
                   personal communication, solicitation, invitation or inducement of any kind from {site.name} or any of
@@ -76,23 +76,23 @@ export default function DisclaimerGate() {
                 </p>
                 <Link
                   href="/disclaimer"
-                  className="mt-3 inline-block text-[0.9375rem] font-medium text-teal underline underline-offset-4 transition-colors duration-300 hover:text-teal-deep"
+                  className="mt-3 inline-block text-[0.875rem] font-medium text-teal underline underline-offset-4 transition-colors duration-300 hover:text-teal-deep md:text-[0.9375rem]"
                 >
                   Read the full disclaimer
                 </Link>
               </div>
 
-              <div className="flex flex-col gap-3">
+              <div className="flex gap-3 md:flex-col">
                 <button
                   type="button"
                   onClick={accept}
-                  className="rounded-full bg-teal px-8 py-3 text-[0.9375rem] font-medium text-white transition-colors duration-300 hover:bg-teal-deep"
+                  className="max-md:flex-1 rounded-full bg-teal px-5 py-3 text-[0.9375rem] font-medium text-white transition-colors duration-300 hover:bg-teal-deep md:px-8"
                 >
                   I Agree
                 </button>
                 <a
                   href="https://www.barcouncilofindia.org/"
-                  className="rounded-full bg-ink px-8 py-3 text-center text-[0.9375rem] font-medium text-cream transition-colors duration-300 hover:bg-ink/85"
+                  className="max-md:flex-1 rounded-full bg-ink px-5 py-3 text-center text-[0.9375rem] font-medium text-cream transition-colors duration-300 hover:bg-ink/85 md:px-8"
                 >
                   Exit Site
                 </a>

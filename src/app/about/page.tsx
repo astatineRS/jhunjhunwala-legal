@@ -39,8 +39,8 @@ export default function AboutPage() {
       />
 
       {/* 1 — Who we are */}
-      <section className="bg-cream py-20 md:py-28">
-        <div className="container-page grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-20">
+      <section className="bg-cream py-12 md:py-28">
+        <div className="container-page grid gap-8 md:gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-20">
           <div>
             <Reveal>
               <p className="eyebrow mb-3 text-teal">Who We Are</p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
               className="display-2 max-w-xl capitalize text-ink"
             />
 
-            <div className="mt-7 flex flex-col gap-5 text-[1.0625rem] leading-relaxed text-ink/70">
+            <div className="mt-5 md:mt-7 flex flex-col gap-4 md:gap-5 text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/70">
               <Reveal delay={1}>
                 <p>
                   Legal matters rarely come with simple answers. They involve people, businesses,
@@ -81,7 +81,7 @@ export default function AboutPage() {
               </Reveal>
             </div>
 
-            <Reveal delay={5} className="mt-9">
+            <Reveal delay={5} className="mt-6 md:mt-9">
               <ButtonLink href="/expertise" variant="ghost">
                 See What We Do
               </ButtonLink>
@@ -92,13 +92,13 @@ export default function AboutPage() {
             <ParallaxImage
               src="/images/office.jpg"
               alt="The firm's offices in Kolkata"
-              className="aspect-[4/5] rounded-[var(--radius-card)] lg:aspect-[3/4]"
+              className="aspect-[3/2] rounded-[var(--radius-card)] md:aspect-[4/5] lg:aspect-[3/4]"
               sizes="(max-width: 1024px) 100vw, 45vw"
               distance={44}
             />
-            <div className="absolute inset-x-4 bottom-4 rounded-[10px] bg-cream/95 px-5 py-4 backdrop-blur">
+            <div className="absolute inset-x-3 bottom-3 rounded-[10px] bg-cream/95 px-4 py-3 backdrop-blur md:inset-x-4 md:bottom-4 md:px-5 md:py-4">
               <p className="eyebrow text-gold-deep">Our Office</p>
-              <p className="mt-1.5 text-[0.9375rem] leading-snug text-ink/75">{site.address}</p>
+              <p className="mt-1.5 text-[0.875rem] md:text-[0.9375rem] leading-snug text-ink/75">{site.address}</p>
             </div>
           </Reveal>
         </div>
@@ -108,7 +108,7 @@ export default function AboutPage() {
       <StatsBand />
 
       {/* 3 — How we work */}
-      <section className="bg-cream py-20 md:py-28">
+      <section className="bg-cream py-12 md:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="How We Work"
@@ -120,7 +120,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4 — What guides us */}
-      <section className="bg-cream pb-20 md:pb-28">
+      <section className="bg-cream pb-12 md:pb-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="What Guides Us"
@@ -132,7 +132,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5 — Industries */}
-      <section className="bg-teal py-20 md:py-28">
+      <section className="bg-teal py-12 md:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Industries We Serve"
@@ -145,7 +145,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6 — People */}
-      <section className="bg-cream py-20 md:py-28">
+      <section className="bg-cream py-12 md:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Our Team"
@@ -158,7 +158,7 @@ export default function AboutPage() {
             }
           />
 
-          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 md:mt-16">
+          <ul className="mt-8 grid grid-cols-2 gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4 md:mt-16">
             {leadership.map((person, index) => (
               <Reveal as="li" key={person.slug} delay={index}>
                 <PersonCard person={person} />

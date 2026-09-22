@@ -41,7 +41,7 @@ export default function ShareRow({ url, title }: { url: string; title: string })
   const x = `https://x.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
 
   return (
-    <div className="mt-14 flex flex-wrap items-center gap-4 border-t border-ink/10 pt-7">
+    <div className="mt-8 md:mt-14 flex flex-wrap items-center gap-3 md:gap-4 border-t border-ink/10 pt-5 md:pt-7">
       <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-ink/45">
         Share this article
       </span>

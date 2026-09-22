@@ -6,7 +6,10 @@ import type { Block } from "@/content/insights";
  */
 export default function ArticleBody({ blocks }: { blocks: Block[] }) {
   return (
-    <div className="prose-legal">
+    // Mobile-only block rhythm: the selectors are written `&.prose-legal …` so
+    // they outrank the `prose-legal` utility's own descendant rules. Font sizes
+    // and line-heights are deliberately left alone.
+    <div className="prose-legal max-md:[&.prose-legal_h3]:mt-6 max-md:[&.prose-legal_blockquote]:my-6 max-md:[&.prose-legal_blockquote]:px-4 max-md:[&.prose-legal_ul]:mb-4">
       {blocks.map((block, index) => {
         if (block.type === "h3") {
           return <h3 key={`h3-${index}`}>{block.text}</h3>;

@@ -16,10 +16,10 @@ export default function MandateMarquee() {
         {mandates.map((mandate) => (
           <article
             key={mandate}
-            className="group mr-4 flex w-[19rem] items-center gap-4 rounded-[2.25rem] bg-white/10 px-5 py-4 ring-1 ring-white/20 backdrop-blur-md transition-transform duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-1 sm:w-[22rem]"
+            className="group mr-4 flex w-[16rem] items-center gap-3 rounded-[2.25rem] bg-white/10 px-4 py-3 ring-1 ring-white/20 backdrop-blur-md transition-transform duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-1 sm:w-[22rem] md:gap-4 md:px-5 md:py-4"
           >
             <ArrowBadge tone="teal" size={34} />
-            <p className="line-clamp-3 text-[0.8125rem] leading-snug text-cream/85">{mandate}</p>
+            <p className="line-clamp-2 text-[0.8125rem] leading-snug text-cream/85 md:line-clamp-3">{mandate}</p>
           </article>
         ))}
       </Marquee>

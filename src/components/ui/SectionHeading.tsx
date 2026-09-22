@@ -28,7 +28,7 @@ export default function SectionHeading({
   return (
     <div
       className={cn(
-        "flex flex-col gap-6",
+        "flex flex-col gap-4 md:gap-6",
         aside && "md:flex-row md:items-end md:justify-between md:gap-16",
         className,
       )}
@@ -36,7 +36,7 @@ export default function SectionHeading({
       <div className={cn("max-w-3xl", isCenter && "mx-auto text-center")}>
         {eyebrow ? (
           <Reveal>
-            <p className={cn("eyebrow mb-3", tone === "light" ? "text-gold" : "text-teal")}>{eyebrow}</p>
+            <p className={cn("eyebrow mb-2 md:mb-3", tone === "light" ? "text-gold" : "text-teal")}>{eyebrow}</p>
           </Reveal>
         ) : null}
         <SplitText
@@ -48,7 +48,7 @@ export default function SectionHeading({
           <Reveal delay={1}>
             <div
               className={cn(
-                "mt-5 text-balance-pretty text-[1.0625rem] leading-relaxed",
+                "mt-3 text-balance-pretty text-[0.9375rem] leading-relaxed md:mt-5 md:text-[1.0625rem]",
                 tone === "light" ? "text-cream/75" : "text-ink/65",
               )}
             >

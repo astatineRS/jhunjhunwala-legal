@@ -13,7 +13,7 @@ export default function PersonCard({ person, className }: { person: Person; clas
         className,
       )}
     >
-      <div className="relative aspect-[4/5] overflow-hidden">
+      <div className="relative aspect-square md:aspect-[4/5] overflow-hidden">
         <Image
           src={person.image}
           alt={person.name}
@@ -24,10 +24,10 @@ export default function PersonCard({ person, className }: { person: Person; clas
         <span className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </div>
 
-      <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-3 rounded-[10px] bg-cream/95 px-4 py-3 backdrop-blur transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-1">
+      <div className="absolute inset-x-2 bottom-2 flex items-center justify-between gap-2 rounded-[10px] bg-cream/95 px-3 py-2.5 backdrop-blur transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-1 md:inset-x-3 md:bottom-3 md:gap-3 md:px-4 md:py-3">
         <span className="min-w-0">
-          <span className="block font-display text-[1.0625rem] font-semibold leading-tight text-ink">{person.name}</span>
-          <span className="mt-0.5 block text-[0.8125rem] leading-tight text-ink/60">{person.role}</span>
+          <span className="block break-words font-display text-[0.9375rem] md:text-[1.0625rem] font-semibold leading-tight text-ink">{person.name}</span>
+          <span className="mt-0.5 block text-[0.75rem] md:text-[0.8125rem] leading-tight text-ink/60">{person.role}</span>
         </span>
         {/* The arrow chip costs 30px of label width — drop it on the narrowest
             two-column grids so names never have to truncate. */}

@@ -7,7 +7,7 @@ import Magnetic from "./Magnetic";
 type Variant = "primary" | "light" | "outline" | "gold" | "ghost";
 
 const base =
-  "group relative inline-flex items-center gap-3 rounded-full pl-7 pr-2 py-2 text-[0.9375rem] font-medium tracking-tight transition-colors duration-400 ease-[var(--ease-out-expo)]";
+  "group relative inline-flex items-center gap-2 rounded-full pl-5 pr-2 py-2 text-[0.9375rem] font-medium tracking-tight transition-colors duration-400 ease-[var(--ease-out-expo)] md:gap-3 md:pl-7";
 
 const variants: Record<Variant, string> = {
   primary: "bg-teal text-white hover:bg-teal-deep",
@@ -42,7 +42,7 @@ export function Button({
   ...rest
 }: ButtonProps & ComponentProps<"button">) {
   const content = (
-    <button className={cn(base, variants[variant], !withArrow && "pr-7", className)} {...rest}>
+    <button className={cn(base, variants[variant], !withArrow && "pr-5 md:pr-7", className)} {...rest}>
       <span>{children}</span>
       {withArrow ? <ArrowBadge tone={badgeTone[variant]} size={34} /> : null}
     </button>
@@ -61,7 +61,7 @@ export function ButtonLink({
   ...rest
 }: ButtonProps & { href: string } & Omit<ComponentProps<typeof Link>, "href" | "className" | "children">) {
   const content = (
-    <Link href={href} className={cn(base, variants[variant], !withArrow && "pr-7", className)} {...rest}>
+    <Link href={href} className={cn(base, variants[variant], !withArrow && "pr-5 md:pr-7", className)} {...rest}>
       <span>{children}</span>
       {withArrow ? <ArrowBadge tone={badgeTone[variant]} size={34} /> : null}
     </Link>

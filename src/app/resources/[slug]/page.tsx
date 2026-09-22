@@ -102,8 +102,8 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="bg-cream pb-24 pt-[calc(var(--header-h)+3.5rem)] md:pb-32">
-        <div className="container-page grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_320px] xl:gap-16">
+      <section className="bg-cream pb-12 pt-[calc(var(--header-h)+2rem)] md:pt-[calc(var(--header-h)+3.5rem)] md:pb-32">
+        <div className="container-page grid items-start gap-8 md:gap-12 lg:grid-cols-[minmax(0,1fr)_320px] xl:gap-16">
           <article>
             <SplitText
               as="h1"
@@ -113,9 +113,9 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
 
             <Reveal
               delay={1}
-              className="mt-10 overflow-hidden rounded-[var(--radius-card)]"
+              className="mt-6 md:mt-10 overflow-hidden rounded-[var(--radius-card)]"
             >
-              <div className="relative aspect-[16/10]">
+              <div className="relative aspect-[16/9] md:aspect-[16/10]">
                 <Image
                   src={insight.image}
                   alt=""
@@ -129,27 +129,27 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
 
             <Reveal
               delay={2}
-              className="mt-8 flex flex-wrap items-center justify-between gap-x-10 gap-y-4"
+              className="mt-6 md:mt-8 flex flex-wrap items-center justify-between gap-x-5 md:gap-x-10 gap-y-3 md:gap-y-4"
             >
-              <ul className="flex flex-wrap items-center gap-x-7 gap-y-3">
+              <ul className="flex flex-wrap items-center gap-x-5 md:gap-x-7 gap-y-3">
                 {metrics.map(({ icon: Icon, value, label }) => (
-                  <li key={label} className="flex items-center gap-2.5 text-[1.0625rem] text-ink">
-                    <Icon className="size-[19px] text-teal" />
+                  <li key={label} className="flex items-center gap-2 md:gap-2.5 text-[0.9375rem] md:text-[1.0625rem] text-ink">
+                    <Icon className="size-4 md:size-[19px] text-teal" />
                     <span>{value}</span>
                     <span className="sr-only">{label}</span>
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-[1.0625rem] text-ink/60">
+              <div className="flex flex-wrap items-center gap-x-5 md:gap-x-7 gap-y-3 text-[0.9375rem] md:text-[1.0625rem] text-ink/60">
                 <span>{insight.date}</span>
-                <span className="flex items-center gap-2.5 capitalize text-ink">
-                  <ClockIcon className="size-[19px] text-teal" />
+                <span className="flex items-center gap-2 md:gap-2.5 capitalize text-ink">
+                  <ClockIcon className="size-4 md:size-[19px] text-teal" />
                   {insight.readTime}
                 </span>
               </div>
             </Reveal>
 
-            <div className="mt-10">
+            <div className="mt-6 md:mt-10">
               <ArticleReader>
                 <ArticleBody blocks={insight.body} />
               </ArticleReader>
@@ -158,7 +158,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             <ShareRow url={canonical} title={insight.title} />
           </article>
 
-          <aside aria-label="Related articles" className="grid gap-10 sm:grid-cols-2 lg:grid-cols-1">
+          <aside aria-label="Related articles" className="grid gap-5 md:gap-10 sm:grid-cols-2 lg:grid-cols-1">
             <h2 className="sr-only">Related articles</h2>
             {related.map((entry, index) => (
               <Reveal key={entry.slug} delay={index % 3}>

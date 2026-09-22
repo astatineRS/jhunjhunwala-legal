@@ -28,32 +28,32 @@ export default function PolicyDocument({
   const entries: TocEntry[] = sections.map(({ id, title: heading }) => ({ id, title: heading }));
 
   return (
-    <article className="bg-cream pb-20 pt-[calc(var(--header-h)+3rem)] md:pb-28">
-      <div className="container-page grid gap-x-10 lg:grid-cols-[13rem_minmax(0,42rem)] lg:gap-x-16">
+    <article className="bg-cream pb-12 pt-[calc(var(--header-h)+1.75rem)] md:pb-28 md:pt-[calc(var(--header-h)+3rem)]">
+      <div className="container-page grid gap-x-7 md:gap-x-10 lg:grid-cols-[13rem_minmax(0,42rem)] lg:gap-x-16">
         <header className="max-w-2xl lg:col-start-2 lg:row-start-1">
           <Reveal>
             <p className="eyebrow mb-3 text-teal">{eyebrow}</p>
           </Reveal>
           <SplitText as="h1" text={title} className="display-1 text-ink" />
           <Reveal delay={1}>
-            <p className="mt-5 text-balance-pretty text-[1.0625rem] leading-relaxed text-ink/65">
+            <p className="mt-4 md:mt-5 text-balance-pretty text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/65">
               {lede}
             </p>
           </Reveal>
           <Reveal delay={2}>
-            <p className="mt-6 border-t border-ink/12 pt-4 text-[0.8125rem] uppercase tracking-[0.14em] text-ink/45">
+            <p className="mt-5 md:mt-6 border-t border-ink/12 pt-3 md:pt-4 text-[0.8125rem] uppercase tracking-[0.14em] text-ink/45">
               Last updated {updated}
             </p>
           </Reveal>
         </header>
 
-        <aside className="mt-12 hidden md:mt-16 lg:col-start-1 lg:row-start-2 lg:block">
+        <aside className="mt-8 hidden md:mt-16 lg:col-start-1 lg:row-start-2 lg:block">
           <div className="sticky top-[calc(var(--header-h)+2.5rem)]">
             <PolicyToc entries={entries} />
           </div>
         </aside>
 
-        <div className="prose-legal mt-12 max-w-none md:mt-16 lg:col-start-2 lg:row-start-2 [&_section:first-child_h2]:mt-0">
+        <div className="prose-legal mt-8 max-w-none md:mt-16 lg:col-start-2 lg:row-start-2 max-md:[&_section_h2]:mt-7 [&_section:first-child_h2]:mt-0">
           {sections.map((section) => (
             <section key={section.id} data-toc-section={section.id} aria-labelledby={section.id}>
               <h2 id={section.id} className="scroll-mt-[calc(var(--header-h)+1.5rem)]">
@@ -64,7 +64,7 @@ export default function PolicyDocument({
           ))}
 
           {footnote ? (
-            <p className="mt-12 border-t border-ink/12 pt-6 text-[0.875rem] leading-relaxed text-ink/55">
+            <p className="mt-8 md:mt-12 border-t border-ink/12 pt-5 md:pt-6 text-[0.875rem] leading-relaxed text-ink/55">
               {footnote}
             </p>
           ) : null}

@@ -52,7 +52,7 @@ export default function Testimonials() {
   }, [paused, reduced]);
 
   return (
-    <section className="bg-gold py-20 md:py-28">
+    <section className="bg-gold py-12 md:py-28">
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
@@ -70,7 +70,7 @@ export default function Testimonials() {
           aria-roledescription="carousel"
           aria-label="Client testimonials"
         >
-          <div className="relative mt-12 h-[26rem] sm:h-[19rem]">
+          <div className="relative mt-6 md:mt-12 h-[21rem] sm:h-[19rem]">
             {testimonials.map((item, index) => {
               const offset = relative(index, active);
               const isActive = offset === 0;
@@ -89,7 +89,7 @@ export default function Testimonials() {
                   transition={{ duration: 0.8, ease: EASE_OUT_EXPO }}
                   style={{ zIndex: 10 - Math.abs(offset) }}
                   className={cn(
-                    "absolute inset-x-0 inset-y-0 mx-auto flex w-[92%] flex-col rounded-[var(--radius-card)] p-7 md:w-[54%] md:p-10",
+                    "absolute inset-x-0 inset-y-0 mx-auto flex w-[92%] flex-col rounded-[var(--radius-card)] p-5 md:w-[54%] md:p-10",
                     isActive
                       ? "bg-cream shadow-[var(--shadow-lift)]"
                       : "pointer-events-none bg-white/25",
@@ -98,13 +98,13 @@ export default function Testimonials() {
                   <figcaption
                     className={cn("flex items-center gap-4", isActive && "justify-center text-center")}
                   >
-                    <span className="relative size-14 shrink-0 overflow-hidden rounded-full">
+                    <span className="relative size-12 shrink-0 overflow-hidden rounded-full md:size-14">
                       <Image src={item.avatar} alt="" fill sizes="56px" className="object-cover" />
                     </span>
                     <span>
                       <span
                         className={cn(
-                          "block text-left font-display text-[1.375rem] font-semibold leading-tight",
+                          "block text-left font-display text-[1.125rem] font-semibold leading-tight md:text-[1.375rem]",
                           isActive ? "text-ink" : "text-ink/70",
                         )}
                       >
@@ -112,7 +112,7 @@ export default function Testimonials() {
                       </span>
                       <span
                         className={cn(
-                          "block text-left text-[0.9375rem] leading-tight",
+                          "block text-left text-[0.875rem] leading-tight md:text-[0.9375rem]",
                           isActive ? "text-ink/65" : "text-ink/50",
                         )}
                       >
@@ -123,7 +123,7 @@ export default function Testimonials() {
 
                   <blockquote
                     className={cn(
-                      "mt-6 text-[0.9375rem] leading-relaxed md:text-[1rem]",
+                      "mt-4 text-[0.875rem] leading-relaxed md:mt-6 md:text-[1rem]",
                       isActive ? "text-center text-ink/80" : "text-ink/55",
                     )}
                   >
@@ -135,7 +135,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-10 flex items-center justify-center gap-6">
+        <div className="mt-6 flex items-center justify-center gap-4 md:mt-10 md:gap-6">
           <button
             type="button"
             onClick={() => go(-1)}

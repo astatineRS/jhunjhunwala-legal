@@ -129,35 +129,57 @@
   }
 }
 
-/* Small uppercase eyebrow used above every section heading in the design */
+/* Section eyebrow and display sizes, written mobile-first: the phone value is
+   the default and the original desktop ramp is restored from 768px up, so wide
+   layouts are untouched while handsets get a tighter scale. */
 @utility eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 0.8125rem;
+    letter-spacing: 0.16em;
+  }
 }
 
 @utility display-1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.75rem, 6.2vw, 4.5rem);
-  line-height: 1.04;
+  font-size: clamp(1.95rem, 8vw, 2.75rem);
+  line-height: 1.08;
   letter-spacing: -0.015em;
+
+  @media (min-width: 768px) {
+    font-size: clamp(2.75rem, 6.2vw, 4.5rem);
+    line-height: 1.04;
+  }
 }
 
 @utility display-2 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.125rem, 4vw, 3rem);
-  line-height: 1.1;
+  font-size: clamp(1.625rem, 6.4vw, 2.125rem);
+  line-height: 1.14;
+
+  @media (min-width: 768px) {
+    font-size: clamp(2.125rem, 4vw, 3rem);
+    line-height: 1.1;
+  }
 }
 
 @utility display-3 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.5rem, 2.2vw, 1.75rem);
-  line-height: 1.2;
+  font-size: 1.25rem;
+  line-height: 1.25;
+
+  @media (min-width: 768px) {
+    font-size: clamp(1.5rem, 2.2vw, 1.75rem);
+    line-height: 1.2;
+  }
 }
 
 @utility hairline {

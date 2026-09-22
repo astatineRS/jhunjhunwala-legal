@@ -32,7 +32,7 @@ const line = {
  */
 export default function CounselStatement() {
   return (
-    <section className="bg-cream py-24 md:py-32">
+    <section className="bg-cream py-12 md:py-32">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -56,12 +56,12 @@ export default function CounselStatement() {
 
         <motion.p
           variants={line}
-          className="mx-auto mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-ink/60"
+          className="mx-auto mt-4 max-w-xl text-[0.9375rem] leading-relaxed text-ink/60 md:mt-6 md:text-[1.0625rem]"
         >
           Talk to us before you need to.
         </motion.p>
 
-        <motion.div variants={line} className="mt-10 flex justify-center">
+        <motion.div variants={line} className="mt-6 flex justify-center md:mt-10">
           <ButtonLink href="/contact">Talk To Our Team</ButtonLink>
         </motion.div>
       </motion.div>

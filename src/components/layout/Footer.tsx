@@ -13,15 +13,15 @@ const socialIcon = {
 export default function Footer() {
   return (
     <footer className="bg-teal text-cream">
-      <div className="container-page grid gap-14 py-16 md:py-20 lg:grid-cols-[1.4fr_repeat(3,1fr)] lg:gap-10">
-        <Reveal className="max-w-sm">
+      <div className="container-page grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-1 md:gap-14 py-10 md:py-20 lg:grid-cols-[1.4fr_repeat(3,1fr)] lg:gap-10">
+        <Reveal className="col-span-2 max-w-sm md:col-span-1">
           <Logo tone="light" />
-          <p className="mt-6 text-[0.975rem] leading-relaxed text-cream/75">
+          <p className="mt-4 text-[0.9375rem] leading-relaxed text-cream/75 md:mt-6 md:text-[0.975rem]">
             Legal matters rarely come with simple answers. They involve people, businesses, relationships, money, and
             decisions that can have lasting consequences.
           </p>
 
-          <ul className="mt-7 space-y-3 text-[0.9375rem] text-cream/85">
+          <ul className="mt-5 space-y-2.5 text-[0.875rem] md:mt-7 md:space-y-3 md:text-[0.9375rem] text-cream/85">
             <li>
               <a href={`mailto:${site.email}`} className="inline-flex items-center gap-3 transition-colors hover:text-gold">
                 <MailIcon className="size-[18px] text-gold" />
@@ -40,8 +40,8 @@ export default function Footer() {
             </li>
           </ul>
 
-          <p className="mt-8 text-sm font-semibold text-cream">Follow Us On:</p>
-          <div className="mt-3 flex items-center gap-3">
+          <p className="mt-6 text-sm font-semibold text-cream md:mt-8">Follow Us On:</p>
+          <div className="mt-3 flex items-center gap-2.5 md:gap-3">
             {site.socials.map((social) => {
               const Icon = socialIcon[social.label as keyof typeof socialIcon];
               return (
@@ -63,12 +63,12 @@ export default function Footer() {
         {footerColumns.map((column, index) => (
           <Reveal key={column.heading} delay={index + 1}>
             <h3 className="font-sans text-[0.9375rem] font-semibold tracking-wide text-white">{column.heading}</h3>
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-3 space-y-2 md:mt-5 md:space-y-3">
               {column.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group inline-flex text-[0.9375rem] text-cream/72 transition-colors hover:text-gold"
+                    className="group inline-flex text-[0.875rem] text-cream/72 transition-colors hover:text-gold md:text-[0.9375rem]"
                   >
                     <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 group-hover:bg-[length:100%_1px]">
                       {link.label}
@@ -82,7 +82,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-cream/15">
-        <div className="container-page flex flex-col gap-3 py-6 text-[0.8125rem] text-cream/60 md:flex-row md:items-center md:justify-between">
+        <div className="container-page flex flex-col gap-2 py-4 text-[0.8125rem] text-cream/60 md:flex-row md:items-center md:justify-between md:gap-3 md:py-6">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
           <p className="max-w-xl md:text-right">
             The content of this website is for general information only and does not constitute legal advice.

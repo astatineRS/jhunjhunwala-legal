@@ -16,7 +16,7 @@ export default function ProcessList() {
   const scaleY = useTransform(scrollYProgress, [0, 1], [0.02, 1]);
 
   return (
-    <div ref={ref} className="relative mt-12 md:mt-16">
+    <div ref={ref} className="relative mt-8 md:mt-16">
       {/* track + scroll-linked fill */}
       <span
         aria-hidden
@@ -28,7 +28,7 @@ export default function ProcessList() {
         className="absolute left-[19px] top-2 bottom-2 w-px origin-top bg-gold md:left-[27px]"
       />
 
-      <ol className="flex flex-col gap-10 md:gap-14">
+      <ol className="flex flex-col gap-6 md:gap-14">
         {process.map((item, index) => (
           <motion.li
             key={item.step}
@@ -43,7 +43,7 @@ export default function ProcessList() {
             </span>
 
             <h3 className="display-3 text-ink">{item.step}</h3>
-            <p className="mt-2.5 max-w-xl text-balance-pretty text-[1.0625rem] leading-relaxed text-ink/65">
+            <p className="mt-2 md:mt-2.5 max-w-xl text-balance-pretty text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/65">
               {item.description}
             </p>
           </motion.li>

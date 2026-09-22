@@ -22,13 +22,13 @@ export default function ExpertisePage() {
         image="/images/hero-banner.jpg"
       />
 
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-cream py-12 md:py-32">
         <div className="container-page">
           <SectionHeading
             eyebrow="Our Services"
             title="Legal expertise for every stage of your journey."
             aside={
-              <div className="space-y-4 text-[0.9375rem] leading-relaxed text-ink/65">
+              <div className="space-y-3 md:space-y-4 text-[0.875rem] md:text-[0.9375rem] leading-relaxed text-ink/65">
                 <p>
                   We provide legal support across corporate, commercial, transactional, and
                   dispute-related matters. Our advice is tailored to the needs and objectives of each
@@ -43,7 +43,7 @@ export default function ExpertisePage() {
             }
           />
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-9 md:mt-16 grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {practiceAreas.map((area, index) => (
               <Reveal key={area.slug} delay={index % 3} className="h-full">
                 <PracticeCard area={area} />

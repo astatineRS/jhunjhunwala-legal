@@ -15,7 +15,7 @@ export default function CtaBand({
   href?: string;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-ink py-24 md:py-32">
+    <section className="relative isolate overflow-hidden bg-ink py-10 md:py-32">
       <Image
         src="/images/band-gavel-dark.jpg"
         alt=""
@@ -28,11 +28,11 @@ export default function CtaBand({
       <div className="container-page text-center">
         <SplitText as="h2" text={title} className="display-2 mx-auto max-w-3xl text-cream" />
         <Reveal delay={1}>
-          <p className="mx-auto mt-5 max-w-2xl text-balance-pretty text-[1.0625rem] leading-relaxed text-cream/75">
+          <p className="mx-auto mt-4 max-w-2xl text-balance-pretty text-[0.9375rem] leading-relaxed text-cream/75 md:mt-5 md:text-[1.0625rem]">
             {body}
           </p>
         </Reveal>
-        <Reveal delay={2} className="mt-9 flex justify-center">
+        <Reveal delay={2} className="mt-6 flex justify-center md:mt-9">
           <ButtonLink href={href} variant="light">
             {cta}
           </ButtonLink>

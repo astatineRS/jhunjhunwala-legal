@@ -9,7 +9,7 @@ import SplitText from "@/components/ui/SplitText";
 
 export default function AboutBand() {
   return (
-    <section className="relative isolate overflow-hidden bg-ink py-24 md:py-32">
+    <section className="relative isolate overflow-hidden bg-ink py-12 md:py-32">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/images/band-gavel.jpg"
@@ -22,7 +22,7 @@ export default function AboutBand() {
       </div>
 
       <div className="container-page">
-        <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20">
+        <div className="grid gap-8 md:gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-20">
           <div>
             <Reveal>
               <p className="eyebrow mb-3 text-gold">Experience that works for you</p>
@@ -30,14 +30,14 @@ export default function AboutBand() {
             <SplitText as="h2" text="About Us" className="display-2 text-cream" />
 
             <Reveal delay={1}>
-              <p className="mt-6 max-w-xl text-balance-pretty text-[1.0625rem] leading-relaxed text-cream/75">
+              <p className="mt-4 max-w-xl text-balance-pretty text-[0.9375rem] leading-relaxed text-cream/75 md:mt-6 md:text-[1.0625rem]">
                 Legal matters rarely come with simple answers. They arrive in the middle of a
                 business, a family or a plan already in motion, and the decision in front of you
                 usually carries consequences in more than one direction.
               </p>
             </Reveal>
             <Reveal delay={2}>
-              <p className="mt-5 max-w-xl text-balance-pretty text-[1.0625rem] leading-relaxed text-cream/75">
+              <p className="mt-3 max-w-xl text-balance-pretty text-[0.9375rem] leading-relaxed text-cream/75 md:mt-5 md:text-[1.0625rem]">
                 Our role is to understand the situation fully, explain the position in language you
                 can act on, and help you decide how to move forward. Sometimes that means drafting,
                 negotiating or filing. Often it means telling you plainly what the law allows and
@@ -45,7 +45,7 @@ export default function AboutBand() {
               </p>
             </Reveal>
 
-            <Reveal delay={3} className="mt-10">
+            <Reveal delay={3} className="mt-6 md:mt-10">
               <ButtonLink href="/about" variant="light">
                 Read More
               </ButtonLink>
@@ -57,9 +57,9 @@ export default function AboutBand() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex flex-col-reverse gap-2 border-b border-r border-white/10 px-6 py-8 last:border-r-0 even:border-r-0 [&:nth-last-child(-n+2)]:border-b-0 md:px-8 md:py-10"
+                  className="flex flex-col-reverse gap-1 border-b border-r border-white/10 px-4 py-5 last:border-r-0 even:border-r-0 [&:nth-last-child(-n+2)]:border-b-0 md:gap-2 md:px-8 md:py-10"
                 >
-                  <dt className="text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-cream/60">
+                  <dt className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-cream/60 md:text-[0.8125rem]">
                     {stat.label}
                   </dt>
                   <dd className="display-2 text-gold">
@@ -71,8 +71,8 @@ export default function AboutBand() {
           </Reveal>
         </div>
 
-        <Reveal delay={1} className="mt-20 border-t border-white/12 pt-8 md:mt-24">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
+        <Reveal delay={1} className="mt-8 border-t border-white/12 pt-5 md:mt-24 md:pt-8">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-10">
             <p className="eyebrow shrink-0 text-cream/50">Trusted By</p>
             <Marquee duration={40} className="min-w-0 flex-1">
               {trustedBy.map((client) => (

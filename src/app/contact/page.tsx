@@ -24,8 +24,8 @@ export default function ContactPage() {
         image="/images/hero-banner.jpg"
       />
 
-      <section className="bg-cream py-20 md:py-28">
-        <div className="container-page grid gap-14 lg:grid-cols-2 lg:items-start lg:gap-24">
+      <section className="bg-cream py-12 md:py-28">
+        <div className="container-page grid gap-8 md:gap-14 lg:grid-cols-2 lg:items-start lg:gap-24">
           <ContactPanel />
           <EnquiryForm />
         </div>

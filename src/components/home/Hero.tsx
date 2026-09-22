@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative isolate flex min-h-screen flex-col overflow-hidden bg-ink pb-32 pt-[calc(var(--header-h)+2rem)] md:pb-40"
+      className="relative isolate flex min-h-[78svh] flex-col overflow-hidden bg-ink pb-[7rem] pt-[calc(var(--header-h)+1rem)] md:min-h-screen md:pb-40 md:pt-[calc(var(--header-h)+2rem)]"
     >
       <motion.div style={reduced ? undefined : { y }} className="absolute inset-0 -z-10">
         <motion.div
@@ -51,20 +51,20 @@ export default function Hero() {
 
       <motion.div
         style={reduced ? undefined : { opacity: fade }}
-        className="container-page flex flex-1 flex-col justify-center py-10 text-center"
+        className="container-page flex flex-1 flex-col justify-center py-6 text-center md:py-10"
       >
         <SplitText
           as="h1"
           text="When the law is complex, you deserve clarity"
           delay={0.35}
-          className="display-1 mx-auto mt-6 max-w-4xl text-cream"
+          className="display-1 mx-auto mt-2 max-w-4xl text-cream md:mt-6"
         />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: EASE_OUT_EXPO, delay: 0.7 }}
-          className="mx-auto mt-7 max-w-2xl text-balance-pretty text-[1.0625rem] leading-relaxed text-cream/80 md:text-[1.125rem]"
+          className="mx-auto mt-4 max-w-2xl text-balance-pretty text-[0.9375rem] leading-relaxed text-cream/80 md:mt-7 md:text-[1.125rem]"
         >
           We help individuals and businesses understand their legal position, navigate difficult
           situations, and make informed decisions with confidence.
@@ -74,7 +74,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: EASE_OUT_EXPO, delay: 0.85 }}
-          className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-7 flex flex-col items-center justify-center gap-4 sm:flex-row md:mt-11"
         >
           <ButtonLink href="/contact" variant="light">
             Book A Consultation
@@ -89,13 +89,13 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, ease: EASE_OUT_EXPO, delay: 1.2 }}
-        className="pointer-events-none flex shrink-0 flex-col items-center gap-3"
+        className="pointer-events-none flex shrink-0 flex-col items-center gap-2 md:gap-3"
         aria-hidden
       >
         <span className="text-[0.625rem] font-semibold uppercase tracking-[0.42em] text-cream/55">
           Scroll
         </span>
-        <span className="relative h-14 w-px overflow-hidden bg-cream/25">
+        <span className="relative h-10 w-px overflow-hidden bg-cream/25 md:h-14">
           <motion.span
             className="absolute inset-x-0 top-0 h-6 bg-gold"
             animate={reduced ? { y: 0 } : { y: ["-100%", "240%"] }}

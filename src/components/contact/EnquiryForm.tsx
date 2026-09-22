@@ -50,9 +50,9 @@ const REQUIRED: FieldName[] = ["firstName", "email", "message"];
 
 /** Underlined field: no box, a single hairline rule that turns teal on focus. */
 const fieldBase =
-  "w-full border-b bg-transparent pb-3 pt-2 text-[1.0625rem] text-ink outline-none transition-colors duration-400 ease-[var(--ease-out-expo)] placeholder:text-ink/35 focus:border-teal disabled:opacity-55";
+  "w-full border-b bg-transparent pb-3 pt-2 text-[0.9375rem] md:text-[1.0625rem] text-ink outline-none transition-colors duration-400 ease-[var(--ease-out-expo)] placeholder:text-ink/35 focus:border-teal disabled:opacity-55";
 
-const labelClass = "text-[1.0625rem] leading-snug text-ink/80";
+const labelClass = "text-[0.9375rem] md:text-[1.0625rem] leading-snug text-ink/80";
 
 export default function EnquiryForm() {
   const [values, setValues] = useState<Values>(EMPTY);
@@ -129,7 +129,7 @@ export default function EnquiryForm() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.7, ease: EASE_OUT_EXPO }}
-            className="flex min-h-[26rem] flex-col items-start justify-center"
+            className="flex min-h-[20rem] md:min-h-[26rem] flex-col items-start justify-center"
             role="status"
             aria-live="polite"
           >
@@ -137,12 +137,12 @@ export default function EnquiryForm() {
               initial={{ scale: 0.7, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.65, ease: EASE_OUT_EXPO, delay: 0.1 }}
-              className="grid size-14 place-items-center rounded-full bg-teal text-cream"
+              className="grid size-12 md:size-14 place-items-center rounded-full bg-teal text-cream"
             >
-              <CheckCircle className="size-7" />
+              <CheckCircle className="size-6 md:size-7" />
             </motion.span>
-            <h3 className="display-3 mt-6 text-ink">Thank you — your details are noted</h3>
-            <p className="mt-4 max-w-md text-[1.0625rem] leading-relaxed text-ink/65">
+            <h3 className="display-3 mt-5 md:mt-6 text-ink">Thank you — your details are noted</h3>
+            <p className="mt-3 md:mt-4 max-w-md text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/65">
               A member of the firm will review what you have shared and respond within one working
               day. If the matter is urgent, please call the office directly rather than wait for a
               reply.
@@ -150,7 +150,7 @@ export default function EnquiryForm() {
             <button
               type="button"
               onClick={reset}
-              className="mt-8 text-[0.9375rem] font-medium text-teal underline decoration-teal/40 underline-offset-4 transition-colors duration-300 hover:text-teal-deep hover:decoration-teal"
+              className="mt-6 md:mt-8 text-[0.9375rem] font-medium text-teal underline decoration-teal/40 underline-offset-4 transition-colors duration-300 hover:text-teal-deep hover:decoration-teal"
             >
               Send another enquiry
             </button>
@@ -169,14 +169,14 @@ export default function EnquiryForm() {
               text="Let’s Talk About Your Legal Matter"
               className="display-2 mt-3 text-ink"
             />
-            <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-ink/65">
+            <p className="mt-3 md:mt-4 max-w-xl text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/65">
               Whether you know exactly what you need or are still trying to understand your options,
               we are here to start the conversation. Nothing you send here creates a
               lawyer&ndash;client relationship.
             </p>
 
-            <form noValidate onSubmit={submit} className="mt-12 flex flex-col gap-9">
-              <div className="grid gap-9 sm:grid-cols-2">
+            <form noValidate onSubmit={submit} className="mt-8 md:mt-12 flex flex-col gap-6 md:gap-9">
+              <div className="grid gap-5 sm:gap-9 sm:grid-cols-2">
                 <Field
                   name="firstName"
                   label="First Name"
@@ -233,7 +233,7 @@ export default function EnquiryForm() {
                   className="sm:col-span-2"
                 />
 
-                <div className="flex flex-col gap-3 sm:col-span-2">
+                <div className="flex flex-col gap-2 md:gap-3 sm:col-span-2">
                   <label htmlFor="enquiry-interest" className={labelClass}>
                     Area of Interest
                   </label>
@@ -266,7 +266,7 @@ export default function EnquiryForm() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2 md:gap-3">
                 <label htmlFor="enquiry-message" className={labelClass}>
                   How can we help?{" "}
                   <span aria-hidden className="text-gold-deep">
@@ -286,7 +286,7 @@ export default function EnquiryForm() {
                   aria-describedby={touched.message && errors.message ? "enquiry-message-error" : undefined}
                   className={cn(
                     fieldBase,
-                    "min-h-[7rem] resize-y leading-relaxed",
+                    "min-h-[5.5rem] max-md:h-[6.25rem] md:min-h-[7rem] resize-y leading-relaxed",
                     touched.message && errors.message ? "border-gold-deep" : "border-ink/20",
                   )}
                 />
@@ -295,7 +295,7 @@ export default function EnquiryForm() {
                 ) : null}
               </div>
 
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-3 md:gap-4 sm:flex-row sm:items-center">
                 <Button type="submit" disabled={disabled}>
                   {disabled ? "Sending…" : "Contact Us"}
                 </Button>
@@ -352,7 +352,7 @@ function Field({
 }) {
   const id = `enquiry-${name}`;
   return (
-    <div className={cn("flex flex-col gap-3", className)}>
+    <div className={cn("flex flex-col gap-2 md:gap-3", className)}>
       <label htmlFor={id} className={labelClass}>
         {label}
         {required ? (

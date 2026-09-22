@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "./icons";
 
@@ -26,11 +27,16 @@ export default function ArrowBadge({
   return (
     <span
       className={cn(
-        "relative grid shrink-0 place-items-center overflow-hidden rounded-full transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:scale-110",
+        "relative grid size-[var(--badge-size-sm)] shrink-0 place-items-center overflow-hidden rounded-full transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:scale-110 md:size-[var(--badge-size)]",
         tones[tone],
         className,
       )}
-      style={{ width: size, height: size }}
+      style={
+        {
+          "--badge-size": `${size}px`,
+          "--badge-size-sm": `${Math.round(size * 0.85)}px`,
+        } as CSSProperties
+      }
       aria-hidden
     >
       <ArrowUpRight

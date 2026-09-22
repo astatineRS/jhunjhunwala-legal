@@ -48,10 +48,14 @@ export default function Header() {
       <div
         className={cn(
           "container-page flex items-center justify-between gap-6 transition-[height] duration-500 ease-[var(--ease-out-expo)]",
-          scrolled ? "h-[4.5rem]" : "h-[var(--header-h)]",
+          scrolled ? "h-[4.5rem]" : "h-[4.5rem] md:h-[var(--header-h)]",
         )}
       >
-        <Logo tone={solid ? "dark" : "light"} compact={scrolled} />
+        <Logo
+          tone={solid ? "dark" : "light"}
+          compact={scrolled}
+          className="origin-left scale-[0.86] md:scale-100"
+        />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {nav.map((item) => {
@@ -129,7 +133,7 @@ export default function Header() {
             transition={{ duration: 0.55, ease: EASE_OUT_EXPO }}
             className="overflow-hidden border-t border-ink/8 bg-cream lg:hidden"
           >
-            <div className="container-page flex flex-col gap-1 py-6">
+            <div className="container-page flex flex-col gap-1 py-3 md:py-6">
               {nav.map((item, index) => (
                 <motion.div
                   key={item.href}
@@ -140,7 +144,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "block border-b border-ink/8 py-4 font-display text-2xl",
+                      "block border-b border-ink/8 py-2.5 font-display text-xl md:py-4 md:text-2xl",
                       isActive(item.href) ? "text-teal" : "text-ink",
                     )}
                   >
@@ -148,7 +152,7 @@ export default function Header() {
                   </Link>
                 </motion.div>
               ))}
-              <div className="pt-6">
+              <div className="pt-4 md:pt-6">
                 <ButtonLink href="/contact" variant="primary" magnetic={false}>
                   Contact Us
                 </ButtonLink>

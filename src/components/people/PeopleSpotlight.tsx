@@ -37,7 +37,7 @@ export default function PeopleSpotlight({ person }: { person: Person }) {
       className="overflow-hidden rounded-[var(--radius-card)] bg-sand"
     >
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-        <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[16/10] lg:aspect-auto lg:min-h-[32rem]">
+        <div className="relative aspect-[3/2] overflow-hidden sm:aspect-[16/10] lg:aspect-auto lg:min-h-[32rem]">
           <motion.div
             variants={{
               hidden: { scale: 1.1 },
@@ -58,12 +58,12 @@ export default function PeopleSpotlight({ person }: { person: Person }) {
 
         <motion.div
           variants={column}
-          className="flex flex-col justify-center gap-6 p-7 sm:p-10 lg:p-14"
+          className="flex flex-col justify-center gap-4 p-5 md:gap-6 sm:p-10 lg:p-14"
         >
           <motion.div variants={item}>
             <p className="eyebrow text-teal">Leading the firm</p>
             <h2 className="display-2 mt-3 text-ink">{person.name}</h2>
-            <p className="mt-2 text-[1.0625rem] text-ink/60">{person.role}</p>
+            <p className="mt-2 text-[0.9375rem] md:text-[1.0625rem] text-ink/60">{person.role}</p>
           </motion.div>
 
           <motion.ul variants={item} className="flex flex-wrap gap-2">
@@ -77,7 +77,7 @@ export default function PeopleSpotlight({ person }: { person: Person }) {
             ))}
           </motion.ul>
 
-          <motion.p variants={item} className="max-w-xl text-balance-pretty leading-relaxed text-ink/70">
+          <motion.p variants={item} className="max-w-xl text-balance-pretty text-[0.9375rem] md:text-base leading-relaxed text-ink/70">
             {person.bio[0]}
           </motion.p>
 

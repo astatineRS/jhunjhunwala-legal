@@ -37,7 +37,7 @@ const details: Detail[] = [
 ];
 
 const cardClass =
-  "block rounded-[var(--radius-card)] bg-gold px-6 py-5 text-white md:px-7 md:py-6";
+  "block h-full rounded-[var(--radius-card)] px-3.5 py-3.5 text-white bg-gold md:px-7 md:py-6";
 
 /**
  * Left-hand column of the contact page: the firm's four contact details as
@@ -49,21 +49,21 @@ export default function ContactPanel() {
     <div>
       <SplitText as="h2" text="How To Reach Us" className="display-2 text-ink" />
       <Reveal delay={1}>
-        <p className="mt-4 max-w-md text-[1.0625rem] leading-relaxed text-ink/65">
+        <p className="mt-3 md:mt-4 max-w-md text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/65">
           Find our contact details and office information below.
         </p>
       </Reveal>
 
-      <ul className="mt-9 flex flex-col gap-4">
+      <ul className="mt-6 md:mt-9 grid grid-cols-2 gap-3 md:flex md:flex-col md:gap-4">
         {details.map((detail, index) => {
           const Icon = detail.icon;
           const body = (
             <>
-              <span className="flex items-center gap-3">
-                <Icon className="size-[1.375rem] shrink-0" />
-                <span className="font-sans text-[1.25rem] leading-snug">{detail.label}</span>
+              <span className="flex items-center gap-2 md:gap-3">
+                <Icon className="size-[1.125rem] md:size-[1.375rem] shrink-0" />
+                <span className="font-sans text-[0.9375rem] md:text-[1.25rem] leading-snug">{detail.label}</span>
               </span>
-              <span className="mt-2.5 block pl-[2.125rem] text-[1.0625rem] leading-snug text-white/90">
+              <span className="mt-1.5 md:mt-2.5 block pl-0 md:pl-[2.125rem] text-[0.8125rem] md:text-[1.0625rem] leading-snug text-white/90 break-words">
                 {detail.value}
               </span>
             </>

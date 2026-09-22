@@ -61,7 +61,7 @@ export default function ClientJourney() {
   const scaleY = useSpring(column.scrollYProgress, { stiffness: 110, damping: 30, restDelta: 0.001 });
 
   return (
-    <section className="bg-cream pb-20 md:pb-28">
+    <section className="bg-cream pb-12 md:pb-28">
       <div className="container-page">
         <SectionHeading
           title="The Backbone Suite"
@@ -70,7 +70,7 @@ export default function ClientJourney() {
         />
 
         {/* Zig-zag rail — wide screens only, where the labels have room to breathe. */}
-        <div ref={railRef} className="relative mt-16 hidden h-[24rem] lg:block">
+        <div ref={railRef} className="relative mt-9 md:mt-16 hidden h-[24rem] lg:block">
           <svg
             viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
             preserveAspectRatio="none"
@@ -128,23 +128,23 @@ export default function ClientJourney() {
         </div>
 
         {/* Stacked rail for phones and tablets. */}
-        <div ref={columnRef} className="relative mt-12 lg:hidden">
+        <div ref={columnRef} className="relative mt-6 md:mt-12 lg:hidden">
           <div
-            className="absolute bottom-8 left-7 top-8 w-px border-l border-dashed border-teal/40"
+            className="absolute bottom-6 left-6 top-6 w-px border-l border-dashed border-teal/40 md:bottom-8 md:left-7 md:top-8"
             aria-hidden
           >
             <motion.div style={{ scaleY }} className="-ml-px h-full w-px origin-top bg-teal" />
           </div>
 
-          <ol className="flex flex-col gap-8">
+          <ol className="flex flex-col gap-5 md:gap-8">
             {steps.map(({ step, slug, Icon, area }, index) => (
               <Reveal as="li" key={step} delay={index} className="relative">
-                <Link href={`/expertise/${slug}`} className="group flex items-center gap-5">
-                  <span className="grid size-14 shrink-0 place-items-center rounded-full border-2 border-teal bg-cream text-teal ring-8 ring-cream transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:bg-teal group-hover:text-cream">
+                <Link href={`/expertise/${slug}`} className="group flex items-center gap-4 md:gap-5">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-full border-2 border-teal bg-cream text-teal ring-8 ring-cream transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:bg-teal group-hover:text-cream md:size-14">
                     <Icon className="size-5" />
                   </span>
                   <span className="min-w-0">
-                    <span className="block font-display text-[1.25rem] font-semibold text-ink transition-colors duration-500 group-hover:text-teal">
+                    <span className="block font-display text-[1.125rem] font-semibold text-ink transition-colors duration-500 group-hover:text-teal md:text-[1.25rem]">
                       {step}
                     </span>
                     <span className="block truncate text-[0.875rem] text-ink/55">{area?.title}</span>

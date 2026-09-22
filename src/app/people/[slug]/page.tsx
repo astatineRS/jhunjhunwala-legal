@@ -60,7 +60,7 @@ export default async function PersonPage({ params }: Params) {
 
   return (
     <>
-      <section className="bg-cream pt-[calc(var(--header-h)+3rem)] pb-16 md:pb-24">
+      <section className="bg-cream pt-[calc(var(--header-h)+1.75rem)] md:pt-[calc(var(--header-h)+3rem)] pb-10 md:pb-24">
         <div className="container-page">
           <Reveal>
             <nav aria-label="Breadcrumb">
@@ -76,7 +76,7 @@ export default async function PersonPage({ params }: Params) {
             </nav>
           </Reveal>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
+          <div className="mt-6 md:mt-10 grid gap-5 md:gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
             <Reveal>
               <ParallaxImage
                 src={person.image}
@@ -84,7 +84,7 @@ export default async function PersonPage({ params }: Params) {
                 priority
                 distance={34}
                 sizes="(max-width: 1024px) 100vw, 34vw"
-                className="aspect-[4/5] w-full rounded-[var(--radius-card)] bg-sand lg:aspect-[3/4]"
+                className="aspect-[4/3] md:aspect-[4/5] w-full rounded-[var(--radius-card)] bg-sand lg:aspect-[3/4]"
                 imageClassName="object-top"
               />
             </Reveal>
@@ -95,11 +95,11 @@ export default async function PersonPage({ params }: Params) {
               </Reveal>
               <SplitText as="h1" text={person.name} className="display-1 text-ink" />
               <Reveal delay={1}>
-                <p className="mt-5 text-[0.95rem] text-ink/60">{person.bar}</p>
+                <p className="mt-5 text-[0.875rem] md:text-[0.95rem] text-ink/60">{person.bar}</p>
               </Reveal>
 
               <Reveal delay={2}>
-                <ul className="mt-7 flex flex-wrap gap-2">
+                <ul className="mt-5 md:mt-7 flex flex-wrap gap-2">
                   {person.focus.map((focus) => (
                     <li
                       key={focus}
@@ -112,7 +112,7 @@ export default async function PersonPage({ params }: Params) {
               </Reveal>
 
               <Reveal delay={3}>
-                <div className="mt-9 flex flex-wrap items-center gap-4">
+                <div className="mt-6 md:mt-9 flex flex-wrap items-center gap-4">
                   <a
                     href={`mailto:${person.email}`}
                     className="group inline-flex items-center gap-3 rounded-full border border-ink/15 py-2 pl-5 pr-2 text-[0.9375rem] text-ink transition-colors duration-500 ease-[var(--ease-out-expo)] hover:border-ink/40 hover:bg-ink/5"
@@ -137,9 +137,9 @@ export default async function PersonPage({ params }: Params) {
         </div>
       </section>
 
-      <section className="bg-cream pb-20 md:pb-28">
+      <section className="bg-cream pb-12 md:pb-28">
         <div className="container-page">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-20">
+          <div className="grid gap-8 md:gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-20">
             <div>
               <Reveal>
                 <p className="eyebrow mb-4 text-teal">Profile</p>
@@ -153,13 +153,13 @@ export default async function PersonPage({ params }: Params) {
               </div>
             </div>
 
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6 md:gap-8">
               <Reveal>
-                <div className="rounded-[var(--radius-card)] bg-sand-soft p-7 md:p-8">
+                <div className="rounded-[var(--radius-card)] bg-sand-soft p-5 md:p-8">
                   <h2 className="display-3 text-ink">Education</h2>
-                  <ul className="mt-5 flex flex-col divide-y divide-ink/10">
+                  <ul className="mt-4 md:mt-5 flex flex-col divide-y divide-ink/10">
                     {person.education.map((entry) => (
-                      <li key={entry} className="py-3 text-[0.95rem] text-ink/70 first:pt-0 last:pb-0">
+                      <li key={entry} className="py-2.5 md:py-3 text-[0.875rem] md:text-[0.95rem] text-ink/70 first:pt-0 last:pb-0">
                         {entry}
                       </li>
                     ))}
@@ -168,9 +168,9 @@ export default async function PersonPage({ params }: Params) {
               </Reveal>
 
               <Reveal delay={1}>
-                <div className="rounded-[var(--radius-card)] border border-ink/10 p-7 md:p-8">
+                <div className="rounded-[var(--radius-card)] border border-ink/10 p-5 md:p-8">
                   <h2 className="display-3 text-ink">Practice areas</h2>
-                  <ul className="mt-5 flex flex-wrap gap-2">
+                  <ul className="mt-4 md:mt-5 flex flex-wrap gap-2">
                     {person.focus.map((focus) => {
                       const area = matchPracticeArea(focus);
 
@@ -200,7 +200,7 @@ export default async function PersonPage({ params }: Params) {
                       );
                     })}
                   </ul>
-                  <p className="mt-5 text-[0.875rem] leading-relaxed text-ink/55">
+                  <p className="mt-4 md:mt-5 text-[0.875rem] leading-relaxed text-ink/55">
                     Linked areas open the full practice page. Unlinked labels describe work {person.name.split(" ")[0]}{" "}
                     handles within those practices.
                   </p>
@@ -211,7 +211,7 @@ export default async function PersonPage({ params }: Params) {
         </div>
       </section>
 
-      <section className="bg-sand-soft py-20 md:py-28">
+      <section className="bg-sand-soft py-12 md:py-28">
         <div className="container-page">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SplitText as="h2" text="Other members of the team" className="display-2 max-w-2xl text-ink" />
@@ -226,7 +226,7 @@ export default async function PersonPage({ params }: Params) {
             </Reveal>
           </div>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 md:mt-12 grid grid-cols-2 gap-4 md:gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {others.map((entry, index) => (
               <Reveal key={entry.slug} delay={index}>
                 <PersonCard person={entry} />

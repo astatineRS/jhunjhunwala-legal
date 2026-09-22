@@ -5,9 +5,9 @@ import Reveal from "@/components/ui/Reveal";
 /** Teal measurement band — the practice in four numbers. */
 export default function StatsBand() {
   return (
-    <section className="bg-teal py-16 md:py-20">
+    <section className="bg-teal py-10 md:py-20">
       <div className="container-page">
-        <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <Reveal
               as="li"
@@ -24,9 +24,9 @@ export default function StatsBand() {
               <Counter
                 value={stat.value}
                 suffix={stat.suffix}
-                className="block font-display text-[clamp(2.75rem,5vw,3.75rem)] font-semibold leading-none text-cream"
+                className="block font-display text-[2.125rem] md:text-[clamp(2.75rem,5vw,3.75rem)] font-semibold leading-none text-cream"
               />
-              <span className="mt-3 block text-[0.9375rem] tracking-wide text-cream/70">
+              <span className="mt-2 md:mt-3 block text-[0.875rem] md:text-[0.9375rem] tracking-wide text-cream/70">
                 {stat.label}
               </span>
             </Reveal>

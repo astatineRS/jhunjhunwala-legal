@@ -66,7 +66,7 @@ function PosterCard({ item }: { item: InFocusItem }) {
 
 export default function InFocus() {
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section className="bg-cream py-12 md:py-28">
       <div className="container-page">
         <SectionHeading
           title="In Focus"
@@ -77,9 +77,9 @@ export default function InFocus() {
 
       <AutoCarousel
         speed={30}
-        className="container-page mt-14"
+        className="container-page mt-6 md:mt-14"
         ariaLabel="Selected matters"
-        itemClassName="w-[74vw] sm:w-[20rem] lg:w-[17.5rem] xl:w-[19rem]"
+        itemClassName="w-[64vw] sm:w-[20rem] lg:w-[17.5rem] xl:w-[19rem]"
         items={inFocus.map((item) => (
           <PosterCard key={item.id} item={item} />
         ))}
