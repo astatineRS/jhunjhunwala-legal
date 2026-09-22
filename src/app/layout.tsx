@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/providers/SmoothScroll";
-import ScrollProgress from "@/components/ui/ScrollProgress";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 import DisclaimerGate from "@/components/DisclaimerGate";
 import { site } from "@/content/site";
 
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationLd) }}
         />
         <SmoothScroll />
-        <ScrollProgress />
+        <ScrollToTop />
         <DisclaimerGate />
         <a
           href="#main"

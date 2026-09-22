@@ -1,77 +1,22 @@
 "use client";
 
-import { animate, motion, useMotionValue, useMotionValueEvent } from "framer-motion";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { practiceAreas } from "@/content/practice-areas";
-import { EASE_OUT_EXPO } from "@/lib/motion";
 import PracticeCard from "@/components/cards/PracticeCard";
+import AutoCarousel, { type CarouselHandle } from "@/components/ui/AutoCarousel";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
 import { ArrowLeft, ArrowRight } from "@/components/ui/icons";
 
-const GAP = 24;
-
 /**
- * Draggable practice-area rail. Constraints are measured from the track rather
- * than assumed, so the rail stays correct across breakpoints and font loads:
- * a ResizeObserver re-measures and clamps the offset back into range.
+ * Practice-area rail. Drifts on its own and loops endlessly; the arrows nudge
+ * it a card at a time and hovering holds it still so a card can be read.
  */
 export default function PracticeCarousel() {
-  const viewportRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const draggingRef = useRef(false);
-
-  const x = useMotionValue(0);
-  const span = useMotionValue(0);
-  const [maxDrag, setMaxDrag] = useState(0);
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
-
-  const sync = useCallback(
-    (value: number) => {
-      const max = span.get();
-      setAtStart(value > -4);
-      setAtEnd(max <= 0 || value < -max + 4);
-    },
-    [span],
-  );
-
-  useMotionValueEvent(x, "change", sync);
-
-  useEffect(() => {
-    const viewport = viewportRef.current;
-    const track = trackRef.current;
-    if (!viewport || !track) return;
-
-    const measure = () => {
-      const next = Math.max(0, track.scrollWidth - viewport.clientWidth);
-      span.set(next);
-      setMaxDrag(next);
-      if (x.get() < -next) {
-        animate(x, -next, { duration: 0.4, ease: EASE_OUT_EXPO });
-      }
-      sync(x.get());
-    };
-
-    measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(viewport);
-    observer.observe(track);
-    return () => observer.disconnect();
-  }, [span, sync, x]);
-
-  const step = useCallback(
-    (direction: 1 | -1) => {
-      const card = trackRef.current?.firstElementChild as HTMLElement | null;
-      const distance = (card?.offsetWidth ?? 320) + GAP;
-      const target = Math.min(0, Math.max(-span.get(), x.get() - direction * distance));
-      animate(x, target, { duration: 0.75, ease: EASE_OUT_EXPO });
-    },
-    [span, x],
-  );
+  const controls = useRef<CarouselHandle>(null);
 
   const control =
-    "grid size-11 place-items-center rounded-full bg-cream text-ink transition-all duration-500 ease-[var(--ease-out-expo)] hover:bg-gold hover:text-white disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-cream disabled:hover:text-ink";
+    "grid size-11 place-items-center rounded-full bg-cream text-ink transition-all duration-500 ease-[var(--ease-out-expo)] hover:bg-gold hover:text-white";
 
   return (
     <section className="bg-stone py-20 md:py-28">
@@ -91,8 +36,7 @@ export default function PracticeCarousel() {
             <div className="flex shrink-0 items-center gap-3">
               <button
                 type="button"
-                onClick={() => step(-1)}
-                disabled={atStart}
+                onClick={() => controls.current?.prev()}
                 aria-label="Previous practice areas"
                 className={control}
               >
@@ -100,8 +44,7 @@ export default function PracticeCarousel() {
               </button>
               <button
                 type="button"
-                onClick={() => step(1)}
-                disabled={atEnd}
+                onClick={() => controls.current?.next()}
                 aria-label="Next practice areas"
                 className={control}
               >
@@ -111,37 +54,16 @@ export default function PracticeCarousel() {
           </Reveal>
         </div>
 
-        <div ref={viewportRef} className="mt-12 overflow-hidden py-3">
-          <motion.div
-            ref={trackRef}
-            drag="x"
-            style={{ x }}
-            dragConstraints={{ left: -maxDrag, right: 0 }}
-            dragElastic={0.05}
-            dragTransition={{ power: 0.22, timeConstant: 320, bounceStiffness: 320, bounceDamping: 42 }}
-            onDragStart={() => {
-              draggingRef.current = true;
-            }}
-            onDragEnd={() => {
-              window.setTimeout(() => {
-                draggingRef.current = false;
-              }, 0);
-            }}
-            onClickCapture={(event) => {
-              if (draggingRef.current) event.preventDefault();
-            }}
-            className="flex w-max cursor-grab gap-6 active:cursor-grabbing"
-          >
-            {practiceAreas.map((area) => (
-              <PracticeCard
-                key={area.slug}
-                area={area}
-                badge="gold"
-                className="w-[78vw] max-w-[19rem] shrink-0 sm:w-[17rem] lg:w-[19rem]"
-              />
-            ))}
-          </motion.div>
-        </div>
+        <AutoCarousel
+          controls={controls}
+          speed={38}
+          className="mt-12 py-3"
+          ariaLabel="Practice areas"
+          itemClassName="w-[78vw] max-w-[19rem] sm:w-[17rem] lg:w-[19rem]"
+          items={practiceAreas.map((area) => (
+            <PracticeCard key={area.slug} area={area} badge="gold" className="h-full w-full" />
+          ))}
+        />
       </div>
     </section>
   );

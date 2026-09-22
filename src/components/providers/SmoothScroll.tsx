@@ -2,10 +2,13 @@
 
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { lenisRef } from "@/lib/lenis";
 
 /**
  * Global inertial scrolling. Disabled outright for users who ask for reduced
  * motion, and torn down on unmount so route changes never stack instances.
+ * The instance is published on `lenisRef` so scroll-driven controls (the
+ * back-to-top button) travel with the same inertia instead of fighting it.
  */
 export default function SmoothScroll() {
   useEffect(() => {
@@ -19,6 +22,8 @@ export default function SmoothScroll() {
       touchMultiplier: 1.6,
     });
 
+    lenisRef.current = lenis;
+
     let frame = 0;
     const raf = (time: number) => {
       lenis.raf(time);
@@ -29,6 +34,7 @@ export default function SmoothScroll() {
     return () => {
       cancelAnimationFrame(frame);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 

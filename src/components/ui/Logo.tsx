@@ -3,23 +3,43 @@ import { cn } from "@/lib/utils";
 import BrandMark from "@/components/ui/BrandMark";
 
 /**
- * Brand lockup: the elephant mark beside the two-line Bookman wordmark.
- * `tone` flips it for dark heroes vs. light surfaces.
+ * Brand lockup: the elephant mark stacked above the two-line Bookman wordmark.
+ * `tone` flips it for dark heroes vs. light surfaces; `compact` is the scrolled
+ * header state, where the whole lockup steps down a size.
  */
-export default function Logo({ tone = "dark", className }: { tone?: "dark" | "light"; className?: string }) {
-  const mark = tone === "light" ? "text-white" : "text-teal";
-  const word = tone === "light" ? "text-white" : "text-teal";
-
+export default function Logo({
+  tone = "dark",
+  compact = false,
+  className,
+}: {
+  tone?: "dark" | "light";
+  compact?: boolean;
+  className?: string;
+}) {
   return (
     <Link
       href="/"
-      className={cn("group inline-flex items-end gap-3", className)}
+      className={cn(
+        "group inline-flex flex-col items-center gap-1",
+        tone === "light" ? "text-white" : "text-teal",
+        className,
+      )}
       aria-label="Jhunjhunwala Legal — home"
     >
-      <BrandMark className={cn("h-9 transition-transform duration-500 group-hover:-translate-y-0.5", mark)} />
-      <span className={cn("font-brand flex flex-col leading-[1.05] tracking-[0.04em]", word)}>
-        <span className="text-[1.0625rem] font-bold uppercase">Jhunjhunwala</span>
-        <span className="text-[1.0625rem] font-bold uppercase">Legal</span>
+      <BrandMark
+        className={cn(
+          "transition-[height,transform] duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-0.5",
+          compact ? "h-[1.6rem]" : "h-8",
+        )}
+      />
+      <span
+        className={cn(
+          "font-brand flex flex-col items-center font-bold uppercase leading-[1.05] tracking-[0.04em] transition-[font-size] duration-500 ease-[var(--ease-out-expo)]",
+          compact ? "text-[0.6875rem]" : "text-[0.8125rem]",
+        )}
+      >
+        <span>Jhunjhunwala</span>
+        <span>Legal</span>
       </span>
     </Link>
   );

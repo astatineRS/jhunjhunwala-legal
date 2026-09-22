@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useRef } from "react";
+import { useRef } from "react";
 import { people } from "@/content/people";
+import AutoCarousel, { type CarouselHandle } from "@/components/ui/AutoCarousel";
 import { ButtonLink } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
@@ -13,15 +14,7 @@ const lead = people[0];
 const rail = people.slice(1, 7);
 
 export default function PeopleStrip() {
-  const railRef = useRef<HTMLUListElement>(null);
-
-  const scroll = useCallback((direction: 1 | -1) => {
-    const track = railRef.current;
-    if (!track) return;
-    const card = track.firstElementChild as HTMLElement | null;
-    const distance = (card?.offsetWidth ?? 200) + 20;
-    track.scrollBy({ left: direction * distance, behavior: "smooth" });
-  }, []);
+  const controls = useRef<CarouselHandle>(null);
 
   const control =
     "grid size-10 shrink-0 place-items-center rounded-full bg-cream text-teal transition-all duration-500 ease-[var(--ease-out-expo)] hover:bg-gold hover:text-white";
@@ -83,39 +76,48 @@ export default function PeopleStrip() {
         </Reveal>
 
         <Reveal delay={1} className="mt-8 flex items-center gap-4">
-          <button type="button" onClick={() => scroll(-1)} aria-label="Previous team members" className={control}>
+          <button
+            type="button"
+            onClick={() => controls.current?.prev()}
+            aria-label="Previous team members"
+            className={control}
+          >
             <ArrowLeft className="size-4" />
           </button>
 
-          <ul
-            ref={railRef}
-            className="flex min-w-0 flex-1 snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-            {rail.map((person) => (
-              <li
+          <AutoCarousel
+            controls={controls}
+            speed={26}
+            gap={20}
+            className="min-w-0 flex-1"
+            ariaLabel="Team members"
+            itemClassName="w-[9.5rem] sm:w-[11rem]"
+            items={rail.map((person) => (
+              <Link
                 key={person.slug}
-                className="shrink-0 basis-[9.5rem] snap-start sm:basis-[11rem] lg:shrink lg:grow lg:basis-0"
+                href={`/people/${person.slug}`}
+                className="group relative block aspect-[3/4] overflow-hidden rounded-[10px]"
               >
-                <Link
-                  href={`/people/${person.slug}`}
-                  className="group relative block aspect-[3/4] overflow-hidden rounded-[10px]"
-                >
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    fill
-                    sizes="(max-width: 640px) 40vw, 12rem"
-                    className="object-cover transition-transform duration-[1.1s] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
-                  />
-                  <span className="absolute inset-x-2 bottom-2 truncate rounded-[6px] bg-cream/95 px-2 py-1.5 text-center font-display text-[0.8125rem] font-semibold leading-tight text-ink backdrop-blur transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-1">
-                    {person.name}
-                  </span>
-                </Link>
-              </li>
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  fill
+                  sizes="(max-width: 640px) 40vw, 12rem"
+                  className="object-cover transition-transform duration-[1.1s] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
+                />
+                <span className="absolute inset-x-2 bottom-2 truncate rounded-[6px] bg-cream/95 px-2 py-1.5 text-center font-display text-[0.8125rem] font-semibold leading-tight text-ink backdrop-blur transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-1">
+                  {person.name}
+                </span>
+              </Link>
             ))}
-          </ul>
+          />
 
-          <button type="button" onClick={() => scroll(1)} aria-label="Next team members" className={control}>
+          <button
+            type="button"
+            onClick={() => controls.current?.next()}
+            aria-label="Next team members"
+            className={control}
+          >
             <ArrowRight className="size-4" />
           </button>
         </Reveal>

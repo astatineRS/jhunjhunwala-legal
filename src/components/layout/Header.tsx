@@ -45,8 +45,13 @@ export default function Header() {
         solid ? "bg-cream/92 shadow-[0_1px_0_rgb(17_17_17_/_0.07)] backdrop-blur-xl" : "bg-transparent",
       )}
     >
-      <div className="container-page flex h-[var(--header-h)] items-center justify-between gap-6">
-        <Logo tone={solid ? "dark" : "light"} />
+      <div
+        className={cn(
+          "container-page flex items-center justify-between gap-6 transition-[height] duration-500 ease-[var(--ease-out-expo)]",
+          scrolled ? "h-[4.5rem]" : "h-[var(--header-h)]",
+        )}
+      >
+        <Logo tone={solid ? "dark" : "light"} compact={scrolled} />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {nav.map((item) => {

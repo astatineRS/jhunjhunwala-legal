@@ -8,7 +8,6 @@ import IndustriesBand from "@/components/home/IndustriesBand";
 import PeopleStrip from "@/components/home/PeopleStrip";
 import ClientJourney from "@/components/home/ClientJourney";
 import Testimonials from "@/components/home/Testimonials";
-import FromOurDesk from "@/components/home/FromOurDesk";
 import FaqSection from "@/components/home/FaqSection";
 
 export const metadata: Metadata = {
@@ -30,7 +29,6 @@ export default function HomePage() {
       <PeopleStrip />
       <ClientJourney />
       <Testimonials />
-      <FromOurDesk />
       <FaqSection />
     </>
   );

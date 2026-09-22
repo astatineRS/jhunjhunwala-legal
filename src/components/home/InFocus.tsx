@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { inFocus, type InFocusItem } from "@/content/home";
 import { getPerson } from "@/content/people";
-import Reveal from "@/components/ui/Reveal";
+import AutoCarousel from "@/components/ui/AutoCarousel";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 /**
@@ -71,15 +73,17 @@ export default function InFocus() {
           align="center"
           description="A closer look at selected matters, transactions, and legal work undertaken by our firm across industries and practice areas."
         />
-
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {inFocus.map((item, index) => (
-            <Reveal key={item.id} delay={index}>
-              <PosterCard item={item} />
-            </Reveal>
-          ))}
-        </div>
       </div>
+
+      <AutoCarousel
+        speed={30}
+        className="container-page mt-14"
+        ariaLabel="Selected matters"
+        itemClassName="w-[74vw] sm:w-[20rem] lg:w-[17.5rem] xl:w-[19rem]"
+        items={inFocus.map((item) => (
+          <PosterCard key={item.id} item={item} />
+        ))}
+      />
     </section>
   );
 }
