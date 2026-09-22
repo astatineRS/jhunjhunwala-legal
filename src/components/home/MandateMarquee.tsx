@@ -10,7 +10,7 @@ export default function MandateMarquee() {
   return (
     <section
       aria-label="Recent mandates"
-      className="relative z-10 -mt-[4.5rem] pb-16 md:-mt-[5.5rem] md:pb-24"
+      className="relative z-10 -mt-[4.5rem] pb-3 md:-mt-[5.5rem] md:pb-4"
     >
       <Marquee duration={70}>
         {mandates.map((mandate) => (
