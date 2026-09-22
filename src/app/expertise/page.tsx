@@ -4,7 +4,6 @@ import CtaBand from "@/components/layout/CtaBand";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import PracticeCard from "@/components/cards/PracticeCard";
-import JourneyRail from "@/components/expertise/JourneyRail";
 import { practiceAreas } from "@/content/practice-areas";
 
 export const metadata: Metadata = {
@@ -47,24 +46,9 @@ export default function ExpertisePage() {
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {practiceAreas.map((area, index) => (
               <Reveal key={area.slug} delay={index % 3} className="h-full">
-                <PracticeCard area={area} tone="cream" />
+                <PracticeCard area={area} />
               </Reveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="overflow-hidden bg-white py-24 md:py-32">
-        <div className="container-page">
-          <SectionHeading
-            align="center"
-            eyebrow="Your Journey"
-            title="How we work with you"
-            description="Most of our work follows a business through its life — setting up, structuring, contracting, raising capital, growing, protecting what it has built, transacting, and resolving what does not go to plan. Each stage maps to a practice."
-          />
-
-          <div className="mt-16 md:mt-20">
-            <JourneyRail />
           </div>
         </div>
       </section>

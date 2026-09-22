@@ -6,19 +6,19 @@ import ArrowBadge from "@/components/ui/ArrowBadge";
 /** Expertise grid tile: outline glyph, title, teaser, arrow chip. */
 export default function PracticeCard({
   area,
-  tone = "cream",
+  badge = "teal",
   className,
 }: {
   area: PracticeArea;
-  tone?: "cream" | "white";
+  /** Resting colour of the arrow chip; it swaps to the other tone on hover. */
+  badge?: "teal" | "gold";
   className?: string;
 }) {
   return (
     <Link
       href={`/expertise/${area.slug}`}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] p-7 transition-all duration-600 ease-[var(--ease-out-expo)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]",
-        tone === "cream" ? "bg-sand-soft" : "bg-white",
+        "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] bg-white p-7 transition-all duration-600 ease-[var(--ease-out-expo)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]",
         className,
       )}
     >
@@ -29,7 +29,14 @@ export default function PracticeCard({
           <rect x="7" y="11" width="26" height="18" rx="3" stroke="currentColor" strokeWidth="1.6" />
           <rect x="11" y="7" width="18" height="26" rx="3" stroke="currentColor" strokeWidth="1.6" />
         </svg>
-        <ArrowBadge tone="teal" size={34} className="transition-colors duration-500 group-hover:bg-gold" />
+        <ArrowBadge
+          tone={badge}
+          size={34}
+          className={cn(
+            "transition-colors duration-500",
+            badge === "teal" ? "group-hover:bg-gold" : "group-hover:bg-teal",
+          )}
+        />
       </div>
 
       <h3 className="relative z-10 mt-14 font-display text-[1.375rem] font-semibold leading-snug text-ink transition-colors duration-500 group-hover:text-cream">

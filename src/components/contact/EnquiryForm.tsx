@@ -48,8 +48,11 @@ function validateField(name: FieldName, value: string): string | undefined {
 
 const REQUIRED: FieldName[] = ["firstName", "email", "message"];
 
+/** Underlined field: no box, a single hairline rule that turns teal on focus. */
 const fieldBase =
-  "w-full border-b bg-transparent pb-2.5 pt-1 text-[0.9375rem] text-cream outline-none transition-colors duration-400 ease-[var(--ease-out-expo)] placeholder:text-cream/35 focus:border-gold disabled:opacity-55";
+  "w-full border-b bg-transparent pb-3 pt-2 text-[1.0625rem] text-ink outline-none transition-colors duration-400 ease-[var(--ease-out-expo)] placeholder:text-ink/35 focus:border-teal disabled:opacity-55";
+
+const labelClass = "text-[1.0625rem] leading-snug text-ink/80";
 
 export default function EnquiryForm() {
   const [values, setValues] = useState<Values>(EMPTY);
@@ -117,7 +120,7 @@ export default function EnquiryForm() {
   const disabled = status === "submitting";
 
   return (
-    <div className="relative overflow-hidden rounded-[var(--radius-card)] bg-charcoal p-7 md:p-10 lg:p-12">
+    <div className="relative">
       <AnimatePresence mode="wait" initial={false}>
         {status === "success" ? (
           <motion.div
@@ -138,8 +141,8 @@ export default function EnquiryForm() {
             >
               <CheckCircle className="size-7" />
             </motion.span>
-            <h3 className="display-3 mt-6 text-cream">Thank you — your details are noted</h3>
-            <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-cream/70">
+            <h3 className="display-3 mt-6 text-ink">Thank you — your details are noted</h3>
+            <p className="mt-4 max-w-md text-[1.0625rem] leading-relaxed text-ink/65">
               A member of the firm will review what you have shared and respond within one working
               day. If the matter is urgent, please call the office directly rather than wait for a
               reply.
@@ -147,7 +150,7 @@ export default function EnquiryForm() {
             <button
               type="button"
               onClick={reset}
-              className="mt-8 text-[0.9375rem] font-medium text-gold underline decoration-gold/40 underline-offset-4 transition-colors duration-300 hover:text-cream hover:decoration-cream/50"
+              className="mt-8 text-[0.9375rem] font-medium text-teal underline decoration-teal/40 underline-offset-4 transition-colors duration-300 hover:text-teal-deep hover:decoration-teal"
             >
               Send another enquiry
             </button>
@@ -160,24 +163,23 @@ export default function EnquiryForm() {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
           >
-            <p className="eyebrow text-gold">Contact</p>
+            <p className="eyebrow text-teal">Contact</p>
             <SplitText
               as="h2"
-              text="Let’s talk about your legal matter"
-              className="display-2 mt-3 text-cream"
+              text="Let’s Talk About Your Legal Matter"
+              className="display-2 mt-3 text-ink"
             />
-            <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-cream/70">
-              Share a few details and we will come back to you with the right person, an honest read
-              on your position, and what the next step involves. Nothing you send here creates a
+            <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-ink/65">
+              Whether you know exactly what you need or are still trying to understand your options,
+              we are here to start the conversation. Nothing you send here creates a
               lawyer&ndash;client relationship.
             </p>
 
-            <form noValidate onSubmit={submit} className="mt-9 flex flex-col gap-7">
-              <div className="grid gap-7 sm:grid-cols-2">
+            <form noValidate onSubmit={submit} className="mt-12 flex flex-col gap-9">
+              <div className="grid gap-9 sm:grid-cols-2">
                 <Field
                   name="firstName"
                   label="First Name"
-                  placeholder="Ananya"
                   required
                   value={values.firstName}
                   error={touched.firstName ? errors.firstName : undefined}
@@ -189,7 +191,6 @@ export default function EnquiryForm() {
                 <Field
                   name="lastName"
                   label="Last Name"
-                  placeholder="Sengupta"
                   value={values.lastName}
                   error={touched.lastName ? errors.lastName : undefined}
                   disabled={disabled}
@@ -201,7 +202,6 @@ export default function EnquiryForm() {
                   name="email"
                   label="Email"
                   type="email"
-                  placeholder="you@company.in"
                   required
                   value={values.email}
                   error={touched.email ? errors.email : undefined}
@@ -214,7 +214,6 @@ export default function EnquiryForm() {
                   name="phone"
                   label="Phone Number"
                   type="tel"
-                  placeholder="+91 98000 00000"
                   value={values.phone}
                   error={touched.phone ? errors.phone : undefined}
                   disabled={disabled}
@@ -225,17 +224,16 @@ export default function EnquiryForm() {
                 <Field
                   name="organisation"
                   label="Organisation"
-                  placeholder="Company or institution"
                   value={values.organisation}
                   error={touched.organisation ? errors.organisation : undefined}
                   disabled={disabled}
                   onChange={set("organisation")}
                   onBlur={blur("organisation")}
                   autoComplete="organization"
-                  className="sm:col-span-2 lg:col-span-1"
+                  className="sm:col-span-2"
                 />
 
-                <div className="flex flex-col gap-2 sm:col-span-2 lg:col-span-1">
+                <div className="flex flex-col gap-3 sm:col-span-2">
                   <label htmlFor="enquiry-interest" className={labelClass}>
                     Area of Interest
                   </label>
@@ -248,34 +246,30 @@ export default function EnquiryForm() {
                       onChange={(event) => set("interest")(event.target.value)}
                       className={cn(
                         fieldBase,
-                        "appearance-none border-white/22 pr-8",
-                        values.interest ? "text-cream" : "text-cream/45",
+                        "appearance-none border-ink/20 pr-9",
+                        values.interest ? "text-ink" : "text-ink/45",
                       )}
                     >
-                      <option value="" className="text-ink">
-                        Select an area
-                      </option>
+                      <option value="">Select an area</option>
                       {practiceAreas.map((area) => (
-                        <option key={area.slug} value={area.title} className="text-ink">
+                        <option key={area.slug} value={area.title}>
                           {area.title}
                         </option>
                       ))}
-                      <option value="Something else" className="text-ink">
-                        Something else
-                      </option>
+                      <option value="Something else">Something else</option>
                     </select>
                     <ChevronDown
-                      className="pointer-events-none absolute right-1 top-1.5 size-4 text-cream/50"
+                      className="pointer-events-none absolute right-1 top-1/2 size-5 -translate-y-1/2 text-ink/50"
                       aria-hidden
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-3">
                 <label htmlFor="enquiry-message" className={labelClass}>
                   How can we help?{" "}
-                  <span aria-hidden className="text-gold">
+                  <span aria-hidden className="text-gold-deep">
                     *
                   </span>
                 </label>
@@ -286,15 +280,14 @@ export default function EnquiryForm() {
                   required
                   value={values.message}
                   disabled={disabled}
-                  placeholder="A short description of the situation, the parties involved, and any deadline you are working to."
                   onChange={(event) => set("message")(event.target.value)}
                   onBlur={blur("message")}
                   aria-invalid={touched.message && Boolean(errors.message)}
                   aria-describedby={touched.message && errors.message ? "enquiry-message-error" : undefined}
                   className={cn(
                     fieldBase,
-                    "resize-y leading-relaxed",
-                    touched.message && errors.message ? "border-gold" : "border-white/22",
+                    "min-h-[7rem] resize-y leading-relaxed",
+                    touched.message && errors.message ? "border-gold-deep" : "border-ink/20",
                   )}
                 />
                 {touched.message && errors.message ? (
@@ -303,11 +296,11 @@ export default function EnquiryForm() {
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button type="submit" variant="light" disabled={disabled}>
+                <Button type="submit" disabled={disabled}>
                   {disabled ? "Sending…" : "Contact Us"}
                 </Button>
-                <p className="text-[0.8125rem] leading-relaxed text-cream/50">
-                  Fields marked <span className="text-gold">*</span> are required.
+                <p className="text-[0.8125rem] leading-relaxed text-ink/50">
+                  Fields marked <span className="text-gold-deep">*</span> are required.
                 </p>
               </div>
             </form>
@@ -318,8 +311,6 @@ export default function EnquiryForm() {
   );
 }
 
-const labelClass = "eyebrow text-[0.6875rem] text-cream/55";
-
 function ErrorText({ id, children }: { id: string; children: React.ReactNode }) {
   return (
     <motion.p
@@ -327,7 +318,7 @@ function ErrorText({ id, children }: { id: string; children: React.ReactNode }) 
       initial={{ opacity: 0, y: -4 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: EASE_OUT_EXPO }}
-      className="text-[0.8125rem] text-gold"
+      className="text-[0.8125rem] text-gold-deep"
     >
       {children}
     </motion.p>
@@ -341,7 +332,6 @@ function Field({
   error,
   onChange,
   onBlur,
-  placeholder,
   type = "text",
   required = false,
   disabled = false,
@@ -354,7 +344,6 @@ function Field({
   error?: string;
   onChange: (value: string) => void;
   onBlur: () => void;
-  placeholder?: string;
   type?: string;
   required?: boolean;
   disabled?: boolean;
@@ -363,13 +352,13 @@ function Field({
 }) {
   const id = `enquiry-${name}`;
   return (
-    <div className={cn("flex flex-col gap-2", className)}>
+    <div className={cn("flex flex-col gap-3", className)}>
       <label htmlFor={id} className={labelClass}>
         {label}
         {required ? (
           <>
             {" "}
-            <span aria-hidden className="text-gold">
+            <span aria-hidden className="text-gold-deep">
               *
             </span>
           </>
@@ -382,13 +371,12 @@ function Field({
         value={value}
         required={required}
         disabled={disabled}
-        placeholder={placeholder}
         autoComplete={autoComplete}
         onChange={(event) => onChange(event.target.value)}
         onBlur={onBlur}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
-        className={cn(fieldBase, error ? "border-gold" : "border-white/22")}
+        className={cn(fieldBase, error ? "border-gold-deep" : "border-ink/20")}
       />
       {error ? <ErrorText id={`${id}-error`}>{error}</ErrorText> : null}
     </div>

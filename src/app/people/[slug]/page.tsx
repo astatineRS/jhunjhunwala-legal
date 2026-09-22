@@ -66,12 +66,6 @@ export default async function PersonPage({ params }: Params) {
             <nav aria-label="Breadcrumb">
               <ol className="flex flex-wrap items-center gap-2 text-[0.8125rem] text-ink/50">
                 <li>
-                  <Link href="/" className="transition-colors duration-400 hover:text-teal">
-                    Home
-                  </Link>
-                </li>
-                <li aria-hidden>/</li>
-                <li>
                   <Link href="/people" className="transition-colors duration-400 hover:text-teal">
                     People
                   </Link>

@@ -26,6 +26,54 @@ export const trustedBy = [
   "Anant Textiles",
 ];
 
+export type InFocusItem = {
+  id: string;
+  /** Opening clause, e.g. "Recently advised". */
+  lead: string;
+  /** The anonymised client descriptor, set in bold on the poster. */
+  client: string;
+  /** Remainder of the summary sentence. */
+  detail: string;
+  /** Person from `people` who led the matter. */
+  personSlug: string;
+};
+
+/** Poster cards for the In Focus band — anonymised versions of recent mandates. */
+export const inFocus: InFocusItem[] = [
+  {
+    id: "commercial-dispute",
+    lead: "Recently represented",
+    client: "a manufacturing group",
+    detail:
+      "in a commercial dispute concerning supply obligations under a long-term vendor arrangement, advising on contractual remedies, notice strategy and the practical route to a negotiated resolution.",
+    personSlug: "meera-raghunathan",
+  },
+  {
+    id: "series-a",
+    lead: "Recently advised",
+    client: "a technology company",
+    detail:
+      "on a Series A investment and the accompanying shareholder arrangements, covering term sheet negotiation, transaction documentation and the governance framework agreed with incoming investors.",
+    personSlug: "kabir-sengupta",
+  },
+  {
+    id: "dpdp-compliance",
+    lead: "Recently advised",
+    client: "a SaaS business",
+    detail:
+      "on its obligations under the Digital Personal Data Protection framework, reviewing consent, retention and cross-border vendor contracting against the commitments made to its own customers.",
+    personSlug: "rohan-das",
+  },
+  {
+    id: "slump-sale",
+    lead: "Recently acted for",
+    client: "the acquirer of a logistics business",
+    detail:
+      "on a slump sale, from diligence and valuation inputs through to the business transfer agreement, employee transition and the closing mechanics agreed between the parties.",
+    personSlug: "aditya-jhunjhunwala",
+  },
+];
+
 export const whyChooseUs = [
   {
     title: "Clear Communication",
@@ -52,42 +100,49 @@ export const process = [
   { step: "Act", description: "Where you ask us to proceed, we work with you to put the chosen approach into action." },
 ];
 
-export const journey = [
-  "Set Up",
-  "Structure",
-  "Contract",
-  "Fund",
-  "Grow",
-  "Protect",
-  "Transact",
-  "Exit / Resolve",
+export type JourneyStep = { step: string; slug: string };
+
+/** The Backbone Suite rail — each stage links to the practice that owns it. */
+export const journey: JourneyStep[] = [
+  { step: "Set Up", slug: "corporate-and-commercial" },
+  { step: "Structure", slug: "startup-founder-and-investor-advisory" },
+  { step: "Contract", slug: "commercial-contracts" },
+  { step: "Fund", slug: "investment-and-transactional-advisory" },
+  { step: "Grow", slug: "employment-and-labour" },
+  { step: "Protect", slug: "data-privacy-and-technology" },
+  { step: "Transact", slug: "intellectual-property" },
+  { step: "Resolve", slug: "pre-litigation-and-dispute-resolution" },
 ];
 
+/**
+ * Client attributions are kept anonymised — the firm has not published named
+ * testimonials, and Bar Council Rule 36 limits what may be claimed publicly.
+ */
 export const testimonials = [
   {
-    name: "Julie Doe",
-    role: "Chief Executive Officer",
+    name: "Chief Executive Officer",
+    role: "Manufacturing group, Kolkata",
     avatar: "/images/team/p9.jpg",
     quote:
       "Their practical advice and clear communication gave us confidence through every important decision.",
   },
   {
-    name: "John Doe",
-    role: "Entrepreneur",
+    name: "Founder",
+    role: "Technology company, Bengaluru",
     avatar: "/images/team/p8.jpg",
     quote:
       "From our first conversation, the team took the time to understand not only the legal issue we were facing, but also the wider business context behind it. They explained every step clearly, helped us evaluate our options, and gave us the confidence to move forward with a well-informed decision. Their attention to detail, responsiveness, and practical approach made what initially felt like a complicated process much easier to navigate.",
   },
   {
-    name: "Jodi Doe",
-    role: "Director",
+    name: "Director",
+    role: "Education trust, West Bengal",
     avatar: "/images/team/p2.jpg",
     quote:
       "They were candid about what was worth pursuing and what was not. That saved us both time and money.",
   },
   {
-    name: "Rahul Sethi",
-    role: "Founder",
+    name: "Co-founder",
+    role: "SaaS business, Kolkata",
     avatar: "/images/team/p7.jpg",
     quote:
       "We came in with a messy cap table and left with documentation our investors accepted without a single comment.",

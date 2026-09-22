@@ -2,16 +2,14 @@ import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import MandateMarquee from "@/components/home/MandateMarquee";
 import AboutBand from "@/components/home/AboutBand";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
+import InFocus from "@/components/home/InFocus";
 import PracticeCarousel from "@/components/home/PracticeCarousel";
-import Understanding from "@/components/home/Understanding";
+import IndustriesBand from "@/components/home/IndustriesBand";
 import PeopleStrip from "@/components/home/PeopleStrip";
-import HowWeWork from "@/components/home/HowWeWork";
 import ClientJourney from "@/components/home/ClientJourney";
-import FromOurDesk from "@/components/home/FromOurDesk";
 import Testimonials from "@/components/home/Testimonials";
+import FromOurDesk from "@/components/home/FromOurDesk";
 import FaqSection from "@/components/home/FaqSection";
-import ContactSplit from "@/components/home/ContactSplit";
 
 export const metadata: Metadata = {
   title: { absolute: "Jhunjhunwala Legal — When the law is complex, you deserve clarity" },
@@ -26,16 +24,14 @@ export default function HomePage() {
       <Hero />
       <MandateMarquee />
       <AboutBand />
-      <WhyChooseUs />
+      <InFocus />
       <PracticeCarousel />
-      <Understanding />
+      <IndustriesBand />
       <PeopleStrip />
-      <HowWeWork />
       <ClientJourney />
-      <FromOurDesk />
       <Testimonials />
+      <FromOurDesk />
       <FaqSection />
-      <ContactSplit />
     </>
   );
 }

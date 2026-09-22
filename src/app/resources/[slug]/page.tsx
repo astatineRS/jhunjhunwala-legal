@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import CtaBand from "@/components/layout/CtaBand";
 import InsightCard from "@/components/cards/InsightCard";
 import ArticleBody from "@/components/resources/ArticleBody";
 import ArticleReader from "@/components/resources/ArticleReader";
-import RelatedRail from "@/components/resources/RelatedRail";
 import ShareRow from "@/components/resources/ShareRow";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
-import { CommentIcon, EyeIcon, ShareIcon } from "@/components/ui/icons";
+import { ClockIcon, CommentIcon, EyeIcon, ShareIcon } from "@/components/ui/icons";
 import { getInsight, getRelatedInsights, insights } from "@/content/insights";
 import { site } from "@/content/site";
 
@@ -69,9 +66,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
   const insight = getInsight(slug);
   if (!insight) notFound();
 
-  const neighbours = getRelatedInsights(slug, 7);
-  const related = neighbours.slice(0, 4);
-  const continueReading = neighbours.length > 6 ? neighbours.slice(4, 7) : neighbours.slice(0, 3);
+  const related = getRelatedInsights(slug, 6);
   const canonical = `${site.url}/resources/${insight.slug}`;
   const published = isoDate(insight.date);
 
@@ -107,53 +102,26 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <article>
-        <section className="bg-cream pt-[calc(var(--header-h)+3rem)]">
-          <div className="container-page">
-            <nav aria-label="Breadcrumb">
-              <ol className="flex flex-wrap items-center gap-2 text-[0.8125rem] text-ink/50">
-                <li>
-                  <Link
-                    href="/"
-                    className="transition-colors duration-400 hover:text-teal"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li aria-hidden className="text-ink/25">
-                  /
-                </li>
-                <li>
-                  <Link
-                    href="/resources"
-                    className="transition-colors duration-400 hover:text-teal"
-                  >
-                    Knowledge Repository
-                  </Link>
-                </li>
-                <li aria-hidden className="text-ink/25">
-                  /
-                </li>
-                <li aria-current="page" className="text-ink/70">
-                  {insight.category}
-                </li>
-              </ol>
-            </nav>
-
+      <section className="bg-cream pb-24 pt-[calc(var(--header-h)+3.5rem)] md:pb-32">
+        <div className="container-page grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_320px] xl:gap-16">
+          <article>
             <SplitText
               as="h1"
               text={insight.title}
-              className="display-1 mt-7 max-w-4xl capitalize text-ink"
+              className="display-1 text-balance-pretty text-ink"
             />
 
-            <Reveal delay={1} className="mt-10 overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
-              <div className="relative aspect-[16/8]">
+            <Reveal
+              delay={1}
+              className="mt-10 overflow-hidden rounded-[var(--radius-card)]"
+            >
+              <div className="relative aspect-[16/10]">
                 <Image
                   src={insight.image}
                   alt=""
                   fill
                   priority
-                  sizes="(max-width: 1280px) 100vw, 1216px"
+                  sizes="(max-width: 1024px) 100vw, 880px"
                   className="object-cover"
                 />
               </div>
@@ -161,73 +129,45 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
 
             <Reveal
               delay={2}
-              className="mt-8 flex flex-wrap items-center justify-between gap-x-10 gap-y-4 border-y border-ink/10 py-5"
+              className="mt-8 flex flex-wrap items-center justify-between gap-x-10 gap-y-4"
             >
-              <ul className="flex flex-wrap items-center gap-x-8 gap-y-3">
+              <ul className="flex flex-wrap items-center gap-x-7 gap-y-3">
                 {metrics.map(({ icon: Icon, value, label }) => (
-                  <li key={label} className="flex items-center gap-2.5 text-[0.9375rem] text-ink/65">
-                    <Icon className="size-[18px] text-teal" />
-                    <span className="font-semibold text-ink">{value}</span>
-                    <span>{label}</span>
+                  <li key={label} className="flex items-center gap-2.5 text-[1.0625rem] text-ink">
+                    <Icon className="size-[19px] text-teal" />
+                    <span>{value}</span>
+                    <span className="sr-only">{label}</span>
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.875rem] text-ink/55">
+              <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-[1.0625rem] text-ink/60">
                 <span>{insight.date}</span>
-                <span aria-hidden className="size-1 rounded-full bg-ink/25" />
-                <span>{insight.readTime}</span>
+                <span className="flex items-center gap-2.5 capitalize text-ink">
+                  <ClockIcon className="size-[19px] text-teal" />
+                  {insight.readTime}
+                </span>
               </div>
             </Reveal>
-          </div>
-        </section>
 
-        <section className="bg-cream pb-24 pt-14 md:pb-32">
-          <div className="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_340px] xl:gap-16">
-            <div>
+            <div className="mt-10">
               <ArticleReader>
                 <ArticleBody blocks={insight.body} />
               </ArticleReader>
-              <ShareRow url={canonical} title={insight.title} />
             </div>
 
-            <RelatedRail insights={related} />
-          </div>
-        </section>
-      </article>
+            <ShareRow url={canonical} title={insight.title} />
+          </article>
 
-      <section className="bg-sand-soft/50 py-20 md:py-28">
-        <div className="container-page">
-          <p className="eyebrow text-teal">Continue reading</p>
-          <SplitText
-            as="h2"
-            text="More from the Knowledge Repository"
-            className="display-3 mt-4 max-w-2xl capitalize text-ink"
-          />
-          <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {continueReading.map((entry, index) => (
-              <Reveal key={entry.slug} delay={index}>
-                <InsightCard insight={entry} tone="white" />
+          <aside aria-label="Related articles" className="grid gap-10 sm:grid-cols-2 lg:grid-cols-1">
+            <h2 className="sr-only">Related articles</h2>
+            {related.map((entry, index) => (
+              <Reveal key={entry.slug} delay={index % 3}>
+                <InsightCard insight={entry} />
               </Reveal>
             ))}
-          </div>
-          <Reveal delay={3} className="mt-12">
-            <Link
-              href="/resources"
-              className="inline-flex items-center gap-2 text-[0.9375rem] font-medium text-teal transition-colors duration-500 ease-[var(--ease-out-expo)] hover:text-teal-deep"
-            >
-              View every article
-              <span aria-hidden>→</span>
-            </Link>
-          </Reveal>
+          </aside>
         </div>
       </section>
-
-      <CtaBand
-        title="Have a question about something you read?"
-        body="This article is general in nature and is not advice on your matter. If it touches a decision you are facing, speak to us and we will look at your facts."
-        cta="Talk To Our Team"
-        href="/contact"
-      />
     </>
   );
 }

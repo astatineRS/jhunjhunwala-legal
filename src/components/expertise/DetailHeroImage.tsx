@@ -53,7 +53,7 @@ export default function DetailHeroImage({
           alt={alt}
           fill
           priority
-          sizes="(min-width: 1024px) 60vw, 100vw"
+          sizes="(min-width: 1320px) 1216px, 100vw"
           className="object-cover"
         />
       </motion.div>

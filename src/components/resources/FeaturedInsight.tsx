@@ -1,62 +1,54 @@
 import Link from "next/link";
 import type { Insight } from "@/content/insights";
-import ArrowBadge from "@/components/ui/ArrowBadge";
 import ParallaxImage from "@/components/ui/ParallaxImage";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
+import { ArrowUpRight } from "@/components/ui/icons";
 
-/** Editorial lead-in for the most recent article: parallax plate left, copy right. */
+/** Editorial lead-in for the most recent article: plate left, copy right. */
 export default function FeaturedInsight({ insight }: { insight: Insight }) {
   return (
-    <section className="bg-cream py-20 md:py-28">
-      <div className="container-page grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+    <section className="bg-cream pb-16 pt-16 md:pb-20 md:pt-20">
+      <div className="container-page grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal>
           <ParallaxImage
             src={insight.image}
             alt=""
-            className="aspect-[4/3] w-full rounded-[var(--radius-card)] shadow-[var(--shadow-card)]"
-            sizes="(max-width: 1024px) 100vw, 52vw"
-            distance={44}
+            className="aspect-[3/2] w-full rounded-[var(--radius-card)]"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            distance={40}
             priority
           />
         </Reveal>
 
         <div>
-          <Reveal>
-            <p className="eyebrow text-teal">Latest reading</p>
-          </Reveal>
-
           <SplitText
             as="h2"
             text={insight.title}
-            className="display-2 mt-4 capitalize text-ink"
+            className="display-2 text-balance-pretty text-ink"
           />
 
           <Reveal
             delay={1}
-            className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3 text-[0.875rem] text-ink/55"
+            className="mt-7 flex items-center justify-between gap-4 text-[0.9375rem] text-ink/60"
           >
-            <span className="rounded-full bg-sand-soft px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-teal-deep">
-              {insight.category}
-            </span>
             <span>{insight.readTime}</span>
-            <span aria-hidden className="size-1 rounded-full bg-ink/25" />
             <span>{insight.date}</span>
           </Reveal>
 
           <Reveal delay={2}>
-            <p className="mt-6 max-w-xl text-balance-pretty text-[1.0625rem] leading-relaxed text-ink/70">
+            <p className="mt-5 text-balance-pretty text-[1.0625rem] leading-relaxed text-ink/75">
               {insight.excerpt}
             </p>
           </Reveal>
 
-          <Reveal delay={3} className="mt-9">
+          <Reveal delay={3} className="mt-10">
             <Link
               href={`/resources/${insight.slug}`}
-              className="group inline-flex items-center gap-3 text-[0.9375rem] font-medium text-teal transition-colors duration-500 ease-[var(--ease-out-expo)] hover:text-teal-deep"
+              className="group inline-flex items-center gap-3 text-[1.0625rem] font-semibold text-ink transition-colors duration-500 ease-[var(--ease-out-expo)] hover:text-teal"
             >
               <span>Read More</span>
-              <ArrowBadge tone="teal" size={38} />
+              <ArrowUpRight className="size-[18px] text-teal transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
           </Reveal>
         </div>

@@ -18,8 +18,7 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "About The Firm", href: "/about" },
   { label: "Expertise", href: "/expertise" },
   { label: "People", href: "/people" },
   { label: "Resources", href: "/resources" },
@@ -30,7 +29,7 @@ export const footerColumns = [
   {
     heading: "Firm",
     links: [
-      { label: "About Us", href: "/about" },
+      { label: "About The Firm", href: "/about" },
       { label: "Our Team", href: "/people" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },

@@ -15,12 +15,12 @@ import GuidingPrinciples from "@/components/about/GuidingPrinciples";
 import IndustryGrid from "@/components/about/IndustryGrid";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About The Firm",
   description:
     "Jhunjhunwala Legal is a Kolkata practice advising founders, businesses and institutions on corporate, commercial and transactional matters — and on the disputes that sometimes follow.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: `About Us — ${site.name}`,
+    title: `About The Firm — ${site.name}`,
     description:
       "A practice built on clear advice, careful preparation, and judgment you can act on.",
     url: `${site.url}/about`,
@@ -33,7 +33,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        title="About Us"
+        title="About The Firm"
         subtitle="A practice built on clear advice, careful preparation, and judgment you can act on."
         image="/images/band-gavel.jpg"
       />

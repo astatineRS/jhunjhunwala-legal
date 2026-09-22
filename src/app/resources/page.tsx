@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import CtaBand from "@/components/layout/CtaBand";
 import PageHero from "@/components/layout/PageHero";
 import FeaturedInsight from "@/components/resources/FeaturedInsight";
 import InsightLibrary from "@/components/resources/InsightLibrary";
@@ -30,12 +29,6 @@ export default function ResourcesPage() {
       />
       <FeaturedInsight insight={featured} />
       <InsightLibrary insights={archive} />
-      <CtaBand
-        title="Have a question about something you read?"
-        body="Our writing is general in nature. If a point here touches a decision you are actually facing, speak to us — advice that accounts for your facts is always more useful than advice that does not."
-        cta="Talk To Our Team"
-        href="/contact"
-      />
     </>
   );
 }

@@ -53,15 +53,6 @@ export default function Hero() {
         style={reduced ? undefined : { opacity: fade }}
         className="container-page flex flex-1 flex-col justify-center py-10 text-center"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: EASE_OUT_EXPO, delay: 0.25 }}
-          className="eyebrow text-gold"
-        >
-          Advocates &amp; Legal Consultants · Kolkata
-        </motion.p>
-
         <SplitText
           as="h1"
           text="When the law is complex, you deserve clarity"
@@ -85,7 +76,9 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: EASE_OUT_EXPO, delay: 0.85 }}
           className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <ButtonLink href="/contact">Book A Consultation</ButtonLink>
+          <ButtonLink href="/contact" variant="light">
+            Book A Consultation
+          </ButtonLink>
           <ButtonLink href="/expertise" variant="outline">
             Explore Our Services
           </ButtonLink>

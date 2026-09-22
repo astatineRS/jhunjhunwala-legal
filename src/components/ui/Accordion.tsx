@@ -8,15 +8,48 @@ import { ChevronDown } from "./icons";
 
 export type AccordionItem = { question: string; answer: string };
 
+type Tone = "sand" | "stone";
+
+type Palette = {
+  open: string;
+  closed: string;
+  index: string;
+  question: string;
+  chevron: string;
+  answer: string;
+};
+
+const tones: Record<Tone, Palette> = {
+  sand: {
+    open: "border-gold/45 bg-sand-soft",
+    closed: "border-transparent bg-sand-soft/70 hover:bg-sand-soft",
+    index: "text-gold-deep",
+    question: "text-ink",
+    chevron: "bg-teal text-white",
+    answer: "text-ink/70",
+  },
+  stone: {
+    open: "border-transparent bg-stone",
+    closed: "border-transparent bg-stone/85 hover:bg-stone",
+    index: "text-cream/80",
+    question: "text-white",
+    chevron: "bg-cream text-ink",
+    answer: "text-cream/85",
+  },
+};
+
 export default function Accordion({
   items,
   className,
+  tone = "sand",
   defaultOpen = 0,
 }: {
   items: AccordionItem[];
   className?: string;
+  tone?: Tone;
   defaultOpen?: number | null;
 }) {
+  const palette = tones[tone];
   const [open, setOpen] = useState<number | null>(defaultOpen);
 
   return (
@@ -30,7 +63,7 @@ export default function Accordion({
             transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
             className={cn(
               "overflow-hidden rounded-[var(--radius-card)] border transition-colors duration-500",
-              isOpen ? "border-gold/45 bg-sand-soft" : "border-transparent bg-sand-soft/70 hover:bg-sand-soft",
+              isOpen ? palette.open : palette.closed,
             )}
           >
             <button
@@ -39,16 +72,16 @@ export default function Accordion({
               aria-expanded={isOpen}
               className="flex w-full items-center gap-4 px-5 py-5 text-left md:px-7"
             >
-              <span className="font-display text-sm text-gold-deep tabular-nums md:text-base">
+              <span className={cn("font-display text-sm tabular-nums md:text-base", palette.index)}>
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="display-3 flex-1 text-[1.0625rem] leading-snug text-ink md:text-[1.25rem]">
+              <span className={cn("display-3 flex-1 text-[1.0625rem] leading-snug md:text-[1.25rem]", palette.question)}>
                 {item.question}
               </span>
               <motion.span
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: 0.45, ease: EASE_OUT_EXPO }}
-                className="grid size-9 shrink-0 place-items-center rounded-full bg-teal text-white"
+                className={cn("grid size-9 shrink-0 place-items-center rounded-full", palette.chevron)}
               >
                 <ChevronDown className="size-4" />
               </motion.span>
@@ -62,7 +95,7 @@ export default function Accordion({
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
                 >
-                  <p className="px-5 pb-6 pl-[3.25rem] text-[0.975rem] leading-relaxed text-ink/70 md:px-7 md:pl-[4.5rem]">
+                  <p className={cn("px-5 pb-6 pl-[3.25rem] text-[0.975rem] leading-relaxed md:px-7 md:pl-[4.5rem]", palette.answer)}>
                     {item.answer}
                   </p>
                 </motion.div>

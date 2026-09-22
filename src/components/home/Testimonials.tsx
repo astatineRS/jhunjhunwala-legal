@@ -5,7 +5,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { testimonials } from "@/content/home";
 import { EASE_OUT_EXPO } from "@/lib/motion";
-import SectionHeading from "@/components/ui/SectionHeading";
+import Reveal from "@/components/ui/Reveal";
+import SplitText from "@/components/ui/SplitText";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "@/components/ui/icons";
 
@@ -29,14 +30,14 @@ function condense(quote: string, limit = 300) {
   const sentences = quote.match(/[^.!?]+[.!?]+\s*/g) ?? [quote];
   let out = "";
   for (const sentence of sentences) {
-    if (out && (out + sentence).trim().length > limit) break;
+    if ((out + sentence).length > limit && out) break;
     out += sentence;
   }
   return out.trim() || quote.slice(0, limit).trimEnd() + "…";
 }
 
 export default function Testimonials() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
   const [paused, setPaused] = useState(false);
   const reduced = useReducedMotion();
 
@@ -51,14 +52,14 @@ export default function Testimonials() {
   }, [paused, reduced]);
 
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section className="bg-gold py-20 md:py-28">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="What clients say"
-          title="Testimonials"
-          align="center"
-          description="A practice built on referrals lives or dies by how the last matter was handled."
-        />
+        <div className="mx-auto max-w-3xl text-center">
+          <Reveal>
+            <p className="eyebrow mb-3 text-white/75">What clients say</p>
+          </Reveal>
+          <SplitText as="h2" text="Testimonials" className="display-2 text-white" />
+        </div>
 
         <div
           className="-mx-5 -my-6 overflow-hidden px-5 py-6 md:-mx-10 md:px-10"
@@ -69,7 +70,7 @@ export default function Testimonials() {
           aria-roledescription="carousel"
           aria-label="Client testimonials"
         >
-          <div className="relative mt-14 h-[30rem] sm:h-[28rem]">
+          <div className="relative mt-12 h-[26rem] sm:h-[19rem]">
             {testimonials.map((item, index) => {
               const offset = relative(index, active);
               const isActive = offset === 0;
@@ -81,66 +82,53 @@ export default function Testimonials() {
                   aria-hidden={!isActive}
                   initial={false}
                   animate={{
-                    x: `${offset * 74}%`,
-                    scale: isActive ? 1 : 0.86,
-                    opacity: isActive ? 1 : isNeighbour ? 0.4 : 0,
+                    x: `${offset * 64}%`,
+                    scale: isActive ? 1 : 0.92,
+                    opacity: isActive ? 1 : isNeighbour ? 1 : 0,
                   }}
                   transition={{ duration: 0.8, ease: EASE_OUT_EXPO }}
                   style={{ zIndex: 10 - Math.abs(offset) }}
                   className={cn(
-                    "absolute inset-y-0 inset-x-0 mx-auto flex w-[88%] flex-col rounded-[var(--radius-card)] p-7 md:w-[58%] md:p-12",
+                    "absolute inset-x-0 inset-y-0 mx-auto flex w-[92%] flex-col rounded-[var(--radius-card)] p-7 md:w-[54%] md:p-10",
                     isActive
-                      ? "bg-gold text-white shadow-[var(--shadow-lift)]"
-                      : "bg-sand-soft text-ink",
-                    !isActive && "pointer-events-none",
+                      ? "bg-cream shadow-[var(--shadow-lift)]"
+                      : "pointer-events-none bg-white/25",
                   )}
                 >
-                  <span
-                    className={cn(
-                      "font-display text-[2.75rem] leading-none",
-                      isActive ? "text-white/45" : "text-ink/15",
-                    )}
-                    aria-hidden
+                  <figcaption
+                    className={cn("flex items-center gap-4", isActive && "justify-center text-center")}
                   >
-                    &ldquo;
-                  </span>
-                  <blockquote
-                    className={cn(
-                      "font-display text-[1.1875rem] leading-snug md:text-[1.4375rem]",
-                      isActive ? "text-white" : "text-ink/70",
-                    )}
-                  >
-                    {condense(item.quote)}
-                  </blockquote>
-                  <figcaption className="mt-auto flex items-center gap-4 pt-8">
                     <span className="relative size-14 shrink-0 overflow-hidden rounded-full">
-                      <Image
-                        src={item.avatar}
-                        alt=""
-                        fill
-                        sizes="56px"
-                        className="object-cover"
-                      />
+                      <Image src={item.avatar} alt="" fill sizes="56px" className="object-cover" />
                     </span>
                     <span>
                       <span
                         className={cn(
-                          "block font-display text-[1.125rem] font-semibold",
-                          isActive ? "text-white" : "text-ink",
+                          "block text-left font-display text-[1.375rem] font-semibold leading-tight",
+                          isActive ? "text-ink" : "text-ink/70",
                         )}
                       >
                         {item.name}
                       </span>
                       <span
                         className={cn(
-                          "block text-[0.8125rem] uppercase tracking-[0.12em]",
-                          isActive ? "text-white/75" : "text-ink/50",
+                          "block text-left text-[0.9375rem] leading-tight",
+                          isActive ? "text-ink/65" : "text-ink/50",
                         )}
                       >
                         {item.role}
                       </span>
                     </span>
                   </figcaption>
+
+                  <blockquote
+                    className={cn(
+                      "mt-6 text-[0.9375rem] leading-relaxed md:text-[1rem]",
+                      isActive ? "text-center text-ink/80" : "text-ink/55",
+                    )}
+                  >
+                    &ldquo;{condense(item.quote)}&rdquo;
+                  </blockquote>
                 </motion.figure>
               );
             })}
@@ -152,9 +140,9 @@ export default function Testimonials() {
             type="button"
             onClick={() => go(-1)}
             aria-label="Previous testimonial"
-            className="grid size-12 place-items-center rounded-full border border-ink/20 text-ink transition-all duration-500 ease-[var(--ease-out-expo)] hover:border-teal hover:bg-teal hover:text-white"
+            className="grid size-11 place-items-center rounded-full border border-white/50 text-white transition-all duration-500 ease-[var(--ease-out-expo)] hover:border-cream hover:bg-cream hover:text-gold-deep"
           >
-            <ArrowLeft className="size-5" />
+            <ArrowLeft className="size-4" />
           </button>
 
           <div className="flex items-center gap-2">
@@ -167,7 +155,7 @@ export default function Testimonials() {
                 aria-current={index === active}
                 className={cn(
                   "h-1.5 rounded-full transition-all duration-500 ease-[var(--ease-out-expo)]",
-                  index === active ? "w-8 bg-gold" : "w-1.5 bg-ink/20 hover:bg-ink/40",
+                  index === active ? "w-8 bg-cream" : "w-1.5 bg-white/40 hover:bg-white/70",
                 )}
               />
             ))}
@@ -177,9 +165,9 @@ export default function Testimonials() {
             type="button"
             onClick={() => go(1)}
             aria-label="Next testimonial"
-            className="grid size-12 place-items-center rounded-full border border-ink/20 text-ink transition-all duration-500 ease-[var(--ease-out-expo)] hover:border-teal hover:bg-teal hover:text-white"
+            className="grid size-11 place-items-center rounded-full border border-white/50 text-white transition-all duration-500 ease-[var(--ease-out-expo)] hover:border-cream hover:bg-cream hover:text-gold-deep"
           >
-            <ArrowRight className="size-5" />
+            <ArrowRight className="size-4" />
           </button>
         </div>
       </div>
