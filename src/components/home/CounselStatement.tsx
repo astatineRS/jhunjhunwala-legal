@@ -1,42 +1,67 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { flipUp, staggerParent, viewportOnce } from "@/lib/motion";
+import { Fragment } from "react";
+import { EASE_OUT_EXPO } from "@/lib/motion";
 import { ButtonLink } from "@/components/ui/Button";
 
+const HEADLINE: { word: string; accent?: boolean }[] = [
+  { word: "The" },
+  { word: "counsel" },
+  { word: "that" },
+  { word: "grows", accent: true },
+  { word: "with" },
+  { word: "you." },
+];
+
+/** Each word hinges up from its own base; the block replays on every pass. */
+const word = {
+  hidden: { opacity: 0, rotateX: -85, y: 22 },
+  show: { opacity: 1, rotateX: 0, y: 0, transition: { duration: 0.9, ease: EASE_OUT_EXPO } },
+};
+
+const line = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE_OUT_EXPO } },
+};
+
 /**
- * Closing statement before the FAQs. Each line is hinged: it tips up from its
- * own base into the page as the section enters the viewport, which reads as a
- * deliberate pause rather than another fade.
+ * Closing statement before the FAQs. The headline is animated word by word —
+ * each tips up from its own baseline — and the whole block re-runs every time
+ * it scrolls back into view, so the section is never caught sitting still.
  */
 export default function CounselStatement() {
   return (
     <section className="bg-cream py-24 md:py-32">
       <motion.div
-        variants={staggerParent}
         initial="hidden"
         whileInView="show"
-        viewport={viewportOnce}
-        className="container-page text-center [perspective:1200px]"
+        viewport={{ amount: 0.5 }}
+        transition={{ staggerChildren: 0.085 }}
+        className="container-page text-center [perspective:900px]"
       >
-        <motion.h2
-          variants={flipUp}
-          className="display-2 mx-auto max-w-3xl text-ink [transform-origin:50%_100%]"
-        >
-          The counsel that <span className="text-gold-deep">grows</span> with you.
-        </motion.h2>
+        <h2 className="display-2 mx-auto max-w-3xl text-ink">
+          {HEADLINE.map((item, index) => (
+            <Fragment key={item.word}>
+              {index > 0 ? " " : null}
+              <motion.span
+                variants={word}
+                className={`inline-block [transform-origin:50%_100%] ${item.accent ? "text-gold-deep" : ""}`}
+              >
+                {item.word}
+              </motion.span>
+            </Fragment>
+          ))}
+        </h2>
 
         <motion.p
-          variants={flipUp}
-          className="mx-auto mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-ink/60 [transform-origin:50%_100%]"
+          variants={line}
+          className="mx-auto mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-ink/60"
         >
           Talk to us before you need to.
         </motion.p>
 
-        <motion.div
-          variants={flipUp}
-          className="mt-10 flex justify-center [transform-origin:50%_100%]"
-        >
+        <motion.div variants={line} className="mt-10 flex justify-center">
           <ButtonLink href="/contact">Talk To Our Team</ButtonLink>
         </motion.div>
       </motion.div>
