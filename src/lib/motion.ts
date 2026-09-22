@@ -32,6 +32,20 @@ export const scaleIn: Variants = {
   }),
 };
 
+/**
+ * Hinged reveal: the block tips up from its own base as it fades in. Needs a
+ * `perspective` on the parent and a bottom transform origin on the element.
+ */
+export const flipUp: Variants = {
+  hidden: { opacity: 0, rotateX: -72, y: 26 },
+  show: (i: number = 0) => ({
+    opacity: 1,
+    rotateX: 0,
+    y: 0,
+    transition: { duration: 1.1, ease: EASE_OUT_EXPO, delay: i * 0.1 },
+  }),
+};
+
 export const staggerParent: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
