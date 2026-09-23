@@ -119,7 +119,7 @@ export default function AboutPage() {
           <Reveal delay={2} className="relative">
             <ParallaxImage
               src="/images/office.jpg"
-              alt="The firm's offices in Kolkata"
+              alt="The firm's offices in Delhi"
               className="aspect-[3/2] rounded-[var(--radius-card)] md:aspect-[4/5] lg:aspect-[3/4]"
               sizes="(max-width: 1024px) 100vw, 45vw"
               distance={44}

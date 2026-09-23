@@ -193,7 +193,7 @@ const sections: PolicySection[] = [
           website or its contents, is governed by the laws of India.
         </p>
         <p>
-          The courts at Kolkata, West Bengal have exclusive jurisdiction over any such dispute or
+          The courts at New Delhi have exclusive jurisdiction over any such dispute or
           claim, and you submit to that jurisdiction by using this website. The firm makes no
           representation that the material on this site is appropriate, or available for use, in any
           jurisdiction outside India; where access from a particular jurisdiction would be contrary

@@ -18,7 +18,7 @@ export const people: Person[] = [
     name: "Samarth Jhunjhunwala",
     role: "Managing Partner",
     image: "/images/team/samarth.jpg",
-    bar: "Enrolled with the Bar Council of West Bengal, 2009",
+    bar: "Enrolled with the Bar Council of Delhi, 2009",
     focus: ["Corporate & Commercial", "Investment & Transactions", "Dispute Strategy"],
     bio: [
       "Samarth leads the firm's corporate and transactional practice. He advises promoters, boards and investors on structuring, shareholder arrangements and acquisitions, and is regularly brought in when a commercial relationship begins to break down.",
@@ -34,7 +34,7 @@ export const people: Person[] = [
     name: "Rohan Das",
     role: "Principal Associate",
     image: "/images/team/p3.jpg",
-    bar: "Enrolled with the Bar Council of West Bengal, 2016",
+    bar: "Enrolled with the Bar Council of Delhi, 2016",
     focus: ["Commercial Contracts", "Technology", "Licensing"],
     bio: [
       "Rohan handles the firm's commercial contracting work, from master services agreements to distribution and licensing arrangements.",
@@ -48,7 +48,7 @@ export const people: Person[] = [
     name: "Ishaan Verma",
     role: "Senior Associate",
     image: "/images/team/p4.jpg",
-    bar: "Enrolled with the Bar Council of West Bengal, 2018",
+    bar: "Enrolled with the Bar Council of Delhi, 2018",
     focus: ["Data Privacy", "Product Compliance", "SaaS Contracting"],
     bio: [
       "Ishaan advises technology and consumer businesses on privacy compliance under the DPDP Act, platform terms and incident response.",

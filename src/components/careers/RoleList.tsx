@@ -25,9 +25,9 @@ export default function RoleList({ roles, email }: { roles: Role[]; email: strin
 
     return (
       <div className="rounded-[var(--radius-card)] border border-ink/10 bg-cream px-5 py-7 md:px-10 md:py-10">
-        <h3 className="display-3 text-ink">No positions open in Kolkata at present</h3>
+        <h3 className="display-3 text-ink">No positions open in Delhi at present</h3>
         <p className="mt-2.5 md:mt-3 max-w-2xl text-balance-pretty text-[0.9375rem] md:text-base leading-relaxed text-ink/70">
-          We are not recruiting for the Kolkata office at the moment. When that changes, the role and
+          We are not recruiting for the Delhi office at the moment. When that changes, the role and
           its brief will be published on this page. Until then, we are glad to read an application
           sent on its own terms and to keep it on file.
         </p>

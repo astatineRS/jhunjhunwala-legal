@@ -11,7 +11,7 @@ import RoleList from "@/components/careers/RoleList";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "There are no open positions at Jhunjhunwala Legal at present. We continue to read speculative applications for our Kolkata office.",
+    "There are no open positions at Jhunjhunwala Legal at present. We continue to read speculative applications for our Delhi office.",
   alternates: { canonical: "/careers" },
 };
 
@@ -41,7 +41,7 @@ export default function CareersPage() {
     <>
       <PageHero
         title="Careers"
-        subtitle="We are a small firm that gives people real work early. We are not hiring in Kolkata at present, but we still read every application that reaches us."
+        subtitle="We are a small firm that gives people real work early. We are not hiring in Delhi at present, but we still read every application that reaches us."
         image="/images/band-gavel.jpg"
       />
 

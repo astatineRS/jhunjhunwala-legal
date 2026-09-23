@@ -142,7 +142,7 @@ export const journey: JourneyStep[] = [
 export const testimonials = [
   {
     name: "Chief Executive Officer",
-    role: "Manufacturing group, Kolkata",
+    role: "Manufacturing group, Delhi NCR",
     avatar: "/images/team/p9.jpg",
     quote:
       "Their practical advice and clear communication gave us confidence through every important decision.",
@@ -156,14 +156,14 @@ export const testimonials = [
   },
   {
     name: "Director",
-    role: "Education trust, West Bengal",
+    role: "Education trust, Uttar Pradesh",
     avatar: "/images/team/p2.jpg",
     quote:
       "They were candid about what was worth pursuing and what was not. That saved us both time and money.",
   },
   {
     name: "Co-founder",
-    role: "SaaS business, Kolkata",
+    role: "SaaS business, New Delhi",
     avatar: "/images/team/p7.jpg",
     quote:
       "We came in with a messy cap table and left with documentation our investors accepted without a single comment.",
@@ -197,7 +197,7 @@ export const faqs = [
       "Yes. The first conversation exists precisely so you can decide whether to engage us at all. There is no obligation to proceed, and we will tell you if we think you do not need a lawyer.",
   },
   {
-    question: "Do you work with clients outside Kolkata?",
+    question: "Do you work with clients outside Delhi?",
     answer:
       "Yes. A substantial part of our transactional and advisory work is handled remotely for clients across India, with in-person attendance where a matter genuinely requires it.",
   },

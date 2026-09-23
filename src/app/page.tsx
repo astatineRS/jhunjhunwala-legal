@@ -14,7 +14,7 @@ import FaqSection from "@/components/home/FaqSection";
 export const metadata: Metadata = {
   title: { absolute: "Jhunjhunwala Legal — When the law is complex, you deserve clarity" },
   description:
-    "A Kolkata law firm advising individuals, founders and businesses on corporate, commercial, transactional, employment and dispute matters — with clear advice and practical judgment.",
+    "A Delhi law firm advising individuals, founders and businesses on corporate, commercial, transactional, employment and dispute matters — with clear advice and practical judgment.",
   alternates: { canonical: "/" },
 };
 
