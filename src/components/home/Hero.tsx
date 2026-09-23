@@ -39,13 +39,15 @@ export default function Hero() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[50%_35%]"
+            className="object-cover object-[30%_62%] md:object-[50%_45%]"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/55 to-ink/90" />
+        {/* The boardroom photograph is already dark and its centre is empty, so
+            the scrim only has to lift the headline off it. */}
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink/85" />
         <div
           className="absolute inset-0"
-          style={{ background: "radial-gradient(75% 60% at 50% 42%, transparent 0%, rgb(17 17 17 / 0.55) 100%)" }}
+          style={{ background: "radial-gradient(75% 60% at 50% 42%, transparent 0%, rgb(17 17 17 / 0.45) 100%)" }}
         />
       </motion.div>
 
