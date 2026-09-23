@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { stats } from "@/content/home";
 import { ButtonLink } from "@/components/ui/Button";
-import Counter from "@/components/ui/Counter";
+import LifecycleGrid from "@/components/LifecycleGrid";
 import MandateMarquee from "@/components/home/MandateMarquee";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
@@ -51,23 +50,7 @@ export default function AboutBand() {
             </Reveal>
           </div>
 
-          <Reveal delay={2}>
-            <dl className="grid grid-cols-2 overflow-hidden rounded-[var(--radius-card)] border border-white/15 bg-white/[0.07] backdrop-blur-xl">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="flex flex-col-reverse gap-1 border-b border-r border-white/10 px-4 py-5 last:border-r-0 even:border-r-0 [&:nth-last-child(-n+2)]:border-b-0 md:gap-2 md:px-8 md:py-10"
-                >
-                  <dt className="text-[0.75rem] font-medium uppercase tracking-[0.12em] text-cream/60 md:text-[0.8125rem]">
-                    {stat.label}
-                  </dt>
-                  <dd className="display-2 text-gold">
-                    <Counter value={stat.value} suffix={stat.suffix} />
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
+          <LifecycleGrid tone="dark" />
         </div>
 
         <Reveal delay={1} className="mt-8 border-t border-white/12 pt-5 md:mt-24 md:pt-8">

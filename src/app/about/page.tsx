@@ -10,9 +10,8 @@ import ParallaxImage from "@/components/ui/ParallaxImage";
 import { ButtonLink } from "@/components/ui/Button";
 import PersonCard from "@/components/cards/PersonCard";
 import ProcessList from "@/components/about/ProcessList";
-import StatsBand from "@/components/about/StatsBand";
+import LifecycleGrid from "@/components/LifecycleGrid";
 import GuidingPrinciples from "@/components/about/GuidingPrinciples";
-import BusinessLifecycle from "@/components/about/BusinessLifecycle";
 
 export const metadata: Metadata = {
   title: "About The Firm",
@@ -133,10 +132,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2 — The practice in numbers */}
-      <StatsBand />
-
-      {/* 3 — Across the business lifecycle */}
+      {/* 2 — Across the business lifecycle */}
       <section className="bg-cream py-12 md:py-28">
         <div className="container-page">
           <SectionHeading
@@ -144,11 +140,11 @@ export default function AboutPage() {
             title="Across the business lifecycle"
             description="Four stages of work, held by the same team. Most clients come to us at one of them and stay with us through the rest."
           />
-          <BusinessLifecycle />
+          <LifecycleGrid className="mt-8 md:mt-16 lg:grid-cols-4" />
         </div>
       </section>
 
-      {/* 4 — How we work */}
+      {/* 3 — How we work */}
       <section className="bg-cream pb-12 md:pb-28">
         <div className="container-page">
           <SectionHeading
@@ -160,7 +156,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5 — What guides us */}
+      {/* 4 — What guides us */}
       <section className="bg-cream pb-12 md:pb-28">
         <div className="container-page">
           <SectionHeading
@@ -172,7 +168,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6 — The journey with Backbone Counsels */}
+      {/* 5 — The journey with Backbone Counsels */}
       <section className="bg-cream py-12 md:py-28">
         <div className="container-page">
           <SectionHeading
@@ -213,7 +209,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 7 — People */}
+      {/* 6 — People */}
       <section className="bg-cream pb-12 md:pb-28">
         <div className="container-page">
           <SectionHeading

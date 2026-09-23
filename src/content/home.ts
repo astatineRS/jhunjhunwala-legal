@@ -1,20 +1,30 @@
-export const stats = [
-  { value: 10, suffix: "+", label: "Years in practice" },
-  { value: 1000, suffix: "+", label: "Matters resolved" },
-  { value: 4000, suffix: "+", label: "People represented" },
-  { value: 95, suffix: "%", label: "Successful outcomes" },
-];
-
-export const mandates = [
-  "Represented a manufacturing group in a commercial dispute concerning supply obligations.",
-  "Advised a technology company on a Series A investment and shareholder arrangements.",
-  "Acted for an education institution on governance restructuring and policy framework.",
-  "Advised founders on a co-founder separation and equity reallocation.",
-  "Represented a distributor in an arbitration concerning territory and termination.",
-  "Advised a SaaS business on DPDP compliance and cross-border vendor contracting.",
-  "Acted on the acquisition of a logistics business by way of slump sale.",
-  "Represented shareholders in an oppression and mismanagement dispute.",
-];
+/** The four stages the firm's work is organised around. */
+export const lifecycle = [
+  {
+    number: "01",
+    title: "Business Formation",
+    description:
+      "Incorporation, entity structuring and founder arrangements, so the business starts on a footing it will not have to unwind later.",
+  },
+  {
+    number: "02",
+    title: "Growth & Governance",
+    description:
+      "Commercial contracts, internal policies and governance that keep pace as the business takes on people, customers and obligations.",
+  },
+  {
+    number: "03",
+    title: "Investment & Transactions",
+    description:
+      "Fundraises, shareholder arrangements, acquisitions and founder exits, from term sheet through diligence to closing.",
+  },
+  {
+    number: "04",
+    title: "Protection & Risk",
+    description:
+      "Intellectual property, data privacy and early dispute management, protecting what the business has already built.",
+  },
+] as const;
 
 export type Client = {
   name: string;
