@@ -190,6 +190,17 @@
   text-wrap: pretty;
 }
 
+/* Static, swipeable card rails: native horizontal scrolling, no visible bar. */
+@utility swipe-rail {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Marquee track (client mandates, trusted-by row) */
 @keyframes marquee-x {
   from {

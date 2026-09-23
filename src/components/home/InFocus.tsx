@@ -15,7 +15,13 @@ function PosterCard({ item }: { item: InFocusItem }) {
   const person = getPerson(item.personSlug);
 
   return (
-    <article className="group relative aspect-[5/6] overflow-hidden rounded-[var(--radius-card)] bg-teal shadow-[var(--shadow-card)]">
+    <a
+      href={item.href}
+      target="_blank"
+      rel="noreferrer noopener"
+      aria-label={`${item.lead} ${item.client} ${item.detail} — read the update on LinkedIn`}
+      className="group relative block aspect-[5/6] overflow-hidden rounded-[var(--radius-card)] bg-teal shadow-[var(--shadow-card)] transition-shadow duration-500 ease-[var(--ease-out-expo)] hover:shadow-[var(--shadow-lift)]"
+    >
       <span className="absolute left-[3%] top-[2.5%] aspect-square w-[26%] rounded-full bg-gold" aria-hidden />
 
       <p className="absolute right-[4%] top-[4%] text-right font-brand text-[0.5rem] font-bold uppercase leading-[1.15] tracking-[0.06em] text-cream">
@@ -41,7 +47,9 @@ function PosterCard({ item }: { item: InFocusItem }) {
 
       <div className="absolute inset-x-[1.5%] bottom-[24%] top-[26%] overflow-hidden bg-gold px-[5%] py-[4%]">
         <p className="text-justify font-display text-[0.6875rem] leading-[1.45] text-white">
-          {item.lead} <strong className="font-bold uppercase">{item.client}</strong> {item.detail}
+          {item.lead} <strong className="font-bold uppercase">{item.client}</strong>
+          {item.detail.startsWith(",") ? "" : " "}
+          {item.detail}
         </p>
       </div>
 
@@ -60,7 +68,7 @@ function PosterCard({ item }: { item: InFocusItem }) {
           />
         </div>
       ) : null}
-    </article>
+    </a>
   );
 }
 

@@ -1,24 +1,19 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 import { people } from "@/content/people";
-import AutoCarousel, { type CarouselHandle } from "@/components/ui/AutoCarousel";
 import { ButtonLink } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "@/components/ui/icons";
+import { ArrowUpRight } from "@/components/ui/icons";
 
 const lead = people[0];
-const rail = people.slice(1, 7);
 
+/**
+ * Founder-led introduction to the practice. The member tiles were pulled for
+ * launch — the full bench lives on the People page — so this section is a
+ * single feature card and a route through to it.
+ */
 export default function PeopleStrip() {
-  const controls = useRef<CarouselHandle>(null);
-
-  const control =
-    "grid size-10 shrink-0 place-items-center rounded-full bg-cream text-teal transition-all duration-500 ease-[var(--ease-out-expo)] hover:bg-gold hover:text-white";
-
   return (
     <section className="bg-teal py-12 md:py-28">
       <div className="container-page">
@@ -27,7 +22,7 @@ export default function PeopleStrip() {
             <Reveal>
               <p className="eyebrow mb-3 text-cream/70">A legal partner, not just a legal service</p>
             </Reveal>
-            <SplitText as="h2" text="Meet Our People" className="display-2 text-cream" />
+            <SplitText as="h2" text="The Backbone Protocol" className="display-2 text-cream" />
           </div>
           <Reveal delay={1} className="md:max-w-md md:pb-2">
             <p className="text-[0.9375rem] leading-relaxed text-cream/85 md:text-[1.0625rem]">
@@ -73,53 +68,6 @@ export default function PeopleStrip() {
               </p>
             </div>
           </Link>
-        </Reveal>
-
-        <Reveal delay={1} className="mt-6 flex items-center gap-3 md:mt-8 md:gap-4">
-          <button
-            type="button"
-            onClick={() => controls.current?.prev()}
-            aria-label="Previous team members"
-            className={control}
-          >
-            <ArrowLeft className="size-4" />
-          </button>
-
-          <AutoCarousel
-            controls={controls}
-            speed={26}
-            gap={20}
-            className="min-w-0 flex-1"
-            ariaLabel="Team members"
-            itemClassName="w-[9.5rem] sm:w-[11rem]"
-            items={rail.map((person) => (
-              <Link
-                key={person.slug}
-                href={`/people/${person.slug}`}
-                className="group relative block aspect-[4/5] overflow-hidden rounded-[10px] md:aspect-[3/4]"
-              >
-                <Image
-                  src={person.image}
-                  alt={person.name}
-                  fill
-                  sizes="(max-width: 640px) 40vw, 12rem"
-                  className="object-cover transition-transform duration-[1.1s] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
-                />
-                <span className="absolute inset-x-2 bottom-2 truncate rounded-[6px] bg-cream/95 px-2 py-1.5 text-center font-display text-[0.8125rem] font-semibold leading-tight text-ink backdrop-blur transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-1">
-                  {person.name}
-                </span>
-              </Link>
-            ))}
-          />
-
-          <button
-            type="button"
-            onClick={() => controls.current?.next()}
-            aria-label="Next team members"
-            className={control}
-          >
-            <ArrowRight className="size-4" />
-          </button>
         </Reveal>
 
         <Reveal delay={2} className="mt-6 md:mt-12 flex justify-center">

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
-import MandateMarquee from "@/components/home/MandateMarquee";
+import TrustedStrip from "@/components/home/TrustedStrip";
 import AboutBand from "@/components/home/AboutBand";
 import InFocus from "@/components/home/InFocus";
 import PracticeCarousel from "@/components/home/PracticeCarousel";
-import IndustriesBand from "@/components/home/IndustriesBand";
+import QuoteBand from "@/components/home/QuoteBand";
 import PeopleStrip from "@/components/home/PeopleStrip";
 import ClientJourney from "@/components/home/ClientJourney";
 import Testimonials from "@/components/home/Testimonials";
@@ -22,11 +22,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <MandateMarquee />
+      <TrustedStrip />
       <AboutBand />
       <InFocus />
       <PracticeCarousel />
-      <IndustriesBand />
+      <QuoteBand />
       <PeopleStrip />
       <ClientJourney />
       <Testimonials />

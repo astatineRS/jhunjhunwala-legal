@@ -12,17 +12,17 @@ import PersonCard from "@/components/cards/PersonCard";
 import ProcessList from "@/components/about/ProcessList";
 import StatsBand from "@/components/about/StatsBand";
 import GuidingPrinciples from "@/components/about/GuidingPrinciples";
-import IndustryGrid from "@/components/about/IndustryGrid";
+import BusinessLifecycle from "@/components/about/BusinessLifecycle";
 
 export const metadata: Metadata = {
   title: "About The Firm",
   description:
-    "Jhunjhunwala Legal is a Kolkata practice advising founders, businesses and institutions on corporate, commercial and transactional matters — and on the disputes that sometimes follow.",
+    "Jhunjhunwala Legal is a multi-service, business-oriented law firm founded in 2026, advising founders, entrepreneurs, startups, investors and growth businesses across the legal matters that shape their businesses.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: `About The Firm — ${site.name}`,
     description:
-      "A practice built on clear advice, careful preparation, and judgment you can act on.",
+      "A business-first practice advising founders, investors and growth businesses across the business lifecycle.",
     url: `${site.url}/about`,
   },
 };
@@ -34,7 +34,7 @@ export default function AboutPage() {
     <>
       <PageHero
         title="About The Firm"
-        subtitle="A practice built on clear advice, careful preparation, and judgment you can act on."
+        subtitle="A multi-service, business-oriented firm advising founders, entrepreneurs, investors and growth businesses."
         image="/images/band-gavel.jpg"
       />
 
@@ -47,41 +47,70 @@ export default function AboutPage() {
             </Reveal>
             <SplitText
               as="h2"
-              text="A practice built around the decision in front of you"
+              text="Counsel that begins with the business it serves"
               className="display-2 max-w-xl capitalize text-ink"
             />
 
             <div className="mt-5 md:mt-7 flex flex-col gap-4 md:gap-5 text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/70">
               <Reveal delay={1}>
                 <p>
-                  Legal matters rarely come with simple answers. They involve people, businesses,
-                  relationships, money, and decisions that can have lasting consequences.
+                  Jhunjhunwala Legal (JJL) is a multi-service business-oriented law firm founded in
+                  2026, advising founders, entrepreneurs, startups, investors and growth businesses
+                  on the legal matters that shape their businesses, with the aim of serving as their
+                  trusted Business and Legal Guardian as they build and grow.
                 </p>
               </Reveal>
               <Reveal delay={2}>
                 <p>
-                  Our role is to understand the situation fully, explain what matters, and provide
-                  practical legal guidance built around your specific needs.
+                  Our practice covers Corporate &amp; Commercial, Startup, Founder &amp; Investor
+                  Advisory, Investment &amp; Transactional Advisory, Commercial Contracts, Technology
+                  &amp; Data Privacy, and Intellectual Property. We work across the business
+                  lifecycle — from setting up and structuring a business to raising capital, entering
+                  transactions, managing commercial relationships, protecting intellectual property
+                  and navigating legal risk.
                 </p>
               </Reveal>
               <Reveal delay={3}>
                 <p>
-                  The firm was founded in Kolkata for clients who would rather understand their own
-                  position than simply be told what to sign. We act for founders, family businesses,
-                  institutions and established companies across corporate, commercial and
-                  transactional work — and on the disputes that occasionally follow from it.
+                  We approach legal work with a business-first perspective. A legal issue rarely
+                  exists in isolation; it can affect a transaction, a commercial relationship, a
+                  funding decision or the next stage of growth. Good legal counsel therefore begins
+                  with understanding the business itself.
                 </p>
               </Reveal>
               <Reveal delay={4}>
                 <p>
-                  We keep the team deliberately small. The lawyer who hears your matter is the lawyer
-                  who works on it, which is why our advice tends to arrive earlier, in plainer
-                  language, and with an honest view of what it will cost to act on.
+                  We understand what our clients are building, what they are trying to achieve, and
+                  what the law requires — and we know how to bring the two together.
+                </p>
+              </Reveal>
+              <Reveal delay={5}>
+                <p>
+                  We are particularly conscious of the realities of building a startup. Early-stage
+                  businesses operate with limited resources, changing priorities and ambitious
+                  timelines. Legal support should therefore be accessible early, practical in its
+                  application and capable of growing with the business.
                 </p>
               </Reveal>
             </div>
 
-            <Reveal delay={5} className="mt-6 md:mt-9">
+            <Reveal delay={6} className="mt-6 md:mt-8">
+              <blockquote className="border-l-2 border-gold pl-4 md:pl-6">
+                <p className="font-display text-[1.25rem] md:text-[1.5rem] font-semibold leading-snug text-ink">
+                  Law should be infrastructure, not an interruption.
+                </p>
+              </blockquote>
+            </Reveal>
+
+            <Reveal delay={7} className="mt-6 md:mt-8">
+              <p className="text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/70">
+                Our aim is to make commercially sound legal counsel more accessible and affordable to
+                the people building India&rsquo;s next generation of businesses, while growing with
+                them as their legal needs evolve.
+              </p>
+            </Reveal>
+
+            <Reveal delay={8} className="mt-6 md:mt-9">
               <ButtonLink href="/expertise" variant="ghost">
                 See What We Do
               </ButtonLink>
@@ -107,8 +136,20 @@ export default function AboutPage() {
       {/* 2 — The practice in numbers */}
       <StatsBand />
 
-      {/* 3 — How we work */}
+      {/* 3 — Across the business lifecycle */}
       <section className="bg-cream py-12 md:py-28">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="What We Do"
+            title="Across the business lifecycle"
+            description="Four stages of work, held by the same team. Most clients come to us at one of them and stay with us through the rest."
+          />
+          <BusinessLifecycle />
+        </div>
+      </section>
+
+      {/* 4 — How we work */}
+      <section className="bg-cream pb-12 md:pb-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="How We Work"
@@ -119,7 +160,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4 — What guides us */}
+      {/* 5 — What guides us */}
       <section className="bg-cream pb-12 md:pb-28">
         <div className="container-page">
           <SectionHeading
@@ -131,21 +172,49 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5 — Industries */}
-      <section className="bg-teal py-12 md:py-28">
+      {/* 6 — The journey with Backbone Counsels */}
+      <section className="bg-cream py-12 md:py-28">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Industries We Serve"
-            title="Legal insight across industries"
-            description="We understand the legal and commercial considerations that shape businesses across sectors."
-            tone="light"
+            eyebrow="Where We Come From"
+            title="The Journey with Backbone Counsels"
           />
-          <IndustryGrid />
+
+          <div className="mt-6 md:mt-12 grid gap-4 md:gap-10 text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/70 lg:grid-cols-2">
+            <Reveal delay={1}>
+              <p>
+                Jhunjhunwala Legal builds on the foundation laid by Backbone Counsels, a legal
+                vertical established by our Founder with a clear belief that legal counsel should
+                function as an integral part of a business, rather than an intervention after
+                problems arise. Through Backbone Counsels, we worked closely with founders and
+                growing businesses across their legal, commercial and strategic requirements,
+                developing an approach centred on understanding the business, anticipating legal
+                risks and providing practical counsel.
+              </p>
+            </Reveal>
+            <Reveal delay={2}>
+              <p>
+                As the practice evolved, so did the scope of the work and the ambition behind it.
+                Jhunjhunwala Legal represents the next stage of that journey, bringing together the
+                experience, relationships and business-first approach developed through Backbone
+                Counsels with a broader multi-service practice. What began as a focused legal
+                practice has grown into a firm built to serve those who build, back and grow
+                businesses, across their legal needs and through every stage of their journey.
+              </p>
+            </Reveal>
+          </div>
+
+          <Reveal delay={3} className="mt-6 md:mt-10">
+            <p className="max-w-2xl border-l-2 border-gold pl-4 font-display text-[1.125rem] md:text-[1.375rem] font-semibold leading-snug text-ink md:pl-6">
+              The name has changed. The philosophy has not. Jhunjhunwala Legal carries forward the
+              foundation of Backbone Counsels while building towards what comes next.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* 6 — People */}
-      <section className="bg-cream py-12 md:py-28">
+      {/* 7 — People */}
+      <section className="bg-cream pb-12 md:pb-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Our Team"

@@ -3,15 +3,12 @@ import ArrowBadge from "@/components/ui/ArrowBadge";
 import Marquee from "@/components/ui/Marquee";
 
 /**
- * Recent-mandate strip. Sits across the hero boundary on a negative margin, so
- * the pills read as floating over the photograph and settling onto the page.
+ * Recent-mandate strip. Rendered inside the About band, so it carries no
+ * offset of its own — the host section owns the spacing.
  */
 export default function MandateMarquee() {
   return (
-    <section
-      aria-label="Recent mandates"
-      className="relative z-10 -mt-[6rem] md:-mt-[7.5rem]"
-    >
+    <div aria-label="Recent mandates">
       <Marquee duration={70}>
         {mandates.map((mandate) => (
           <article
@@ -23,6 +20,6 @@ export default function MandateMarquee() {
           </article>
         ))}
       </Marquee>
-    </section>
+    </div>
   );
 }

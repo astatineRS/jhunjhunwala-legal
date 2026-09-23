@@ -21,7 +21,6 @@ export const nav = [
   { label: "About The Firm", href: "/about" },
   { label: "Expertise", href: "/expertise" },
   { label: "People", href: "/people" },
-  { label: "Resources", href: "/resources" },
   { label: "Careers", href: "/careers" },
 ] as const;
 
@@ -47,9 +46,8 @@ export const footerColumns = [
     ],
   },
   {
-    heading: "Resources",
+    heading: "Legal",
     links: [
-      { label: "Insights", href: "/resources" },
       { label: "FAQs", href: "/#faqs" },
       { label: "Disclaimer", href: "/disclaimer" },
       { label: "Privacy Policy", href: "/privacy-policy" },

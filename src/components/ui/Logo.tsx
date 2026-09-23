@@ -34,12 +34,19 @@ export default function Logo({
       />
       <span
         className={cn(
-          "font-brand flex flex-col items-center font-bold uppercase leading-[1.05] tracking-[0.04em] transition-[font-size] duration-500 ease-[var(--ease-out-expo)]",
+          "font-brand flex flex-col items-stretch font-bold uppercase leading-[1.05] tracking-[0.04em] transition-[font-size] duration-500 ease-[var(--ease-out-expo)]",
           compact ? "text-[0.6875rem]" : "text-[0.8125rem]",
         )}
       >
         <span>Jhunjhunwala</span>
-        <span>Legal</span>
+        {/* The short second line is stretched to the width of the first with a
+            rule either side, so the lockup reads as a block rather than a
+            centred word floating in white space. */}
+        <span className="flex items-center gap-[0.3em]">
+          <span aria-hidden className="h-px flex-1 bg-current" />
+          <span>Legal</span>
+          <span aria-hidden className="h-px flex-1 bg-current" />
+        </span>
       </span>
     </Link>
   );

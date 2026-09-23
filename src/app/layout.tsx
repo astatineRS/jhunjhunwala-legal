@@ -62,7 +62,10 @@ const organisationLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="antialiased">
+      {/* Browser extensions (ColorZilla, Grammarly, password managers) inject
+          attributes onto <body> before React hydrates; suppressing the warning
+          here covers only this element's attributes, not the tree below it. */}
+      <body className="antialiased" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationLd) }}

@@ -11,7 +11,7 @@ import RoleList from "@/components/careers/RoleList";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Open roles and internships at Jhunjhunwala Legal — corporate, disputes and technology work with real responsibility from the first month.",
+    "There are no open positions at Jhunjhunwala Legal at present. We continue to read speculative applications for our Kolkata office.",
   alternates: { canonical: "/careers" },
 };
 
@@ -41,7 +41,7 @@ export default function CareersPage() {
     <>
       <PageHero
         title="Careers"
-        subtitle="We are a small firm that gives people real work early. If that suits you, we would like to hear from you."
+        subtitle="We are a small firm that gives people real work early. We are not hiring in Kolkata at present, but we still read every application that reaches us."
         image="/images/band-gavel.jpg"
       />
 
@@ -82,13 +82,14 @@ export default function CareersPage() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-16">
             <div className="max-w-2xl">
               <Reveal>
-                <p className="eyebrow mb-3 md:mb-4 text-teal">Open roles</p>
+                <p className="eyebrow mb-3 md:mb-4 text-teal">Vacancies</p>
               </Reveal>
-              <SplitText as="h2" text="Currently hiring" className="display-2 text-ink" />
+              <SplitText as="h2" text="No current openings" className="display-2 text-ink" />
             </div>
             <Reveal delay={1} className="md:max-w-sm md:pb-3">
               <p className="text-balance-pretty text-[0.9375rem] md:text-base leading-relaxed text-ink/65">
-                Select a role to see the brief and apply. Applications go straight to the partners.
+                Any vacancy we open is published here first, with the brief and the person you would
+                report to set out in full.
               </p>
             </Reveal>
           </div>
@@ -105,7 +106,7 @@ export default function CareersPage() {
             <Reveal>
               <p className="eyebrow mb-3 md:mb-4 text-teal">How hiring works</p>
             </Reveal>
-            <SplitText as="h2" text="Four steps, no surprises" className="display-2 text-ink" />
+            <SplitText as="h2" text="What happens when we are hiring" className="display-2 text-ink" />
           </div>
 
           <ol className="mt-8 md:mt-12 flex flex-col">
@@ -134,11 +135,12 @@ export default function CareersPage() {
               <div className="max-w-xl">
                 <p className="eyebrow text-gold">Speculative applications</p>
                 <h2 className="display-3 mt-2 md:mt-3 text-cream">
-                  No listing that fits? Write to us anyway.
+                  Nothing open today. Write to us anyway.
                 </h2>
                 <p className="mt-2 md:mt-3 text-balance-pretty text-[0.9375rem] md:text-base leading-relaxed text-cream/75">
-                  We keep speculative applications on file for a year and read them again whenever a practice
-                  starts hiring. Tell us what you want to work on and send one piece of writing you are proud of.
+                  We keep speculative applications on file for a year and read them again whenever the
+                  firm starts hiring. Tell us what you want to work on and send one piece of writing
+                  you are proud of.
                 </p>
               </div>
               <ButtonLink
@@ -154,8 +156,8 @@ export default function CareersPage() {
       </section>
 
       <CtaBand
-        title="Not seeing the right role?"
-        body="If you would rather talk before applying, write to us and we will arrange a call with the partner who leads that practice."
+        title="Would rather talk first?"
+        body="If you would like to understand the work before you apply, write to us and we will arrange a call with the lawyer who leads that practice."
         cta="Write To Us"
         href="/contact"
       />

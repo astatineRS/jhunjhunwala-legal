@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { stats, trustedBy } from "@/content/home";
+import { stats } from "@/content/home";
 import { ButtonLink } from "@/components/ui/Button";
 import Counter from "@/components/ui/Counter";
-import ClientLogo from "@/components/ui/ClientLogo";
-import Marquee from "@/components/ui/Marquee";
+import MandateMarquee from "@/components/home/MandateMarquee";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
 
@@ -72,18 +71,9 @@ export default function AboutBand() {
         </div>
 
         <Reveal delay={1} className="mt-8 border-t border-white/12 pt-5 md:mt-24 md:pt-8">
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-10">
-            <p className="eyebrow shrink-0 text-cream/50">Trusted By</p>
-            <Marquee duration={40} className="min-w-0 flex-1">
-              {trustedBy.map((client) => (
-                <span
-                  key={client.name}
-                  className="mr-12 flex items-center text-cream/70 transition-opacity duration-500 hover:text-cream"
-                >
-                  <ClientLogo client={client} />
-                </span>
-              ))}
-            </Marquee>
+          <div className="flex flex-col gap-3 md:gap-5">
+            <p className="eyebrow shrink-0 text-cream/50">Recent Mandates</p>
+            <MandateMarquee />
           </div>
         </Reveal>
       </div>

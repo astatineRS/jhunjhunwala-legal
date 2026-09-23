@@ -46,7 +46,7 @@ function matchPracticeArea(focus: string) {
   );
 }
 
-const linkedIn = site.socials.find((social) => social.label === "LinkedIn")?.href ?? "https://www.linkedin.com/";
+const firmLinkedIn = site.socials.find((social) => social.label === "LinkedIn")?.href ?? "https://www.linkedin.com/";
 
 export default async function PersonPage({ params }: Params) {
   const { slug } = await params;
@@ -122,7 +122,7 @@ export default async function PersonPage({ params }: Params) {
                     <ArrowBadge tone="teal" size={34} />
                   </a>
                   <a
-                    href={linkedIn}
+                    href={person.linkedin ?? firmLinkedIn}
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label={`${person.name} on LinkedIn`}

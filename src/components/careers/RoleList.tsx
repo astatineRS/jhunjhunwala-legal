@@ -8,10 +8,39 @@ import { cn } from "@/lib/utils";
 import { ChevronDown } from "@/components/ui/icons";
 import ArrowBadge from "@/components/ui/ArrowBadge";
 
-/** Expandable list of open roles. One row open at a time; rows are plain buttons. */
+/**
+ * Expandable list of open roles. One row open at a time; rows are plain buttons.
+ * With no roles open, the list is replaced by a plain notice and a route to a
+ * speculative application.
+ */
 export default function RoleList({ roles, email }: { roles: Role[]; email: string }) {
   const [open, setOpen] = useState<number | null>(0);
   const baseId = useId();
+
+  if (roles.length === 0) {
+    const subject = encodeURIComponent("Speculative application");
+    const body = encodeURIComponent(
+      `Dear Jhunjhunwala Legal,\n\nI would like to be considered for a position when one opens.\n\nI have attached my CV and a short writing sample.\n\nKind regards,\n`,
+    );
+
+    return (
+      <div className="rounded-[var(--radius-card)] border border-ink/10 bg-cream px-5 py-7 md:px-10 md:py-10">
+        <h3 className="display-3 text-ink">No positions open in Kolkata at present</h3>
+        <p className="mt-2.5 md:mt-3 max-w-2xl text-balance-pretty text-[0.9375rem] md:text-base leading-relaxed text-ink/70">
+          We are not recruiting for the Kolkata office at the moment. When that changes, the role and
+          its brief will be published on this page. Until then, we are glad to read an application
+          sent on its own terms and to keep it on file.
+        </p>
+        <a
+          href={`mailto:${email}?subject=${subject}&body=${body}`}
+          className="group mt-6 md:mt-8 inline-flex items-center gap-3 rounded-full bg-teal py-2 pl-6 pr-2 text-[0.9375rem] font-medium text-white transition-colors duration-400 ease-[var(--ease-out-expo)] hover:bg-teal-deep md:pl-7"
+        >
+          <span>Send a speculative application</span>
+          <ArrowBadge tone="white" size={34} />
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-2.5 md:gap-3">

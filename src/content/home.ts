@@ -18,21 +18,17 @@ export const mandates = [
 
 export type Client = {
   name: string;
-  /** Path to a brand SVG in /public/logos. Falls back to a wordmark lockup. */
-  logo?: string;
-  /** Rendered height of the logo file, in pixels. */
-  logoHeight?: number;
+  /** Supplied brand artwork in /public/logos. */
+  logo: string;
 };
 
 export const trustedBy: Client[] = [
-  { name: "Syinq", logo: "/logos/syinq.svg", logoHeight: 38 },
-  { name: "Meridian Industries" },
-  { name: "Calcutta Steelworks" },
-  { name: "Northbridge Education Trust" },
-  { name: "Vector Labs" },
-  { name: "Sundara Hospitality" },
-  { name: "Harbourline Logistics" },
-  { name: "Anant Textiles" },
+  { name: "Syinq", logo: "/logos/syinq.svg" },
+  { name: "Excelera Touchstone Consulting", logo: "/logos/excelera.png" },
+  { name: "INIK", logo: "/logos/inik.jpg" },
+  { name: "Runway Avenue", logo: "/logos/runway-avenue.png" },
+  { name: "Sort My Prep", logo: "/logos/sort-my-prep.png" },
+  { name: "White Magic", logo: "/logos/white-magic.png" },
 ];
 
 export type InFocusItem = {
@@ -45,41 +41,47 @@ export type InFocusItem = {
   detail: string;
   /** Person from `people` who led the matter. */
   personSlug: string;
+  /** LinkedIn post the update was published as. */
+  href: string;
 };
 
-/** Poster cards for the In Focus band — anonymised versions of recent mandates. */
+/** Poster cards for the In Focus band — the firm's published client updates. */
 export const inFocus: InFocusItem[] = [
   {
-    id: "commercial-dispute",
-    lead: "Recently represented",
-    client: "a manufacturing group",
+    id: "health-tech-consultant",
+    lead: "Handled the contractual engagement of",
+    client: "a health-tech company",
     detail:
-      "in a commercial dispute concerning supply obligations under a long-term vendor arrangement, advising on contractual remedies, notice strategy and the practical route to a negotiated resolution.",
-    personSlug: "meera-raghunathan",
+      "with a consultant, including the structuring and documentation of the arrangement.",
+    personSlug: "samarth-jhunjhunwala",
+    href: "https://lnkd.in/p/gSBFQXyb",
   },
   {
-    id: "series-a",
-    lead: "Recently advised",
-    client: "a technology company",
+    id: "robotics-llp",
+    lead: "Led the incorporation and LLP structuring of",
+    client: "a Robotics and AI company",
     detail:
-      "on a Series A investment and the accompanying shareholder arrangements, covering term sheet negotiation, transaction documentation and the governance framework agreed with incoming investors.",
-    personSlug: "kabir-sengupta",
+      ", including preparation of documentation and the regulatory requirements for commencement of operations.",
+    personSlug: "samarth-jhunjhunwala",
+    href: "https://lnkd.in/p/gR2V7Bwh",
   },
   {
-    id: "dpdp-compliance",
-    lead: "Recently advised",
-    client: "a SaaS business",
+    id: "founder-exit",
+    lead: "Handled a founder exit for",
+    client: "a mobility technology company",
     detail:
-      "on its obligations under the Digital Personal Data Protection framework, reviewing consent, retention and cross-border vendor contracting against the commitments made to its own customers.",
-    personSlug: "rohan-das",
+      ", including transaction structuring, stakeholder arrangements and related documentation.",
+    personSlug: "samarth-jhunjhunwala",
+    href: "https://lnkd.in/p/gjPKs7Ch",
   },
   {
-    id: "slump-sale",
-    lead: "Recently acted for",
-    client: "the acquirer of a logistics business",
+    id: "nda-review",
+    lead: "Undertook a detailed review of a Non-Disclosure Agreement for",
+    client: "a staffing and workforce solutions company",
     detail:
-      "on a slump sale, from diligence and valuation inputs through to the business transfer agreement, employee transition and the closing mechanics agreed between the parties.",
-    personSlug: "aditya-jhunjhunwala",
+      ", identifying and addressing key legal and commercial risks.",
+    personSlug: "samarth-jhunjhunwala",
+    href: "https://lnkd.in/p/gzuG43si",
   },
 ];
 
