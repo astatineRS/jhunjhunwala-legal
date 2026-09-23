@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { EASE_OUT_EXPO } from "@/lib/motion";
+import { useReducedMotionSafe } from "@/lib/reduced-motion";
 import SplitText from "@/components/ui/SplitText";
 import { ButtonLink } from "@/components/ui/Button";
 
@@ -17,7 +18,7 @@ import { ButtonLink } from "@/components/ui/Button";
  */
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionSafe();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "16%"]);
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);

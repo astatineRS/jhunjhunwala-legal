@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { EASE_OUT_EXPO } from "@/lib/motion";
+import { useReducedMotionSafe } from "@/lib/reduced-motion";
 import { cn } from "@/lib/utils";
 
 /**
@@ -25,7 +26,7 @@ export default function DetailHeroImage({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = useReducedMotionSafe();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
