@@ -17,8 +17,8 @@ export default function Footer() {
         <Reveal className="max-w-sm">
           <Logo tone="light" />
           <p className="mt-4 text-[0.9375rem] leading-relaxed text-cream/75 md:mt-6 md:text-[0.975rem]">
-            Legal matters rarely come with simple answers. They involve people, businesses, relationships, money, and
-            decisions that can have lasting consequences.
+            We at Jhunjhunwala Legal understand what you&rsquo;re trying to build, we understand what the law
+            requires, and we know how to bring the two together.
           </p>
 
           <ul className="mt-5 space-y-2.5 text-[0.875rem] md:mt-7 md:space-y-3 md:text-[0.9375rem] text-cream/85">

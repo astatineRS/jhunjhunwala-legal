@@ -1,6 +1,6 @@
 import { trustedBy } from "@/content/home";
 import ClientLogo from "@/components/ui/ClientLogo";
-import Marquee from "@/components/ui/Marquee";
+import Ticker from "@/components/ui/Ticker";
 
 /**
  * Client logos, carried across the hero boundary on a negative margin so the
@@ -12,14 +12,13 @@ export default function TrustedStrip() {
       <div className="container-page mb-3 md:mb-4">
         <p className="eyebrow text-cream/60">Trusted By</p>
       </div>
-
-      <Marquee duration={45}>
+      <Ticker speed={38} ariaLabel="Clients the firm acts for">
         {trustedBy.map((client) => (
           <span key={client.name} className="mr-4 flex items-center md:mr-6">
             <ClientLogo client={client} />
           </span>
         ))}
-      </Marquee>
+      </Ticker>
     </section>
   );
 }

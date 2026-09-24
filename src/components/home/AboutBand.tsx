@@ -29,17 +29,20 @@ export default function AboutBand() {
 
             <Reveal delay={1}>
               <p className="mt-4 max-w-xl text-balance-pretty text-[0.9375rem] leading-relaxed text-cream/75 md:mt-6 md:text-[1.0625rem]">
-                Legal matters rarely come with simple answers. They arrive in the middle of a
-                business, a family or a plan already in motion, and the decision in front of you
-                usually carries consequences in more than one direction.
+                Jhunjhunwala Legal (JJL) is a multi-service business-oriented law firm founded in
+                2026, advising founders, entrepreneurs, startups, investors and growth businesses on
+                the legal matters that shape their businesses, with the aim of serving as their
+                trusted Business and Legal Guardian as they build and grow.
               </p>
             </Reveal>
             <Reveal delay={2}>
               <p className="mt-3 max-w-xl text-balance-pretty text-[0.9375rem] leading-relaxed text-cream/75 md:mt-5 md:text-[1.0625rem]">
-                Our role is to understand the situation fully, explain the position in language you
-                can act on, and help you decide how to move forward. Sometimes that means drafting,
-                negotiating or filing. Often it means telling you plainly what the law allows and
-                what it will take to establish it.
+                Our practice covers Corporate &amp; Commercial, Startup, Founder &amp; Investor
+                Advisory, Investment &amp; Transactional Advisory, Commercial Contracts, Technology
+                &amp; Data Privacy, and Intellectual Property. We work across the business lifecycle
+                &mdash; from setting up and structuring a business to raising capital, entering
+                transactions, managing commercial relationships, protecting intellectual property
+                and navigating legal risk.
               </p>
             </Reveal>
 

@@ -39,6 +39,7 @@ export const trustedBy: Client[] = [
   { name: "Runway Avenue", logo: "/logos/runway-avenue.png" },
   { name: "Sort My Prep", logo: "/logos/sort-my-prep.png" },
   { name: "White Magic", logo: "/logos/white-magic.png" },
+  { name: "Care Ease", logo: "/logos/care-ease.png" },
 ];
 
 export type InFocusItem = {
