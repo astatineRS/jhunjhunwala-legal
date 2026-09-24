@@ -19,7 +19,7 @@ export const practiceAreas: PracticeArea[] = [
     teaser:
       "Corporate structuring, compliance, governance and ongoing business counsel.",
     journey: "Set Up",
-    image: "/images/practice/practice-01.jpg",
+    image: "/images/practice/corporate-and-commercial.jpg",
     intro: [
       "Businesses face legal questions long before they face disputes. How a company is incorporated, who controls it, how decisions are recorded and how obligations are documented all shape what happens later.",
       "We advise promoters, boards and management teams on entity structuring, shareholder arrangements, statutory compliance and the routine corporate decisions that keep a business on stable ground.",
@@ -43,7 +43,7 @@ export const practiceAreas: PracticeArea[] = [
     teaser:
       "Legal counsel for founders, startups, angel investors and portfolio businesses.",
     journey: "Structure",
-    image: "/images/practice/practice-02.jpg",
+    image: "/images/practice/startup-founder-and-investor-advisory.jpg",
     intro: [
       "Early-stage companies move quickly, and legal structure often lags behind the business. The cost of that gap usually appears at the next round, during diligence, or when a founder leaves.",
       "We work with founders and startups on formation and early-stage structuring, co-founder and shareholder arrangements, ESOP documentation and the legal health checks that keep a company fundable, keeping the paperwork honest about what was actually agreed.",
@@ -66,7 +66,7 @@ export const practiceAreas: PracticeArea[] = [
     teaser:
       "Fundraising, investments, due diligence, SHA, SSA, SPA and transaction execution.",
     journey: "Fund",
-    image: "/images/practice/practice-03.jpg",
+    image: "/images/practice/investment-and-transactional-advisory.jpg",
     intro: [
       "Transactions concentrate risk into a short window. Diligence findings, indemnity limits, conditions precedent and closing sequence decide how much of that risk you actually carry.",
       "We advise on fundraising and investment transactions (angel, seed and venture capital rounds, primary and secondary share transactions) from the first term sheet through to post-closing obligations, with a focus on what the documents will mean if the relationship sours.",
@@ -89,7 +89,7 @@ export const practiceAreas: PracticeArea[] = [
     teaser:
       "Drafting, reviewing and negotiating contracts that support day-to-day business.",
     journey: "Contract",
-    image: "/images/practice/practice-01.jpg",
+    image: "/images/practice/commercial-contracts.jpg",
     intro: [
       "Most commercial risk is created, allocated or avoided in a contract. Payment terms, liability caps, termination rights and service levels decide who absorbs a problem when one occurs.",
       "We draft and negotiate the full range of commercial agreements (services, consultancy, vendor, agency, SaaS, licensing, technology and collaboration arrangements) and build contract templates that a team can actually use without calling a lawyer every time.",
@@ -113,7 +113,7 @@ export const practiceAreas: PracticeArea[] = [
     teaser:
       "Employment documentation, workplace policies, compliance, exits and workplace disputes.",
     journey: "Grow",
-    image: "/images/practice/practice-02.jpg",
+    image: "/images/practice/employment-and-labour.jpg",
     intro: [
       "Employment issues are rarely only legal. They involve people, evidence, timing and the credibility of the process that was followed.",
       "We advise employers on contracts and policies, statutory compliance, restructuring and separations, and on handling workplace complaints, including POSH matters, with a defensible process.",
@@ -137,7 +137,7 @@ export const practiceAreas: PracticeArea[] = [
     teaser:
       "DPDP, GDPR, privacy, technology contracts and platform compliance.",
     journey: "Protect",
-    image: "/images/practice/practice-03.jpg",
+    image: "/images/practice/data-privacy-and-technology.jpg",
     intro: [
       "Data obligations now sit inside ordinary business decisions: which vendor to use, where data is stored, what a consent notice says, and how a platform collects information from its users.",
       "We advise on the Digital Personal Data Protection Act and allied Indian rules, and on cross-border frameworks such as the GDPR where they apply to Indian operations.",
@@ -161,7 +161,7 @@ export const practiceAreas: PracticeArea[] = [
     teaser:
       "Trademark, copyright, patent and broader IP protection and commercialisation.",
     journey: "Transact",
-    image: "/images/practice/practice-01.jpg",
+    image: "/images/practice/intellectual-property.jpg",
     intro: [
       "For many businesses the brand, the codebase and the content are the balance sheet. They are also the assets most often left undocumented.",
       "We advise on trademark, copyright and patent protection, on ownership of work created by employees and contractors, and on assignment and licensing arrangements that put an IP asset to commercial use.",
@@ -184,7 +184,7 @@ export const practiceAreas: PracticeArea[] = [
     teaser:
       "Legal notices, commercial disputes, recovery and pre-litigation strategy.",
     journey: "Exit / Resolve",
-    image: "/images/practice/practice-03.jpg",
+    image: "/images/practice/pre-litigation-and-dispute-resolution.jpg",
     intro: [
       "Disputes can have significant legal, financial, and commercial consequences. We advise clients from the early stages of a potential dispute, helping them understand their legal position, assess available options, and determine an appropriate course of action before matters escalate.",
       "Our work covers legal notices, negotiation and settlement, recovery and contract enforcement, and pre-litigation strategy across a range of commercial and contractual disputes. We focus on understanding the underlying issues and objectives of each matter, while providing clear advice on the risks, practical considerations, and possible routes toward resolution.",

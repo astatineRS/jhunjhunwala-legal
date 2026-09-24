@@ -37,6 +37,7 @@ export const people: Person[] = [
     slug: "ruchika-daga",
     name: "Ruchika Daga",
     role: "Of-Counsel",
+    image: "/images/team/ruchika.jpg",
     bar: "Enrolled with the Bar Council of India and the Bar Council of Maharashtra & Goa",
     focus: [
       "Corporate & Commercial",
@@ -59,6 +60,7 @@ export const people: Person[] = [
     slug: "pakhi-chaudhary",
     name: "Pakhi Chaudhary",
     role: "Paralegal",
+    image: "/images/team/pakhi.jpg",
     bar: "Enrolled with the Bar Council of India and the Bar Council of Uttar Pradesh",
     focus: [
       "Commercial Contracts",

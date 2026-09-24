@@ -63,7 +63,13 @@ export default function PracticeCarousel() {
           ariaLabel="Practice areas"
           itemClassName="w-[78vw] max-w-[19rem] sm:w-[17rem] lg:w-[19rem]"
           items={practiceAreas.map((area) => (
-            <PracticeCard key={area.slug} area={area} badge="gold" className="h-full w-full" />
+            <PracticeCard
+              key={area.slug}
+              area={area}
+              badge="gold"
+              className="h-full w-full"
+              sizes="(max-width: 640px) 78vw, 19rem"
+            />
           ))}
         />
 
