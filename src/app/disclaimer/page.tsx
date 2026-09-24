@@ -203,37 +203,6 @@ const sections: PolicySection[] = [
           Our lawyers are enrolled with the relevant State Bar Council in India and practise Indian
           law. We do not hold ourselves out as qualified to advise on the law of any other country.
         </p>
-      </>
-    ),
-  },
-  {
-    id: "contact",
-    title: "Questions about this notice",
-    body: (
-      <>
-        <p>
-          If anything in this notice is unclear, or you believe any page on this website is
-          inaccurate or out of date, please write to us and we will look into it.
-        </p>
-        <ul>
-          <li>
-            <strong>{site.name}</strong>
-          </li>
-          <li>{site.address}</li>
-          <li>
-            Email:{" "}
-            <a href={`mailto:${site.email}`} className={linkClass}>
-              {site.email}
-            </a>
-          </li>
-          <li>
-            Telephone:{" "}
-            <a href={site.phoneHref} className={linkClass}>
-              {site.phone}
-            </a>
-          </li>
-          <li>Office hours: {site.hours}</li>
-        </ul>
         <p>
           The Bar Council of India Rules may be read in full on the{" "}
           <a
