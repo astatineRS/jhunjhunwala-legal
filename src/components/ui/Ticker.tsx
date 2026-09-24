@@ -89,15 +89,25 @@ export default function Ticker({
     draggingRef.current = true;
     const originX = event.clientX;
     const originScroll = viewport.scrollLeft;
+    let travelled = 0;
 
     const move = (moveEvent: PointerEvent) => {
-      viewport.scrollLeft = originScroll - (moveEvent.clientX - originX);
+      const delta = moveEvent.clientX - originX;
+      travelled = Math.max(travelled, Math.abs(delta));
+      viewport.scrollLeft = originScroll - delta;
     };
     const end = () => {
       draggingRef.current = false;
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerup", end);
       window.removeEventListener("pointercancel", end);
+      // A drag that ends over a link must not follow it.
+      if (travelled > 5) {
+        viewport.addEventListener("click", (clickEvent) => clickEvent.preventDefault(), {
+          capture: true,
+          once: true,
+        });
+      }
     };
 
     window.addEventListener("pointermove", move);
