@@ -166,7 +166,7 @@ export default function EnquiryForm() {
             <p className="eyebrow text-teal">Contact</p>
             <SplitText
               as="h2"
-              text="Let’s Talk About Your Legal Matter"
+              text="Let’s Talk"
               className="display-2 mt-3 text-ink"
             />
             <p className="mt-3 md:mt-4 max-w-xl text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/65">

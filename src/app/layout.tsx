@@ -51,9 +51,8 @@ const organisationLd = {
   areaServed: "IN",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "21 Commercial Street",
-    addressLocality: "Kolkata",
-    postalCode: "700001",
+    addressLocality: "New Delhi",
+    addressRegion: "Delhi",
     addressCountry: "IN",
   },
   openingHours: "Mo-Sa 09:00-18:00",

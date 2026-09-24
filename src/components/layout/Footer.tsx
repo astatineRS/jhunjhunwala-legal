@@ -66,11 +66,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-cream/15">
-        <div className="container-page flex flex-col gap-2 py-4 text-[0.8125rem] text-cream/60 md:flex-row md:items-center md:justify-between md:gap-3 md:py-6">
+        <div className="container-page py-4 text-[0.8125rem] text-cream/60 md:py-6">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p className="max-w-xl md:text-right">
-            The content of this website is for general information only and does not constitute legal advice.
-          </p>
         </div>
       </div>
     </footer>
