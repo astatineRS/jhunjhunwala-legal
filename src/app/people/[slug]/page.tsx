@@ -6,7 +6,7 @@ import { practiceAreas } from "@/content/practice-areas";
 import { site } from "@/content/site";
 import PersonCard from "@/components/cards/PersonCard";
 import CtaBand from "@/components/layout/CtaBand";
-import ParallaxImage from "@/components/ui/ParallaxImage";
+import PersonPortrait from "@/components/people/PersonPortrait";
 import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
 import ArrowBadge from "@/components/ui/ArrowBadge";
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     openGraph: {
       title: `${person.name}, ${person.role}`,
       description: person.bio[0],
-      images: [{ url: person.image }],
+      images: person.image ? [{ url: person.image }] : undefined,
     },
   };
 }
@@ -78,15 +78,14 @@ export default async function PersonPage({ params }: Params) {
 
           <div className="mt-6 md:mt-10 grid gap-5 md:gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
             <Reveal>
-              <ParallaxImage
-                src={person.image}
-                alt={person.name}
-                priority
-                distance={34}
-                sizes="(max-width: 1024px) 100vw, 34vw"
-                className="aspect-[4/3] md:aspect-[4/5] w-full rounded-[var(--radius-card)] bg-sand lg:aspect-[3/4]"
-                imageClassName="object-top"
-              />
+              <div className="relative aspect-[4/3] md:aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-card)] bg-sand lg:aspect-[3/4]">
+                <PersonPortrait
+                  person={person}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 34vw"
+                  className="object-top"
+                />
+              </div>
             </Reveal>
 
             <div className="flex flex-col justify-center">
@@ -114,11 +113,11 @@ export default async function PersonPage({ params }: Params) {
               <Reveal delay={3}>
                 <div className="mt-6 md:mt-9 flex flex-wrap items-center gap-4">
                   <a
-                    href={`mailto:${person.email}`}
+                    href={`mailto:${person.email ?? site.email}`}
                     className="group inline-flex items-center gap-3 rounded-full border border-ink/15 py-2 pl-5 pr-2 text-[0.9375rem] text-ink transition-colors duration-500 ease-[var(--ease-out-expo)] hover:border-ink/40 hover:bg-ink/5"
                   >
                     <MailIcon className="size-4 text-teal" />
-                    <span>{person.email}</span>
+                    <span>{person.email ?? site.email}</span>
                     <ArrowBadge tone="teal" size={34} />
                   </a>
                   <a

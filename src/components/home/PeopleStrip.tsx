@@ -1,4 +1,4 @@
-import Image from "next/image";
+import PersonPortrait from "@/components/people/PersonPortrait";
 import Link from "next/link";
 import { people } from "@/content/people";
 import { ButtonLink } from "@/components/ui/Button";
@@ -38,12 +38,10 @@ export default function PeopleStrip() {
             className="group grid gap-4 rounded-[var(--radius-card)] bg-cream p-4 transition-shadow duration-600 ease-[var(--ease-out-expo)] hover:shadow-[var(--shadow-lift)] md:grid-cols-[0.34fr_0.66fr] md:gap-8 md:p-6"
           >
             <div className="relative aspect-[3/2] overflow-hidden rounded-[10px] md:aspect-[5/5.2]">
-              <Image
-                src={lead.image}
-                alt={lead.name}
-                fill
+              <PersonPortrait
+                person={lead}
                 sizes="(max-width: 768px) 100vw, 34vw"
-                className="object-cover object-top transition-transform duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-[1.05]"
+                className="object-top transition-transform duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-[1.05]"
               />
             </div>
 

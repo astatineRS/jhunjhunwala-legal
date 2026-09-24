@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Person } from "@/content/people";
 import { cn } from "@/lib/utils";
 import ArrowBadge from "@/components/ui/ArrowBadge";
+import PersonPortrait from "@/components/people/PersonPortrait";
 
 export default function PersonCard({ person, className }: { person: Person; className?: string }) {
   return (
@@ -14,12 +14,10 @@ export default function PersonCard({ person, className }: { person: Person; clas
       )}
     >
       <div className="relative aspect-square md:aspect-[4/5] overflow-hidden">
-        <Image
-          src={person.image}
-          alt={person.name}
-          fill
+        <PersonPortrait
+          person={person}
           sizes="(max-width: 768px) 50vw, 25vw"
-          className="object-cover transition-transform duration-[1.1s] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
+          className="transition-transform duration-[1.1s] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
         />
         <span className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </div>

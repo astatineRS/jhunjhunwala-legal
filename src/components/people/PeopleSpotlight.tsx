@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import PersonPortrait from "@/components/people/PersonPortrait";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Person } from "@/content/people";
@@ -45,13 +45,11 @@ export default function PeopleSpotlight({ person }: { person: Person }) {
             }}
             className="absolute inset-0"
           >
-            <Image
-              src={person.image}
-              alt={person.name}
-              fill
+            <PersonPortrait
+              person={person}
               priority
               sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover object-top"
+              className="object-top"
             />
           </motion.div>
         </div>
