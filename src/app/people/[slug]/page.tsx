@@ -27,11 +27,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 
   return {
-    title: `${person.name} — ${person.role}`,
+    title: `${person.name}, ${person.role}`,
     description: person.bio[0],
     alternates: { canonical: `/people/${person.slug}` },
     openGraph: {
-      title: `${person.name} — ${person.role}`,
+      title: `${person.name}, ${person.role}`,
       description: person.bio[0],
       images: [{ url: person.image }],
     },

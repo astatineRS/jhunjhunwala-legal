@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: area.teaser,
     alternates: { canonical: `/expertise/${area.slug}` },
     openGraph: {
-      title: `${area.title} — Jhunjhunwala Legal`,
+      title: `${area.title} | Jhunjhunwala Legal`,
       description: area.teaser,
       url: `/expertise/${area.slug}`,
       type: "article",
@@ -57,7 +57,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
 
         <DetailHeroImage
           src={area.image}
-          alt={`Jhunjhunwala Legal — ${area.title}`}
+          alt={`Jhunjhunwala Legal: ${area.title}`}
           className="mt-6 aspect-[2/1] w-full md:mt-12 md:aspect-[16/9]"
         />
 

@@ -39,8 +39,8 @@ export default function AboutBand() {
               <p className="mt-3 max-w-xl text-balance-pretty text-[0.9375rem] leading-relaxed text-cream/75 md:mt-5 md:text-[1.0625rem]">
                 Our practice covers Corporate &amp; Commercial, Startup, Founder &amp; Investor
                 Advisory, Investment &amp; Transactional Advisory, Commercial Contracts, Technology
-                &amp; Data Privacy, and Intellectual Property. We work across the business lifecycle
-                &mdash; from setting up and structuring a business to raising capital, entering
+                &amp; Data Privacy, and Intellectual Property. We work across the business lifecycle,
+                from setting up and structuring a business to raising capital, entering
                 transactions, managing commercial relationships, protecting intellectual property
                 and navigating legal risk.
               </p>

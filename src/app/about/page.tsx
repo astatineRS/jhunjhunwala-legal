@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Jhunjhunwala Legal is a multi-service, business-oriented law firm founded in 2026, advising founders, entrepreneurs, startups, investors and growth businesses across the legal matters that shape their businesses.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: `About The Firm — ${site.name}`,
+    title: `About The Firm | ${site.name}`,
     description:
       "A business-first practice advising founders, investors and growth businesses across the business lifecycle.",
     url: `${site.url}/about`,
@@ -64,7 +64,7 @@ export default function AboutPage() {
                   Our practice covers Corporate &amp; Commercial, Startup, Founder &amp; Investor
                   Advisory, Investment &amp; Transactional Advisory, Commercial Contracts, Technology
                   &amp; Data Privacy, and Intellectual Property. We work across the business
-                  lifecycle — from setting up and structuring a business to raising capital, entering
+                  lifecycle, from setting up and structuring a business to raising capital, entering
                   transactions, managing commercial relationships, protecting intellectual property
                   and navigating legal risk.
                 </p>
@@ -80,7 +80,7 @@ export default function AboutPage() {
               <Reveal delay={4}>
                 <p>
                   We understand what our clients are building, what they are trying to achieve, and
-                  what the law requires — and we know how to bring the two together.
+                  what the law requires, and we know how to bring the two together.
                 </p>
               </Reveal>
               <Reveal delay={5}>
@@ -123,7 +123,7 @@ export default function AboutPage() {
             <div className="relative aspect-square overflow-hidden rounded-[var(--radius-card)] bg-cream shadow-[var(--shadow-card)] ring-1 ring-ink/10">
               <Image
                 src="/images/brand-lockup.png"
-                alt="Jhunjhunwala Legal — Ahead from day one"
+                alt="Jhunjhunwala Legal: Ahead from day one"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-contain"
@@ -155,7 +155,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="How We Work"
             title="Four steps, in the same order, every time"
-            description="Most matters go wrong at the beginning — from a fact that was never established or an option that was never put on the table. Our method is deliberately unhurried at the start so the rest can move quickly."
+            description="Most matters go wrong at the beginning, from a fact that was never established or an option that was never put on the table. Our method is deliberately unhurried at the start so the rest can move quickly."
           />
           <ProcessList />
         </div>
@@ -220,7 +220,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Our Team"
             title="The people behind the work"
-            description="A small bench of lawyers who stay on your matter from the first conversation to the last document. No handovers, no rotating juniors — the person who advises you is the person accountable for the outcome."
+            description="A small bench of lawyers who stay on your matter from the first conversation to the last document. No handovers, no rotating juniors: the person who advises you is the person accountable for the outcome."
             aside={
               <ButtonLink href="/people" variant="ghost">
                 Meet The Team

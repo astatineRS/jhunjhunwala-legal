@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/disclaimer" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: `Disclaimer — ${site.name}`,
+    title: `Disclaimer | ${site.name}`,
     description:
       "The basis on which information is published here, and the limits of what it can be used for.",
     url: `${site.url}/disclaimer`,
@@ -74,8 +74,8 @@ const sections: PolicySection[] = [
           work or the outcome of any matter.
         </p>
         <p>
-          Nothing published here — including practice-area descriptions, illustrative mandates,
-          articles, and any figures relating to the firm&rsquo;s experience — should be read as a
+          Nothing published here, including practice-area descriptions, illustrative mandates,
+          articles, and any figures relating to the firm&rsquo;s experience, should be read as a
           promise, a guarantee, a warranty, or a prediction. Past matters are described in general
           terms and do not indicate what will happen in yours. Every matter turns on its own facts.
         </p>
@@ -129,8 +129,8 @@ const sections: PolicySection[] = [
         <p>
           It follows that you should <strong>not send us confidential or privileged material</strong>{" "}
           through this website. Information sent before an engagement is confirmed may not attract
-          professional privilege, and — because we may already act for another party with an adverse
-          interest — we cannot undertake to treat unsolicited material as confidential. Please send
+          professional privilege, and, because we may already act for another party with an adverse
+          interest, we cannot undertake to treat unsolicited material as confidential. Please send
           a short description of the subject matter first, and wait for our reply before sending
           documents.
         </p>
@@ -148,7 +148,7 @@ const sections: PolicySection[] = [
     body: (
       <>
         <p>
-          This website contains links to external sites — statutes and judgments on official
+          This website contains links to external sites: statutes and judgments on official
           repositories, the Bar Council of India, professional bodies, and similar sources. Those
           links are provided for convenience only.
         </p>

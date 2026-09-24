@@ -76,7 +76,7 @@ export const inFocus: InFocusItem[] = [
     detail:
       "on a key contractual engagement as part of their ongoing business operations.",
     href: "https://lnkd.in/p/gSBFQXyb",
-    mandate: "Contractual engagement — CareEase Homecare",
+    mandate: "Contractual engagement: CareEase Homecare",
   },
   {
     id: "obliviqlabs",
@@ -86,7 +86,7 @@ export const inFocus: InFocusItem[] = [
     detail:
       "on the incorporation and structuring of its business, with strategic inputs on the proposed framework and providing assistance with the documentation.",
     href: "https://lnkd.in/p/gR2V7Bwh",
-    mandate: "LLP incorporation — OBLIVIQLABS",
+    mandate: "LLP incorporation: OBLIVIQLABS",
   },
   {
     id: "syinq",
@@ -96,7 +96,7 @@ export const inFocus: InFocusItem[] = [
     detail:
       "on a founder exit transaction as part of its ongoing business operations, working closely with stakeholders across structuring, documentation and negotiations.",
     href: "https://lnkd.in/p/gjPKs7Ch",
-    mandate: "Founder exit transaction — SYINQ",
+    mandate: "Founder exit transaction: SYINQ",
   },
   {
     id: "excelera",
@@ -106,7 +106,7 @@ export const inFocus: InFocusItem[] = [
     detail:
       "on an NDA as part of its ongoing business operations, working closely across structuring, documentation, and negotiations.",
     href: "https://lnkd.in/p/gzuG43si",
-    mandate: "NDA advisory — Excelera Infotech",
+    mandate: "NDA advisory: Excelera Infotech",
   },
 ];
 
@@ -125,7 +125,7 @@ export const whyChooseUs = [
   },
   {
     title: "Personal Attention",
-    description: "You work with people who understand your matter—not a process that treats every client the same.",
+    description: "You work with people who understand your matter, not a process that treats every client the same.",
   },
 ];
 
@@ -199,7 +199,7 @@ export const faqs = [
   {
     question: "What documents should I bring?",
     answer:
-      "Anything that records the relationship or the issue: agreements, correspondence, notices, invoices, and any statements or records relevant to what happened. If you are not sure what matters, bring more rather than less — we will tell you what is relevant.",
+      "Anything that records the relationship or the issue: agreements, correspondence, notices, invoices, and any statements or records relevant to what happened. If you are not sure what matters, bring more rather than less; we will tell you what is relevant.",
   },
   {
     question: "How are legal fees determined?",

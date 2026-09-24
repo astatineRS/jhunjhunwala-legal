@@ -48,7 +48,7 @@ export default function RoleList({ roles, email }: { roles: Role[]; email: strin
         const isOpen = open === index;
         const panelId = `${baseId}-role-${index}`;
         const buttonId = `${panelId}-trigger`;
-        const subject = encodeURIComponent(`Application — ${role.title}`);
+        const subject = encodeURIComponent(`Application: ${role.title}`);
         const body = encodeURIComponent(
           `Dear Jhunjhunwala Legal,\n\nI would like to apply for the ${role.title} role.\n\nI have attached my CV and a short writing sample.\n\nKind regards,\n`,
         );

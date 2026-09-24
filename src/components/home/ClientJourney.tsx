@@ -111,7 +111,7 @@ export default function ClientJourney() {
                 <Reveal delay={index}>
                   <Link
                     href={`/expertise/${slug}`}
-                    aria-label={`${step} — ${area?.title ?? "Expertise"}`}
+                    aria-label={`${step}: ${area?.title ?? "Expertise"}`}
                     className="group flex w-[8rem] flex-col items-center text-center"
                   >
                     <span className="grid size-[4.5rem] place-items-center rounded-full border-2 border-teal bg-cream text-teal ring-8 ring-cream transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:bg-teal group-hover:text-cream">

@@ -9,7 +9,7 @@ import { practiceAreas } from "@/content/practice-areas";
 export const metadata: Metadata = {
   title: "Expertise",
   description:
-    "Legal advice across corporate, commercial, transactional and dispute-related matters — from setting up a business to resolving complex disputes.",
+    "Legal advice across corporate, commercial, transactional and dispute-related matters, from setting up a business to resolving complex disputes.",
   alternates: { canonical: "/expertise" },
 };
 

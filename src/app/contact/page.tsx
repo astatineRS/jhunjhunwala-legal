@@ -6,10 +6,10 @@ import EnquiryForm from "@/components/contact/EnquiryForm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Contact ${site.name} — ${site.address}. Email ${site.email} or call ${site.phone} to discuss a corporate, commercial or dispute matter.`,
+  description: `Contact ${site.name} in ${site.address}. Email ${site.email} or call ${site.phone} to discuss a corporate, commercial or dispute matter.`,
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: `Contact Us — ${site.name}`,
+    title: `Contact Us | ${site.name}`,
     description: "Tell us what you're dealing with, and let's discuss how we can help.",
     url: `${site.url}/contact`,
   },

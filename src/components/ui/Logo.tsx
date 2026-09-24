@@ -33,7 +33,7 @@ export default function Logo({
     <Link
       href="/"
       className={cn("group inline-flex items-center", className)}
-      aria-label="Jhunjhunwala Legal — home"
+      aria-label="Jhunjhunwala Legal home"
     >
       <Image
         src={tone === "light" ? "/logos/jjl-lockup-light.png" : "/logos/jjl-lockup.png"}

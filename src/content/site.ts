@@ -3,7 +3,7 @@ export const site = {
   shortName: "JJL",
   tagline: "Law That Moves Business Forward.",
   description:
-    "Jhunjhunwala Legal advises individuals, founders and businesses on corporate, commercial, transactional and dispute matters — with clear advice and practical judgment.",
+    "Jhunjhunwala Legal advises individuals, founders and businesses on corporate, commercial, transactional and dispute matters, with clear advice and practical judgment.",
   url: "https://www.jhunjhunwalalegal.com",
   email: "info@jhunjhunwalalegal.com",
   phone: "+91 63932 59200",

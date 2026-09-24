@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy-policy" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: `Privacy Policy — ${site.name}`,
+    title: `Privacy Policy | ${site.name}`,
     description:
       "What this website collects, why, how long it is kept, and the rights you hold over it.",
     url: `${site.url}/privacy-policy`,
@@ -31,8 +31,8 @@ const sections: PolicySection[] = [
           covers the website only.
         </p>
         <p>
-          Personal data you give us in the course of an engagement — instructions, documents,
-          correspondence and matter records — is governed by our engagement terms and by the
+          Personal data you give us in the course of an engagement (instructions, documents,
+          correspondence and matter records) is governed by our engagement terms and by the
           professional obligations of confidentiality and privilege that apply to advocates in
           India. Those obligations are stricter than this notice and are not displaced by it.
         </p>
@@ -58,7 +58,7 @@ const sections: PolicySection[] = [
         </p>
         <p>
           If you write to us by email, telephone us, or apply for a role advertised on our careers
-          page, we hold what you send — including any attachments, curriculum vitae, or documents
+          page, we hold what you send, including any attachments, curriculum vitae, or documents
           you choose to share.
         </p>
         <h3>Information collected automatically</h3>
@@ -90,8 +90,8 @@ const sections: PolicySection[] = [
         </ul>
         <p>
           Please do not use the website to send us confidential or privileged material about a live
-          dispute. Until we have confirmed that we are able to act — which requires a conflicts
-          check — such material is not protected by the professional privilege that would otherwise
+          dispute. Until we have confirmed that we are able to act, which requires a conflicts
+          check, such material is not protected by the professional privilege that would otherwise
           attach to it.
         </p>
       </>
@@ -155,7 +155,7 @@ const sections: PolicySection[] = [
           <li>
             <strong>Voluntary provision for a specified purpose.</strong> Where you provide details
             to us for a purpose you have identified and have not indicated that you object to their
-            use for that purpose, we may process them for it — for example, acting on a request to
+            use for that purpose, we may process them for it, for example, acting on a request to
             call you back.
           </li>
           <li>
@@ -222,7 +222,7 @@ const sections: PolicySection[] = [
             matter.
           </li>
           <li>
-            <strong>Service providers acting as data processors</strong> — our website host, email
+            <strong>Service providers acting as data processors:</strong> our website host, email
             provider and document storage provider. Each is engaged under contractual terms that
             restrict them to processing on our instructions and require appropriate security
             measures.
@@ -257,7 +257,7 @@ const sections: PolicySection[] = [
           encrypted at rest.
         </p>
         <p>
-          Everyone at the firm — including interns and administrative staff — is bound by written
+          Everyone at the firm, including interns and administrative staff, is bound by written
           confidentiality obligations that survive the end of their association with us.
         </p>
         <p>
@@ -357,7 +357,7 @@ const sections: PolicySection[] = [
           The website is intended for adults seeking legal assistance and is not directed at
           children. We do not knowingly collect personal data of a child through it, and we do not
           undertake any tracking, behavioural monitoring or targeted advertising directed at
-          children — all of which the DPDP Act prohibits.
+          children, all of which the DPDP Act prohibits.
         </p>
         <p>
           Where a matter genuinely concerns a child or a person with a disability who has a lawful

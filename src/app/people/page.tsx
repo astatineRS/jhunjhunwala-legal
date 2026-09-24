@@ -10,7 +10,7 @@ import PeopleSpotlight from "@/components/people/PeopleSpotlight";
 export const metadata: Metadata = {
   title: "Our People",
   description:
-    "The lawyers of Jhunjhunwala Legal — corporate, transactional, employment, technology and disputes counsel based in Delhi.",
+    "The lawyers of Jhunjhunwala Legal: corporate, transactional, employment, technology and disputes counsel based in Delhi.",
   alternates: { canonical: "/people" },
 };
 

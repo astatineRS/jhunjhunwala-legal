@@ -141,7 +141,7 @@ export default function EnquiryForm() {
             >
               <CheckCircle className="size-6 md:size-7" />
             </motion.span>
-            <h3 className="display-3 mt-5 md:mt-6 text-ink">Thank you — your details are noted</h3>
+            <h3 className="display-3 mt-5 md:mt-6 text-ink">Thank you, your details are noted</h3>
             <p className="mt-3 md:mt-4 max-w-md text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/65">
               A member of the firm will review what you have shared and respond within one working
               day. If the matter is urgent, please call the office directly rather than wait for a

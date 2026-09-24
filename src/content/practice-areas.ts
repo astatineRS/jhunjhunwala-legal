@@ -46,7 +46,7 @@ export const practiceAreas: PracticeArea[] = [
     image: "/images/practice/practice-02.jpg",
     intro: [
       "Early-stage companies move quickly, and legal structure often lags behind the business. The cost of that gap usually appears at the next round, during diligence, or when a founder leaves.",
-      "We work with founders and startups on formation and early-stage structuring, co-founder and shareholder arrangements, ESOP documentation and the legal health checks that keep a company fundable — keeping the paperwork honest about what was actually agreed.",
+      "We work with founders and startups on formation and early-stage structuring, co-founder and shareholder arrangements, ESOP documentation and the legal health checks that keep a company fundable, keeping the paperwork honest about what was actually agreed.",
       "We also act on the other side of the table, advising angel investors and funds on their investments and supporting the portfolio businesses they back.",
     ],
     keyServices: [
@@ -69,7 +69,7 @@ export const practiceAreas: PracticeArea[] = [
     image: "/images/practice/practice-03.jpg",
     intro: [
       "Transactions concentrate risk into a short window. Diligence findings, indemnity limits, conditions precedent and closing sequence decide how much of that risk you actually carry.",
-      "We advise on fundraising and investment transactions — angel, seed and venture capital rounds, primary and secondary share transactions — from the first term sheet through to post-closing obligations, with a focus on what the documents will mean if the relationship sours.",
+      "We advise on fundraising and investment transactions (angel, seed and venture capital rounds, primary and secondary share transactions) from the first term sheet through to post-closing obligations, with a focus on what the documents will mean if the relationship sours.",
       "Our diligence reports are written to be used: issues ranked by consequence, with a recommended contractual response for each.",
     ],
     keyServices: [
@@ -92,7 +92,7 @@ export const practiceAreas: PracticeArea[] = [
     image: "/images/practice/practice-01.jpg",
     intro: [
       "Most commercial risk is created, allocated or avoided in a contract. Payment terms, liability caps, termination rights and service levels decide who absorbs a problem when one occurs.",
-      "We draft and negotiate the full range of commercial agreements — services, consultancy, vendor, agency, SaaS, licensing, technology and collaboration arrangements — and build contract templates that a team can actually use without calling a lawyer every time.",
+      "We draft and negotiate the full range of commercial agreements (services, consultancy, vendor, agency, SaaS, licensing, technology and collaboration arrangements) and build contract templates that a team can actually use without calling a lawyer every time.",
       "Where a contract already exists, we review it for the exposure that matters and tell you plainly what is worth renegotiating.",
     ],
     keyServices: [
@@ -116,7 +116,7 @@ export const practiceAreas: PracticeArea[] = [
     image: "/images/practice/practice-02.jpg",
     intro: [
       "Employment issues are rarely only legal. They involve people, evidence, timing and the credibility of the process that was followed.",
-      "We advise employers on contracts and policies, statutory compliance, restructuring and separations, and on handling workplace complaints — including POSH matters — with a defensible process.",
+      "We advise employers on contracts and policies, statutory compliance, restructuring and separations, and on handling workplace complaints, including POSH matters, with a defensible process.",
       "We also advise senior executives on their own arrangements, from offer terms to negotiated exits.",
     ],
     keyServices: [
@@ -141,7 +141,7 @@ export const practiceAreas: PracticeArea[] = [
     intro: [
       "Data obligations now sit inside ordinary business decisions: which vendor to use, where data is stored, what a consent notice says, and how a platform collects information from its users.",
       "We advise on the Digital Personal Data Protection Act and allied Indian rules, and on cross-border frameworks such as the GDPR where they apply to Indian operations.",
-      "We translate the compliance requirement into documents and processes the business can run — not a policy binder nobody opens.",
+      "We translate the compliance requirement into documents and processes the business can run, not a policy binder nobody opens.",
     ],
     keyServices: [
       { name: "DPDP & GDPR Compliance", description: "DPDP Act compliance and GDPR compliance for Indian and cross-border operations." },

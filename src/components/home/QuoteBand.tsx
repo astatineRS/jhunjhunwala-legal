@@ -21,7 +21,7 @@ export default function QuoteBand() {
           />
           <Reveal delay={1}>
             <footer className="mt-5 text-[0.9375rem] text-ink/55 md:mt-8 md:text-[1.0625rem]">
-              Jhunjhunwala Legal — <span className="italic">ahead from day one</span>
+              Jhunjhunwala Legal, <span className="italic">ahead from day one</span>
             </footer>
           </Reveal>
         </blockquote>
