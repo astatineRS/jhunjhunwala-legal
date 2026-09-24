@@ -15,7 +15,7 @@ export default function Footer() {
     <footer className="bg-teal text-cream">
       <div className="container-page grid gap-y-6 py-10 md:gap-14 md:py-20 lg:grid-cols-[1.4fr_repeat(3,1fr)] lg:gap-10">
         <Reveal className="max-w-sm">
-          <Logo tone="light" />
+          <Logo tone="light" size="lg" />
           <p className="mt-4 text-[0.9375rem] leading-relaxed text-cream/75 md:mt-6 md:text-[0.975rem]">
             We at Jhunjhunwala Legal understand what you&rsquo;re trying to build, we understand what the law
             requires, and we know how to bring the two together.

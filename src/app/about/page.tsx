@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { site } from "@/content/site";
 import { people } from "@/content/people";
 import PageHero from "@/components/layout/PageHero";
@@ -6,7 +7,6 @@ import CtaBand from "@/components/layout/CtaBand";
 import SectionHeading from "@/components/ui/SectionHeading";
 import SplitText from "@/components/ui/SplitText";
 import Reveal from "@/components/ui/Reveal";
-import ParallaxImage from "@/components/ui/ParallaxImage";
 import { ButtonLink } from "@/components/ui/Button";
 import PersonCard from "@/components/cards/PersonCard";
 import ProcessList from "@/components/about/ProcessList";
@@ -117,14 +117,19 @@ export default function AboutPage() {
           </div>
 
           <Reveal delay={2} className="relative">
-            <ParallaxImage
-              src="/images/office.jpg"
-              alt="The firm's offices in Delhi"
-              className="aspect-[3/2] rounded-[var(--radius-card)] md:aspect-[4/5] lg:aspect-[3/4]"
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              distance={44}
-            />
-            <div className="absolute inset-x-3 bottom-3 rounded-[10px] bg-cream/95 px-4 py-3 backdrop-blur md:inset-x-4 md:bottom-4 md:px-5 md:py-4">
+            {/* The firm has no photographed office to show, so the panel carries
+                the brand lockup on its own cream field; `object-contain` keeps
+                the artwork whole rather than cropping the wordmark. */}
+            <div className="relative aspect-square overflow-hidden rounded-[var(--radius-card)] bg-cream shadow-[var(--shadow-card)] ring-1 ring-ink/10">
+              <Image
+                src="/images/brand-lockup.png"
+                alt="Jhunjhunwala Legal — Ahead from day one"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-contain"
+              />
+            </div>
+            <div className="absolute inset-x-3 bottom-3 rounded-[10px] bg-white px-4 py-3 shadow-[var(--shadow-card)] md:inset-x-4 md:bottom-4 md:px-5 md:py-4">
               <p className="eyebrow text-gold-deep">Our Office</p>
               <p className="mt-1.5 text-[0.875rem] md:text-[0.9375rem] leading-snug text-ink/75">{site.address}</p>
             </div>

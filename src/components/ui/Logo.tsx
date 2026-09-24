@@ -1,53 +1,52 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import BrandMark from "@/components/ui/BrandMark";
 
 /**
- * Brand lockup: the elephant mark stacked above the two-line Bookman wordmark.
- * `tone` flips it for dark heroes vs. light surfaces; `compact` is the scrolled
- * header state, where the whole lockup steps down a size.
+ * Brand lockup: the supplied artwork — elephant mark over the wordmark and the
+ * "Ahead from day one" line — rather than a typeset reconstruction of it.
+ *
+ * Two files, not one recoloured file: the PNGs are flat teal / flat cream on a
+ * transparent field, so the light variant reads on the dark hero and footer
+ * without a CSS filter approximating the brand colour. `size` steps the whole
+ * lockup down for the scrolled header and up for the footer.
  */
+const HEIGHTS = {
+  /** Scrolled desktop bar and the mobile pill, both ~68-72px tall. */
+  sm: "h-12",
+  /** Full-height desktop bar (88px). */
+  md: "h-16",
+  /** Footer, where the wordmark and the day-one line should both be legible. */
+  lg: "h-24",
+} as const;
+
 export default function Logo({
   tone = "dark",
-  compact = false,
+  size = "md",
   className,
 }: {
   tone?: "dark" | "light";
-  compact?: boolean;
+  size?: keyof typeof HEIGHTS;
   className?: string;
 }) {
   return (
     <Link
       href="/"
-      className={cn(
-        "group inline-flex flex-col items-center gap-1",
-        tone === "light" ? "text-white" : "text-teal",
-        className,
-      )}
+      className={cn("group inline-flex items-center", className)}
       aria-label="Jhunjhunwala Legal — home"
     >
-      <BrandMark
+      <Image
+        src={tone === "light" ? "/logos/jjl-lockup-light.png" : "/logos/jjl-lockup.png"}
+        alt="Jhunjhunwala Legal"
+        width={1702}
+        height={669}
+        priority
+        sizes="260px"
         className={cn(
-          "transition-[height,transform] duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-0.5",
-          compact ? "h-[1.6rem]" : "h-8",
+          "w-auto transition-[height,transform] duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-0.5",
+          HEIGHTS[size],
         )}
       />
-      <span
-        className={cn(
-          "font-brand flex flex-col items-stretch font-bold uppercase leading-[1.05] tracking-[0.04em] transition-[font-size] duration-500 ease-[var(--ease-out-expo)]",
-          compact ? "text-[0.6875rem]" : "text-[0.8125rem]",
-        )}
-      >
-        <span>Jhunjhunwala</span>
-        {/* The short second line is stretched to the width of the first with a
-            rule either side, so the lockup reads as a block rather than a
-            centred word floating in white space. */}
-        <span className="flex items-center gap-[0.3em]">
-          <span aria-hidden className="h-px flex-1 bg-current" />
-          <span>Legal</span>
-          <span aria-hidden className="h-px flex-1 bg-current" />
-        </span>
-      </span>
     </Link>
   );
 }

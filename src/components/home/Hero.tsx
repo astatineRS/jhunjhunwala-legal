@@ -58,7 +58,7 @@ export default function Hero() {
       >
         <SplitText
           as="h1"
-          text="When the law is complex, you deserve clarity"
+          text="Law That Moves Business Forward."
           delay={0.35}
           className="display-1 mx-auto mt-2 max-w-4xl text-cream md:mt-6"
         />

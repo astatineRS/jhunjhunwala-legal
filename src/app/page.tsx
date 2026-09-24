@@ -12,7 +12,7 @@ import CounselStatement from "@/components/home/CounselStatement";
 import FaqSection from "@/components/home/FaqSection";
 
 export const metadata: Metadata = {
-  title: { absolute: "Jhunjhunwala Legal — When the law is complex, you deserve clarity" },
+  title: { absolute: "Jhunjhunwala Legal — Law That Moves Business Forward." },
   description:
     "A Delhi law firm advising individuals, founders and businesses on corporate, commercial, transactional, employment and dispute matters — with clear advice and practical judgment.",
   alternates: { canonical: "/" },

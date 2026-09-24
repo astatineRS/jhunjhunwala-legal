@@ -1,7 +1,7 @@
 export const site = {
   name: "Jhunjhunwala Legal",
   shortName: "JJL",
-  tagline: "When the law is complex, you deserve clarity",
+  tagline: "Law That Moves Business Forward.",
   description:
     "Jhunjhunwala Legal advises individuals, founders and businesses on corporate, commercial, transactional and dispute matters — with clear advice and practical judgment.",
   url: "https://www.jhunjhunwalalegal.com",

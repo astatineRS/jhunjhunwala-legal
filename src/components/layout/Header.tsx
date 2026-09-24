@@ -53,7 +53,7 @@ export default function Header() {
           className="overflow-hidden rounded-[22px] bg-cream shadow-[0_20px_45px_-26px_rgb(17_17_17/0.65)]"
         >
           <div className="flex h-[4.25rem] items-center justify-between pl-4 pr-3">
-            <Logo tone="dark" compact className="origin-left scale-[0.92]" />
+            <Logo tone="dark" size="sm" className="origin-left scale-[0.92]" />
 
             <button
               type="button"
@@ -146,7 +146,7 @@ export default function Header() {
             scrolled ? "h-[4.5rem]" : "h-[var(--header-h)]",
           )}
         >
-          <Logo tone={solid ? "dark" : "light"} compact={scrolled} />
+          <Logo tone={solid ? "dark" : "light"} size={scrolled ? "sm" : "md"} />
 
           <nav className="flex items-center gap-1" aria-label="Primary">
             {nav.map((item) => {
