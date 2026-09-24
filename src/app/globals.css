@@ -228,6 +228,56 @@
   animation-play-state: paused;
 }
 
+/* Typed headline: each character inks in as it lands, and the nib-shaped caret
+   blinks only while the line is resting. */
+@keyframes ink-in {
+  from {
+    opacity: 0;
+    transform: translate3d(-0.06em, 0.12em, 0) rotate(-6deg);
+    filter: blur(1.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+@utility ink-char {
+  display: inline-block;
+  white-space: pre;
+  animation: ink-in 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes nib-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0.08;
+  }
+}
+
+@utility ink-caret {
+  display: inline-block;
+  width: 0.055em;
+  height: 0.78em;
+  translate: 0 0.06em;
+  rotate: 9deg;
+  border-radius: 999px;
+  background-color: currentColor;
+  animation: nib-blink 1.05s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ink-char,
+  .ink-caret {
+    animation: none;
+  }
+}
+
 /* Long-form editorial body copy (insight articles, policy pages) */
 @utility prose-legal {
   color: color-mix(in srgb, var(--color-ink) 82%, transparent);

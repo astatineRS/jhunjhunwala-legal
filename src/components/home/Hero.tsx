@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 import { useReducedMotionSafe } from "@/lib/reduced-motion";
-import SplitText from "@/components/ui/SplitText";
+import TypedHeadline from "@/components/ui/TypedHeadline";
 import { ButtonLink } from "@/components/ui/Button";
 
 /**
@@ -56,12 +56,16 @@ export default function Hero() {
         style={reduced ? undefined : { opacity: fade }}
         className="container-page flex flex-1 flex-col justify-center py-6 text-center md:py-10"
       >
-        <SplitText
-          as="h1"
-          text="Law That Moves Business Forward."
-          delay={0.35}
-          className="display-1 mx-auto mt-2 max-w-4xl text-cream md:mt-6"
-        />
+        <h1 className="display-1 mx-auto mt-2 max-w-4xl text-cream md:mt-6">
+          <TypedHeadline
+            lines={[
+              "Law That Moves Business Forward.",
+              "Your Legal Guardian",
+              "Lawyers. Business Thinkers.",
+              "Business & Legal Strategy across deals, risks & disputes",
+            ]}
+          />
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
