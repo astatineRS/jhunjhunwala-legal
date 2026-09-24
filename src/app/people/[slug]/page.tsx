@@ -78,7 +78,7 @@ export default async function PersonPage({ params }: Params) {
 
           <div className="mt-6 md:mt-10 grid gap-5 md:gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
             <Reveal>
-              <div className="relative aspect-[4/3] md:aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-card)] bg-sand lg:aspect-[3/4]">
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[var(--radius-card)] bg-sand md:aspect-[4/5] lg:aspect-[3/4]">
                 <PersonPortrait
                   person={person}
                   priority

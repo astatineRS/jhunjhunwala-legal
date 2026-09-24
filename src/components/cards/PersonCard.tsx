@@ -13,11 +13,11 @@ export default function PersonCard({ person, className }: { person: Person; clas
         className,
       )}
     >
-      <div className="relative aspect-square md:aspect-[4/5] overflow-hidden">
+      <div className="relative aspect-[4/5] overflow-hidden">
         <PersonPortrait
           person={person}
           sizes="(max-width: 768px) 50vw, 25vw"
-          className="transition-transform duration-[1.1s] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
+          className="object-top transition-transform duration-[1.1s] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
         />
         <span className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </div>
