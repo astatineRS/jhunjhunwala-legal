@@ -17,9 +17,8 @@ type Phase = "hold" | "erase" | "write";
  *
  * Each character is its own span with a one-shot `ink-char` animation, so only
  * the character that just landed animates — React keeps the earlier spans
- * mounted and their animations never re-run. The caret is a slanted nib rather
- * than a terminal block, which is what makes the line read as written rather
- * than printed.
+ * mounted and their animations never re-run. No caret: a blinking nib at the
+ * end of a serif display line reads as a stray slash, not as a pen.
  */
 export default function TypedHeadline({
   lines,
@@ -76,30 +75,64 @@ export default function TypedHeadline({
     return () => window.clearTimeout(timer);
   }, [count, eraseMs, holdMs, index, lines, phase, reduced, writeMs]);
 
-  // Reduced motion gets the headline outright, with no caret and no cycle.
+  // Reduced motion gets the headline outright, with no cycle.
   const visible = reduced ? lines[0] : lines[index].slice(0, count);
   // The tallest line holds the box open, so the sub-head and buttons below do
-  // not jump every time a shorter line is written.
+  // not jump every time a shorter line is written. It has to be drawn through
+  // the same markup: a run of inline-block characters makes a taller line box
+  // than the same string as plain text, so a plain-text reserve under-measures
+  // and the long line then spills onto the sub-head.
   const tallest = lines.reduce((a, b) => (b.length > a.length ? b : a));
 
   return (
     <span className={cn("relative block", className)}>
       <span aria-hidden className="invisible block">
-        {tallest}
+        <Ink text={tallest} keyPrefix="reserve" />
       </span>
       <span className="absolute inset-0 flex items-center justify-center">
         <span>
           <span className="sr-only">{lines[index]}</span>
-          <span aria-hidden className="whitespace-pre-wrap">
-            {visible.split("").map((char, i) => (
-              <span key={`${index}-${i}`} className="ink-char">
-                {char}
-              </span>
-            ))}
-            {reduced ? null : <span className="ink-caret" />}
+          <span aria-hidden>
+            <Ink text={visible} keyPrefix={`line-${index}`} />
           </span>
         </span>
       </span>
     </span>
+  );
+}
+
+/**
+ * Text as one inline-block per character, grouped into one inline-block per
+ * word. Without the word grouping a line can break between two characters of
+ * the same word ("Strategy a / cross deals"); the whitespace between words is
+ * left as a plain text node, so it stays the only break opportunity.
+ */
+function Ink({ text, keyPrefix }: { text: string; keyPrefix: string }) {
+  let offset = 0;
+
+  return (
+    <>
+      {text
+        .split(/(\s+)/)
+        .filter(Boolean)
+        .map((token) => {
+          const start = offset;
+          offset += token.length;
+
+          if (/^\s+$/.test(token)) {
+            return <span key={`${keyPrefix}-space-${start}`}>{token}</span>;
+          }
+
+          return (
+            <span key={`${keyPrefix}-word-${start}`} className="inline-block whitespace-pre">
+              {token.split("").map((char, i) => (
+                <span key={`${keyPrefix}-${start + i}`} className="ink-char">
+                  {char}
+                </span>
+              ))}
+            </span>
+          );
+        })}
+    </>
   );
 }

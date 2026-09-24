@@ -228,8 +228,7 @@
   animation-play-state: paused;
 }
 
-/* Typed headline: each character inks in as it lands, and the nib-shaped caret
-   blinks only while the line is resting. */
+/* Typed headline: each character inks in as it lands. */
 @keyframes ink-in {
   from {
     opacity: 0;
@@ -249,31 +248,8 @@
   animation: ink-in 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-@keyframes nib-blink {
-  0%,
-  45% {
-    opacity: 1;
-  }
-  55%,
-  100% {
-    opacity: 0.08;
-  }
-}
-
-@utility ink-caret {
-  display: inline-block;
-  width: 0.055em;
-  height: 0.78em;
-  translate: 0 0.06em;
-  rotate: 9deg;
-  border-radius: 999px;
-  background-color: currentColor;
-  animation: nib-blink 1.05s steps(1, end) infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .ink-char,
-  .ink-caret {
+  .ink-char {
     animation: none;
   }
 }
