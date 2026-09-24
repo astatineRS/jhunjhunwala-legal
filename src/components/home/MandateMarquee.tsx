@@ -22,9 +22,7 @@ export default function MandateMarquee() {
         >
           <ArrowBadge tone="teal" size={32} />
           <p className="line-clamp-2 text-[0.75rem] leading-snug text-cream/85 md:text-[0.8125rem] md:line-clamp-3">
-            {item.lead} {item.client}
-            {item.detail.startsWith(",") ? "" : " "}
-            {item.detail}
+            {item.mandate}
           </p>
         </a>
       ))}

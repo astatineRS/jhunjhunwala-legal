@@ -44,55 +44,69 @@ export const trustedBy: Client[] = [
 
 export type InFocusItem = {
   id: string;
+  /** Published poster artwork in /public/images/updates, 1080x1350. */
+  image: string;
   /** Opening clause, e.g. "Recently advised". */
   lead: string;
-  /** The anonymised client descriptor, set in bold on the poster. */
+  /** The client named on the poster, set apart in the summary line. */
   client: string;
   /** Remainder of the summary sentence. */
   detail: string;
-  /** Person from `people` who led the matter. */
-  personSlug: string;
   /** LinkedIn post the update was published as. */
   href: string;
+  /**
+   * Compact restatement for the mandate chips. The published sentence runs to
+   * three lines in a chip and clamps before the client is even named, so the
+   * strip carries the work and the client and nothing else.
+   */
+  mandate: string;
 };
 
-/** Poster cards for the In Focus band — the firm's published client updates. */
+/**
+ * The firm's published client updates. The poster is the artwork as it went out
+ * on LinkedIn; the copy fields carry the same sentence as text, for the poster's
+ * alt text — the summary is otherwise locked inside a PNG.
+ */
 export const inFocus: InFocusItem[] = [
   {
-    id: "health-tech-consultant",
-    lead: "Handled the contractual engagement of",
-    client: "a health-tech company",
+    id: "care-ease",
+    image: "/images/updates/care-ease.png",
+    lead: "Recently had the opportunity to advise and assist",
+    client: "CareEase Homecare Services Private Limited",
     detail:
-      "with a consultant, including the structuring and documentation of the arrangement.",
-    personSlug: "samarth-jhunjhunwala",
+      "on a key contractual engagement as part of their ongoing business operations.",
     href: "https://lnkd.in/p/gSBFQXyb",
+    mandate: "Contractual engagement — CareEase Homecare",
   },
   {
-    id: "robotics-llp",
-    lead: "Led the incorporation and LLP structuring of",
-    client: "a Robotics and AI company",
+    id: "obliviqlabs",
+    image: "/images/updates/obliviqlabs.png",
+    lead: "Recently advised and assisted",
+    client: "OBLIVIQLABS LLP",
     detail:
-      ", including preparation of documentation and the regulatory requirements for commencement of operations.",
-    personSlug: "samarth-jhunjhunwala",
+      "on the incorporation and structuring of its business, with strategic inputs on the proposed framework and providing assistance with the documentation.",
     href: "https://lnkd.in/p/gR2V7Bwh",
+    mandate: "LLP incorporation — OBLIVIQLABS",
   },
   {
-    id: "founder-exit",
-    lead: "Handled a founder exit for",
-    client: "a mobility technology company",
+    id: "syinq",
+    image: "/images/updates/syinq.png",
+    lead: "Recently had the opportunity to advise and assist",
+    client: "SYINQ",
     detail:
-      ", including transaction structuring, stakeholder arrangements and related documentation.",
-    personSlug: "samarth-jhunjhunwala",
+      "on a founder exit transaction as part of its ongoing business operations, working closely with stakeholders across structuring, documentation and negotiations.",
     href: "https://lnkd.in/p/gjPKs7Ch",
+    mandate: "Founder exit transaction — SYINQ",
   },
   {
-    id: "nda-review",
-    lead: "Undertook a detailed review of a Non-Disclosure Agreement for",
-    client: "a staffing and workforce solutions company",
+    id: "excelera",
+    image: "/images/updates/excelera.png",
+    lead: "We recently advised and provided strategic inputs to",
+    client: "Excelera Infotech Pvt. Ltd.",
     detail:
-      ", identifying and addressing key legal and commercial risks.",
-    personSlug: "samarth-jhunjhunwala",
+      "on an NDA as part of its ongoing business operations, working closely across structuring, documentation, and negotiations.",
     href: "https://lnkd.in/p/gzuG43si",
+    mandate: "NDA advisory — Excelera Infotech",
   },
 ];
 
