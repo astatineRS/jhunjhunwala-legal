@@ -14,9 +14,9 @@ export default function Industries() {
           align="center"
         />
 
-        <div className="mt-8 grid gap-8 md:mt-14 md:grid-cols-3 md:gap-6 lg:gap-10">
+        <div className="mt-8 grid gap-x-6 gap-y-10 md:mt-14 md:grid-cols-3 md:gap-y-14 lg:gap-x-10">
           {industries.map((industry, index) => (
-            <Reveal key={industry.title} delay={index}>
+            <Reveal key={`${industry.title}-${index}`} delay={index % 3}>
               <article className="text-center">
                 <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius-card)] bg-sand shadow-[var(--shadow-card)]">
                   <Image

@@ -129,7 +129,7 @@ export const whyChooseUs = [
   },
 ];
 
-export const industries = [
+const industryRow = [
   {
     title: "Real Estate & Infrastructure",
     description:
@@ -149,6 +149,9 @@ export const industries = [
     image: "/images/industries/legal-advisory.png",
   },
 ] as const;
+
+/** The approved homepage reference presents the three-card row three times. */
+export const industries = [...industryRow, ...industryRow, ...industryRow];
 
 export const process = [
   { step: "Understand", description: "We start by listening to your situation, concerns, and objectives." },
