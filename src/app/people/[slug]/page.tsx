@@ -166,7 +166,30 @@ export default async function PersonPage({ params }: Params) {
                 </div>
               </Reveal>
 
-              <Reveal delay={1}>
+              {person.publications?.length ? (
+                <Reveal delay={1}>
+                  <div className="rounded-[var(--radius-card)] border border-ink/10 p-5 md:p-8">
+                    <h2 className="display-3 text-ink">Publications &amp; Featured Articles</h2>
+                    <ul className="mt-4 flex flex-col divide-y divide-ink/10 md:mt-5">
+                      {person.publications.map((publication) => (
+                        <li key={publication.href} className="py-3 first:pt-0 last:pb-0 md:py-4">
+                          <a
+                            href={publication.href}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="group flex items-start justify-between gap-4 text-[0.875rem] font-medium leading-relaxed text-teal transition-colors duration-300 hover:text-teal-deep md:text-[0.95rem]"
+                          >
+                            <span>{publication.title}</span>
+                            <ArrowBadge tone="teal" size={30} className="mt-0.5 shrink-0" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              ) : null}
+
+              <Reveal delay={person.publications?.length ? 2 : 1}>
                 <div className="rounded-[var(--radius-card)] border border-ink/10 p-5 md:p-8">
                   <h2 className="display-3 text-ink">Practice areas</h2>
                   <ul className="mt-4 md:mt-5 flex flex-wrap gap-2">

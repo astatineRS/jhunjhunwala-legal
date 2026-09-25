@@ -4,6 +4,7 @@ import TrustedStrip from "@/components/home/TrustedStrip";
 import AboutBand from "@/components/home/AboutBand";
 import InFocus from "@/components/home/InFocus";
 import PracticeCarousel from "@/components/home/PracticeCarousel";
+import Industries from "@/components/home/Industries";
 import QuoteBand from "@/components/home/QuoteBand";
 import PeopleStrip from "@/components/home/PeopleStrip";
 import ClientJourney from "@/components/home/ClientJourney";
@@ -26,6 +27,7 @@ export default function HomePage() {
       <AboutBand />
       <InFocus />
       <PracticeCarousel />
+      <Industries />
       <QuoteBand />
       <PeopleStrip />
       <ClientJourney />

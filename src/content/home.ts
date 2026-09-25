@@ -129,6 +129,27 @@ export const whyChooseUs = [
   },
 ];
 
+export const industries = [
+  {
+    title: "Real Estate & Infrastructure",
+    description:
+      "Legal guidance on property transactions, development, construction, and infrastructure projects.",
+    image: "/images/industries/legal-advisory.png",
+  },
+  {
+    title: "Energy & Natural Resource",
+    description:
+      "Legal support for businesses and projects operating across energy, resources, and related sectors.",
+    image: "/images/industries/legal-advisory.png",
+  },
+  {
+    title: "Consumer & Retail",
+    description:
+      "Legal guidance on commercial relationships, contracts, transactions, and consumer-facing operations.",
+    image: "/images/industries/legal-advisory.png",
+  },
+] as const;
+
 export const process = [
   { step: "Understand", description: "We start by listening to your situation, concerns, and objectives." },
   { step: "Assess", description: "We review the relevant facts and identify the legal issues and potential challenges." },

@@ -9,6 +9,7 @@ export type Person = {
   focus: string[];
   bio: string[];
   education: string[];
+  publications?: { title: string; href: string }[];
   /** Direct address. Absent where the firm has not published one, in which
    *  case the profile offers the general enquiry address instead. */
   email?: string;
@@ -22,14 +23,39 @@ export const people: Person[] = [
     name: "Samarth Jhunjhunwala",
     role: "Founding & Managing Partner",
     image: "/images/team/samarth.jpg",
-    bar: "Enrolled with the Bar Council of Delhi, 2009",
-    focus: ["Corporate & Commercial", "Investment & Transactions", "Dispute Strategy"],
-    bio: [
-      "Samarth leads the firm's corporate and transactional practice. He advises promoters, boards and investors on structuring, shareholder arrangements and acquisitions, and is regularly brought in when a commercial relationship begins to break down.",
-      "Clients come to him for a direct read on where a matter is likely to end up, and what it will take to get there. He has acted on transactions across manufacturing, technology and education, and has spent much of his practice on the negotiation side of disputes rather than the courtroom steps.",
-      "He founded the firm on a simple premise: clients should understand their own legal position well enough to make the decision themselves.",
+    bar: "Bar Council of Delhi · D/17682/2025",
+    focus: [
+      "Corporate & Commercial",
+      "Startup & Founder Advisory",
+      "Investment & Transactions",
+      "Data Privacy & Technology",
+      "Intellectual Property",
     ],
-    education: ["LL.M., Corporate Law", "B.A. LL.B. (Hons.)"],
+    bio: [
+      "Samarth Jhunjhunwala is a corporate and commercial lawyer, advising founders, startups, investors and businesses across India and overseas.",
+      "Coming from a business background and having been closely involved with businesses from an early age, Samarth developed a first-hand understanding of how businesses operate, make decisions and manage risk long before entering legal practice. This perspective continues to shape his approach to legal counsel, particularly when advising founders, entrepreneurs and businesses where legal considerations are closely connected to commercial objectives.",
+      "He has advised startups and businesses in India and overseas on corporate structuring and incorporation, formation of LLPs and private companies, cross-border structuring, founder exits, commercial documentation, technology and data privacy, GDPR compliance and corporate policies, alongside negotiating, documenting and guiding transactions and strategic business arrangements, with clients across health-tech, ed-tech, fashion technology, robotics and AI, SaaS, e-commerce, and transportation.",
+      "His corporate and commercial practice centres on business structuring, governance and ongoing legal advisory for startups and growing businesses, alongside the drafting, review and negotiation of commercial contracts and agreements. He acts as ongoing counsel to founders and businesses, advising on corporate structures, regulatory requirements and the legal aspects of their commercial relationships.",
+      "In startup, founder and investor advisory, Samarth advises on fundraising and transactional matters, including deal structuring, transaction documentation and negotiations between founders and investors. His transactional work includes advising on strategic business arrangements and the legal considerations arising across different stages of a business.",
+      "In technology and data privacy, he advises businesses on data protection compliance, privacy frameworks and technology contracts, including SaaS and platform agreements. His intellectual property practice includes trademark protection, brand strategy, and the licensing and assignment arrangements through which businesses protect and commercialise their IP.",
+      "Beyond active practice, Samarth remains engaged in legal education and thought leadership. He has delivered guest lectures at schools, universities and professional forums on a range of legal subjects, and his insights have been featured in Times Now Digital, Business News This Week and other reputed platforms.",
+      "His approach to legal practice is grounded in understanding the business behind the legal question. He believes effective legal counsel should account not only for what the law requires, but also for what the business is trying to achieve.",
+    ],
+    education: [
+      "B.A. LL.B. (Hons.)",
+      "Batch of 2020 | Bennett University",
+      "Academic Merit: Among the highest-scoring students of the batch",
+    ],
+    publications: [
+      {
+        title: "How Business-Savvy Lawyering is Redefining the Legal Profession in the Startup Era",
+        href: "https://businessnewsthisweek.com/business/how-business-savvy-lawyering-is-redefining-the-legal-profession-in-the-startup-era/",
+      },
+      {
+        title: "Love in Legal Limbo: Defined yet Denied Rights of the Non-Heterosexual Couples in India",
+        href: "https://www.timesnownews.com/education/love-in-legal-limbo-defined-yet-denied-rights-of-the-non-heterosexual-couples-in-india-article-151901825",
+      },
+    ],
     email: "samarth@jhunjhunwalalegal.com",
     linkedin: "https://www.linkedin.com/in/samarthjhunjhunwala/",
   },
@@ -59,7 +85,7 @@ export const people: Person[] = [
   {
     slug: "pakhi-chaudhary",
     name: "Pakhi Chaudhary",
-    role: "Paralegal",
+    role: "Trainee Associate",
     image: "/images/team/pakhi.jpg",
     bar: "Enrolled with the Bar Council of India and the Bar Council of Uttar Pradesh",
     focus: [
