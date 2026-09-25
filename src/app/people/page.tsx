@@ -21,19 +21,11 @@ export default function PeoplePage() {
     <>
       <section className="bg-cream pt-[calc(var(--header-h)+4rem)] pb-14 md:pb-20">
         <div className="container-page">
-          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-16">
-            <div className="max-w-3xl">
-              <Reveal>
-                <p className="eyebrow mb-4 text-teal">A legal partner, not just a legal service</p>
-              </Reveal>
-              <SplitText as="h1" text="Meet Our People" className="display-1 text-ink" />
-            </div>
-            <Reveal delay={1} className="md:max-w-sm md:pb-3">
-              <p className="text-balance-pretty text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/65">
-                We listen first. We understand the facts. We identify the legal issues. Then we explain your
-                options clearly and help you decide how to move forward.
-              </p>
+          <div className="max-w-3xl">
+            <Reveal>
+              <p className="eyebrow mb-4 text-teal">A legal partner, not just a legal service</p>
             </Reveal>
+            <SplitText as="h1" text="Meet Our People" className="display-1 text-ink" />
           </div>
         </div>
       </section>

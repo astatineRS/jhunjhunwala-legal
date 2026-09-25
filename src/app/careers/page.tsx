@@ -9,9 +9,9 @@ import { ButtonLink } from "@/components/ui/Button";
 import RoleList from "@/components/careers/RoleList";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Careers & Internships",
   description:
-    "There are no open positions at Jhunjhunwala Legal at present. We continue to read speculative applications for our Delhi office.",
+    "Careers and internship applications at Jhunjhunwala Legal. There are no open positions at present, but the firm continues to read speculative applications.",
   alternates: { canonical: "/careers" },
 };
 
@@ -35,13 +35,16 @@ const hiring = [
 ];
 
 const speculativeSubject = encodeURIComponent("Speculative application");
+const internshipSubject = encodeURIComponent("Internship application");
+const internshipBody = encodeURIComponent(
+  "Dear Jhunjhunwala Legal,\n\nI would like to apply for an internship. My preferred dates and areas of interest are set out below.\n\nI have attached my CV and a short writing sample.\n\nKind regards,\n",
+);
 
 export default function CareersPage() {
   return (
     <>
       <PageHero
-        title="Careers"
-        subtitle="We are a small firm that gives people real work early. We are not hiring in Delhi at present, but we still read every application that reaches us."
+        title="Careers & Internships"
         image="/images/band-gavel.jpg"
       />
 
@@ -125,6 +128,30 @@ export default function CareersPage() {
               </Reveal>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section id="internships" className="bg-cream pb-12 md:pb-28">
+        <div className="container-page">
+          <Reveal>
+            <div className="flex flex-col gap-5 rounded-[var(--radius-card)] border border-ink/10 bg-sand-soft px-5 py-7 md:flex-row md:items-center md:justify-between md:gap-10 md:px-12 md:py-12">
+              <div className="max-w-2xl">
+                <p className="eyebrow text-teal">Internships</p>
+                <h2 className="display-3 mt-2 text-ink md:mt-3">Apply for an internship</h2>
+                <p className="mt-2 text-balance-pretty text-[0.9375rem] leading-relaxed text-ink/70 md:mt-3 md:text-base">
+                  Email your CV, preferred dates, areas of interest and a short writing sample. We
+                  consider applications against the team&rsquo;s availability and the work underway
+                  during the requested period.
+                </p>
+              </div>
+              <ButtonLink
+                href={`mailto:${site.email}?subject=${internshipSubject}&body=${internshipBody}`}
+                className="shrink-0"
+              >
+                Apply For An Internship
+              </ButtonLink>
+            </div>
+          </Reveal>
         </div>
       </section>
 

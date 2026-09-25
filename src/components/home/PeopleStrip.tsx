@@ -22,7 +22,7 @@ export default function PeopleStrip() {
             <Reveal>
               <p className="eyebrow mb-3 text-cream/70">A legal partner, not just a legal service</p>
             </Reveal>
-            <SplitText as="h2" text="The Backbone Protocol" className="display-2 text-cream" />
+            <SplitText as="h2" text="The People of JJL" className="display-2 text-cream" />
           </div>
           <Reveal delay={1} className="md:max-w-md md:pb-2">
             <p className="text-[0.9375rem] leading-relaxed text-cream/85 md:text-[1.0625rem]">

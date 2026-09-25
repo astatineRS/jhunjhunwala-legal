@@ -9,7 +9,7 @@ export const site = {
   phone: "+91 63932 59200",
   phoneHref: "tel:+916393259200",
   address: "New Delhi, India",
-  hours: "09:00 – 18:00, Monday to Saturday",
+  hours: "10:00 AM – 7:00 PM, Monday to Saturday",
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/company/backbone-counsels/posts/?feedView=all" },
     { label: "Facebook", href: "https://www.facebook.com/" },
@@ -21,7 +21,7 @@ export const nav = [
   { label: "About The Firm", href: "/about" },
   { label: "Expertise", href: "/expertise" },
   { label: "People", href: "/people" },
-  { label: "Careers", href: "/careers" },
+  { label: "Careers & Internships", href: "/careers" },
 ] as const;
 
 export const footerColumns = [
@@ -30,7 +30,7 @@ export const footerColumns = [
     links: [
       { label: "About The Firm", href: "/about" },
       { label: "Our Team", href: "/people" },
-      { label: "Careers", href: "/careers" },
+      { label: "Careers & Internships", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -49,7 +49,6 @@ export const footerColumns = [
     heading: "Legal",
     links: [
       { label: "FAQs", href: "/#faqs" },
-      { label: "Disclaimer", href: "/disclaimer" },
       { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },

@@ -179,9 +179,20 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Where We Come From"
             title="The Journey with Backbone Counsels"
+            aside={
+              <div className="w-full max-w-[18rem] rounded-[var(--radius-card)] bg-teal-deep px-5 py-4 shadow-[var(--shadow-card)]">
+                <Image
+                  src="/logos/backbone-counsels.png"
+                  alt="Backbone Counsels"
+                  width={724}
+                  height={249}
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            }
           />
 
-          <div className="mt-6 md:mt-12 grid gap-4 md:gap-10 text-[0.9375rem] md:text-[1.0625rem] leading-relaxed text-ink/70 lg:grid-cols-2">
+          <div className="mt-6 grid gap-4 text-justify text-[0.9375rem] leading-relaxed text-ink/70 md:mt-12 md:gap-10 md:text-[1.0625rem] lg:grid-cols-2">
             <Reveal delay={1}>
               <p>
                 Jhunjhunwala Legal builds on the foundation laid by Backbone Counsels, a legal

@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import SmoothScroll from "@/components/providers/SmoothScroll";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import DisclaimerGate from "@/components/DisclaimerGate";
 import { site } from "@/content/site";
@@ -55,7 +54,7 @@ const organisationLd = {
     addressRegion: "Delhi",
     addressCountry: "IN",
   },
-  openingHours: "Mo-Sa 09:00-18:00",
+  openingHours: "Mo-Sa 10:00-19:00",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -69,7 +68,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationLd) }}
         />
-        <SmoothScroll />
         <ScrollToTop />
         <DisclaimerGate />
         <a

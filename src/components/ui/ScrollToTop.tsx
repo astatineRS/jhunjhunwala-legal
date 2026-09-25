@@ -2,14 +2,12 @@
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
-import { lenisRef } from "@/lib/lenis";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 import { ArrowUp } from "@/components/ui/icons";
 
 /**
- * Back-to-top control. Appears once the page is scrolled past a screen height
- * and scrolls through Lenis when smooth scrolling is active, so the ride up
- * matches the rest of the page rather than snapping.
+ * Back-to-top control. Native page scrolling stays untouched so wheel and
+ * trackpad input remain responsive; only this explicit action is animated.
  */
 export default function ScrollToTop() {
   const { scrollY } = useScroll();
@@ -20,11 +18,6 @@ export default function ScrollToTop() {
   });
 
   const toTop = () => {
-    const lenis = lenisRef.current;
-    if (lenis) {
-      lenis.scrollTo(0, { duration: 1.4 });
-      return;
-    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

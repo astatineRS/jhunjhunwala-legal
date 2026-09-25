@@ -1,11 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { testimonials } from "@/content/home";
 import { EASE_OUT_EXPO } from "@/lib/motion";
-import Reveal from "@/components/ui/Reveal";
 import SplitText from "@/components/ui/SplitText";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "@/components/ui/icons";
@@ -55,10 +53,7 @@ export default function Testimonials() {
     <section className="bg-gold py-12 md:py-28">
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
-          <Reveal>
-            <p className="eyebrow mb-3 text-white/75">What clients say</p>
-          </Reveal>
-          <SplitText as="h2" text="Testimonials" className="display-2 text-white" />
+          <SplitText as="h2" text="What Our Clients Say" className="display-2 text-white" />
         </div>
 
         <div
@@ -95,16 +90,11 @@ export default function Testimonials() {
                       : "pointer-events-none bg-white/25",
                   )}
                 >
-                  <figcaption
-                    className={cn("flex items-center gap-4", isActive && "justify-center text-center")}
-                  >
-                    <span className="relative size-12 shrink-0 overflow-hidden rounded-full md:size-14">
-                      <Image src={item.avatar} alt="" fill sizes="56px" className="object-cover" />
-                    </span>
+                  <figcaption className={cn(isActive && "text-center")}>
                     <span>
                       <span
                         className={cn(
-                          "block text-left font-display text-[1.125rem] font-semibold leading-tight md:text-[1.375rem]",
+                          "block font-display text-[1.125rem] font-semibold leading-tight md:text-[1.375rem]",
                           isActive ? "text-ink" : "text-ink/70",
                         )}
                       >
@@ -112,7 +102,7 @@ export default function Testimonials() {
                       </span>
                       <span
                         className={cn(
-                          "block text-left text-[0.875rem] leading-tight md:text-[0.9375rem]",
+                          "mt-1 block text-[0.875rem] leading-tight md:text-[0.9375rem]",
                           isActive ? "text-ink/65" : "text-ink/50",
                         )}
                       >

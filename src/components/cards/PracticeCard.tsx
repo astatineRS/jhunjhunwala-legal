@@ -27,6 +27,7 @@ export default function PracticeCard({
   return (
     <Link
       href={`/expertise/${area.slug}`}
+      scroll
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] bg-white transition-all duration-600 ease-[var(--ease-out-expo)] hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]",
         className,

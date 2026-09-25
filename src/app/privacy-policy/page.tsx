@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { site } from "@/content/site";
 import PolicyDocument, { type PolicySection } from "@/components/legal/PolicyDocument";
 
-const UPDATED = "21 September 2026";
+const UPDATED = "25 September 2026";
 const linkClass = "text-teal underline decoration-teal/35 underline-offset-4 transition-colors duration-300 hover:text-teal-deep hover:decoration-teal";
 
 export const metadata: Metadata = {
@@ -22,26 +21,15 @@ export const metadata: Metadata = {
 const sections: PolicySection[] = [
   {
     id: "scope",
-    title: "Scope of this notice",
+    title: "Scope",
     body: (
-      <>
-        <p>
-          This notice explains how {site.name} (&ldquo;the firm&rdquo;, &ldquo;we&rdquo;) handles
-          personal data collected through <strong>{site.url.replace("https://", "")}</strong>. It
-          covers the website only.
-        </p>
-        <p>
-          Personal data you give us in the course of an engagement (instructions, documents,
-          correspondence and matter records) is governed by our engagement terms and by the
-          professional obligations of confidentiality and privilege that apply to advocates in
-          India. Those obligations are stricter than this notice and are not displaced by it.
-        </p>
-        <p>
-          The firm is the data fiduciary for the information described here. Our contact details,
-          including those of the person who handles privacy queries, are set out at the end of this
-          notice.
-        </p>
-      </>
+      <p>
+        Jhunjhunwala Legal (the &ldquo;Firm&rdquo;, &ldquo;we&rdquo;) is committed to respecting
+        your online privacy and recognizes your need for appropriate protection and management of
+        any information you share with us on the Website. This Privacy Policy explains how we handle
+        personal data collected through <strong>{site.url.replace("https://", "")}</strong> in
+        relation to the use of and access to the Website.
+      </p>
     ),
   },
   {
@@ -395,17 +383,10 @@ const sections: PolicySection[] = [
           <li>
             <strong>{site.name}</strong>
           </li>
-          <li>{site.address}</li>
           <li>
             Email:{" "}
             <a href={`mailto:${site.email}`} className={linkClass}>
               {site.email}
-            </a>
-          </li>
-          <li>
-            Telephone:{" "}
-            <a href={site.phoneHref} className={linkClass}>
-              {site.phone}
             </a>
           </li>
           <li>Office hours: {site.hours}</li>
@@ -427,16 +408,6 @@ export default function PrivacyPolicyPage() {
       lede="What this website collects, why we collect it, how long we keep it, and the rights you hold over it under India's data protection law."
       updated={UPDATED}
       sections={sections}
-      footnote={
-        <>
-          This notice is provided for information. It is not legal advice, and nothing in it creates
-          a lawyer&ndash;client relationship between you and the firm. Please also read our{" "}
-          <Link href="/disclaimer" className={linkClass}>
-            disclaimer
-          </Link>
-          .
-        </>
-      }
     />
   );
 }

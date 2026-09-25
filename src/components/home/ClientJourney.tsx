@@ -47,7 +47,7 @@ const steps = journey.map(({ step, slug }, index) => ({
 }));
 
 /**
- * The Backbone Suite: the eight stages a business meets, in order. The dashed
+ * The Backbone Protocol: the eight stages a business meets, in order. The dashed
  * rail is the track; a solid line draws over it as the section scrolls, using
  * `pathLength` so the reveal follows the curve rather than a bounding box.
  */
@@ -64,7 +64,7 @@ export default function ClientJourney() {
     <section className="bg-cream pb-12 md:pb-28">
       <div className="container-page">
         <SectionHeading
-          title="The Backbone Suite"
+          title="The Backbone Protocol"
           align="center"
           description="A clear, straightforward approach from the first conversation to the next step."
         />

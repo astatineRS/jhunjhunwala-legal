@@ -20,7 +20,7 @@ export const people: Person[] = [
   {
     slug: "samarth-jhunjhunwala",
     name: "Samarth Jhunjhunwala",
-    role: "Managing Partner",
+    role: "Founding & Managing Partner",
     image: "/images/team/samarth.jpg",
     bar: "Enrolled with the Bar Council of Delhi, 2009",
     focus: ["Corporate & Commercial", "Investment & Transactions", "Dispute Strategy"],
