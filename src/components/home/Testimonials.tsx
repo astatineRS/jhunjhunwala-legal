@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { testimonials } from "@/content/home";
 import { EASE_OUT_EXPO } from "@/lib/motion";
@@ -65,7 +66,7 @@ export default function Testimonials() {
           aria-roledescription="carousel"
           aria-label="Client testimonials"
         >
-          <div className="relative mt-6 md:mt-12 h-[21rem] sm:h-[19rem]">
+          <div className="relative mt-6 md:mt-12 h-[25rem] sm:h-[22rem]">
             {testimonials.map((item, index) => {
               const offset = relative(index, active);
               const isActive = offset === 0;
@@ -84,13 +85,43 @@ export default function Testimonials() {
                   transition={{ duration: 0.8, ease: EASE_OUT_EXPO }}
                   style={{ zIndex: 10 - Math.abs(offset) }}
                   className={cn(
-                    "absolute inset-x-0 inset-y-0 mx-auto flex w-[92%] flex-col rounded-[var(--radius-card)] p-5 md:w-[54%] md:p-10",
+                    "absolute inset-x-0 inset-y-0 mx-auto flex w-[92%] flex-col justify-center rounded-[var(--radius-card)] p-5 md:w-[54%] md:p-10",
                     isActive
                       ? "bg-cream shadow-[var(--shadow-lift)]"
                       : "pointer-events-none bg-white/25",
                   )}
                 >
-                  <figcaption className={cn(isActive && "text-center")}>
+                  <span
+                    className={cn(
+                      "flex h-12 shrink-0 items-center md:h-14",
+                      isActive ? "justify-center" : "justify-start",
+                    )}
+                  >
+                    {item.logo ? (
+                      <span className="grid h-full w-28 place-items-center rounded-[10px] bg-white px-3 py-2 md:w-32">
+                        <span className="relative block size-full">
+                          <Image
+                            src={item.logo}
+                            alt={item.company}
+                            fill
+                            sizes="128px"
+                            className="object-contain"
+                          />
+                        </span>
+                      </span>
+                    ) : (
+                      <span
+                        className={cn(
+                          "font-display text-[1.0625rem] font-semibold uppercase tracking-[0.1em] md:text-[1.1875rem]",
+                          isActive ? "text-teal" : "text-teal/60",
+                        )}
+                      >
+                        {item.company}
+                      </span>
+                    )}
+                  </span>
+
+                  <figcaption className={cn("mt-4", isActive && "text-center")}>
                     <span>
                       <span
                         className={cn(

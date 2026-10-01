@@ -171,38 +171,77 @@ export const journey: JourneyStep[] = [
   { step: "Resolve", slug: "pre-litigation-and-dispute-resolution" },
 ];
 
-/**
- * Client attributions are kept anonymised — the firm has not published named
- * testimonials, and Bar Council Rule 36 limits what may be claimed publicly.
- */
-export const testimonials = [
+export type Testimonial = {
+  /** The person giving the testimonial. */
+  name: string;
+  /** Their title at the client. */
+  role: string;
+  /** Client entity, named as they trade. */
+  company: string;
+  /**
+   * Client brand artwork in /public/logos. Omitted where the client has not
+   * supplied a mark — the card falls back to the company name alone.
+   */
+  logo?: string;
+  quote: string;
+};
+
+/** Published with each client's consent; attributions are used as given. */
+export const testimonials: Testimonial[] = [
   {
-    name: "Chief Executive Officer",
-    role: "Manufacturing group, Delhi NCR",
-    avatar: "/images/team/p9.jpg",
+    name: "Raunak Shukla",
+    role: "Cofounder & CEO",
+    company: "SYINQ",
+    logo: "/logos/syinq.svg",
     quote:
-      "Their practical advice and clear communication gave us confidence through every important decision.",
+      "Our experience working with Backbone Counsels has been very positive. As an early-stage startup, we especially valued how they made legal processes easier to understand rather than simply telling us what needed to be done. The team was approachable, responsive, and practical in their advice, which helped us make decisions with more clarity and confidence. I would particularly recommend them to founders and early-stage businesses looking for legal support that is practical and easy to navigate. They take the time to understand the business context and provide advice accordingly, rather than treating everything as a standard legal checklist.",
   },
   {
-    name: "Founder",
-    role: "Technology company, Bengaluru",
-    avatar: "/images/team/p8.jpg",
+    name: "Naman Kothari",
+    role: "Co-founder",
+    company: "Sort My Prep",
+    logo: "/logos/sort-my-prep.png",
     quote:
-      "From our first conversation, the team took the time to understand not only the legal issue we were facing, but also the wider business context behind it. They explained every step clearly, helped us evaluate our options, and gave us the confidence to move forward with a well-informed decision. Their attention to detail, responsiveness, and practical approach made what initially felt like a complicated process much easier to navigate.",
+      "We see Samarth and Jhunjhunwala Legal as rigorous and practical. What we valued most was that the first piece of work told us where we stood. Every conclusion was traceable back to a specific document, so we could check it ourselves rather than take it on trust. The working sequence has suited us too: tell us what we are minded to do, and you confirm it before we build. For a small team like ours, avoiding rework matters more than speed. Particularly for an early-stage company operating across more than one jurisdiction, the difficulty is not finding an answer but knowing which of several regimes actually governs the question. The advice has been practical rather than defensive.",
   },
   {
-    name: "Director",
-    role: "Education trust, Uttar Pradesh",
-    avatar: "/images/team/p2.jpg",
+    name: "Rahul Agarwal",
+    role: "Founder & CEO",
+    company: "CareEase",
+    logo: "/logos/care-ease.png",
     quote:
-      "They were candid about what was worth pursuing and what was not. That saved us both time and money.",
+      "My experience of working with Samarth has been very good. He has always been very cooperative and available whenever I needed his help or wanted to discuss any legal matter. Whenever I approached him for a consultation, he gave me his time, understood the situation properly, and provided clear and practical legal advice. I have worked with him on several matters, including drafting agreements with my co-founder and advisors, consultancy and advisory agreements, and patent-related work. For every agreement, he took the time to understand the specific situation, did the necessary research, and advised me on what I should and should not do from a legal perspective. I particularly valued that he didn’t just focus on preparing the documents. He took the time to explain the legal aspects and guide me through the process, which was very helpful for me as a founder.",
   },
   {
-    name: "Co-founder",
-    role: "SaaS business, New Delhi",
-    avatar: "/images/team/p7.jpg",
+    name: "Arhaam Azhari",
+    role: "Founder & CEO",
+    company: "Runway Avenue Inc.",
+    logo: "/logos/runway-avenue.png",
     quote:
-      "We came in with a messy cap table and left with documentation our investors accepted without a single comment.",
+      "Our experience of working with Samarth and his team has been excellent. The entire team takes a keen effort to handle all our queries and concerns while producing perfect results with their well-versed legal services. I personally value Samarth and his ability to understand my situation in proper detail in any given moment and his ability to best manage the circumstances while getting appropriate work done. Really appreciate the effort and time management the entire Jhunjhunwala Legal team has shown while working with us from across continents. The ability of the team to best accommodate all limitations of a young startup like ours while maintaining performance always helps young companies find their footing and is essential for success.",
+  },
+  {
+    name: "Yashraj Singh Saluja",
+    role: "Founder & Director",
+    company: "The Third Eye Astro Pvt Ltd",
+    logo: "/logos/white-magic.png",
+    quote:
+      "Samarth took White Magic from zero to a complete, launch-ready legal foundation. What I valued most was that he engaged with the business, not just the drafting. He was patient through many rounds of revisions, responsive on short timelines, and priced fairly for an early-stage company. The personal dedication and Samarth’s will to take a call and hold a discussion at 11:30pm is the biggest separating factor for me personally.",
+  },
+  {
+    name: "Mohammed Imran",
+    role: "Founder",
+    company: "Excelera Touchstone Consulting",
+    logo: "/logos/excelera.png",
+    quote:
+      "My experience working with Samarth was that he is diligent in his facts. He gives the right process and timelines for when the work will be completed. In any area of law — intellectual property, copyright, arbitration, review of contracts — he could bring in the right personnel to give the right advice. I would highly recommend using Samarth’s services for the value he brings to his customers. It was a good experience and we will use his services again.",
+  },
+  {
+    name: "Dhruv Sahu",
+    role: "Partner",
+    company: "Obliviqlabs LLP",
+    quote:
+      "My three lines for Samarth and our experience of working with him: open, and possessing a higher level of understanding. Easier to connect with and to understand. Awesome team — nothing to add from my side.",
   },
 ];
 

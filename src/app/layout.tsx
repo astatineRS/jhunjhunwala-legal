@@ -39,12 +39,19 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+/**
+ * `logo` and `image` give Google an explicit brand mark to associate with the
+ * domain; the favicon itself ships as `app/favicon.ico` + `app/icon.svg`.
+ */
 const organisationLd = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   name: site.name,
+  alternateName: site.shortName,
   description: site.description,
   url: site.url,
+  logo: `${site.url}/images/jjl-mark.png`,
+  image: `${site.url}/images/jjl-mark.png`,
   email: site.email,
   telephone: site.phone,
   areaServed: "IN",
